@@ -1,0 +1,20 @@
+*{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+.home-header_imgs-wrapper{position:absolute;top:0;left:0;right:0;bottom:0;pointer-events:none;z-index:4}
+.home-header_imgs-left,.home-header_imgs-right{position:absolute;top:40%;transform:translateY(-50%)}
+.home-header_imgs-left{left:15%}
+.home-header_imgs-right{right:15%}
+.home-header_img{position:absolute;width:100px;height:100px;opacity:1;background:#fff;border-radius:50%;padding:15px;box-shadow:0 4px 20px rgba(0,0,0,.1)}
+.left-1{top:-180px;left:0}
+.left-2{top:0;left:-50px}
+.left-3{top:180px;left:0}
+.right-1{top:-180px;right:0}
+.right-2{top:0;right:-50px}
+.right-3{top:180px;right:0}
+.hero-content{max-width:1200px;margin:0;padding:120px 0;opacity:0;animation:heroFadeIn 1.5s ease-out .5s forwards;position:relative;z-index:3;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+@keyframes heroFadeIn{from{opacity:0;transform:translateY(50px)}to{opacity:1;transform:translateY(0)}}
+.hero-title{font-size:clamp(2rem,5vw,3.5rem);font-weight:800;line-height:1.1;color:#1a1a1a;margin-bottom:30px;letter-spacing:-.02em;opacity:0;animation:slideInUp 1.2s ease-out 1s forwards}
+@keyframes slideInUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+.btn-primary{background:#a3e635;color:#000;padding:18px 40px;border-radius:50px;text-decoration:none;font-weight:700;font-size:1.1rem;transition:all .3s ease;display:inline-flex;align-items:center;gap:10px;box-shadow:0 4px 20px rgba(163,230,53,.3)}
+.btn-primary:hover{transform:translateY(-2px);background:#84cc16;box-shadow:0 8px 30px rgba(163,230,53,.4)}
+.w-webflow-badge{display:none!important}
+@media (max-width:768px){.hero-content{grid-template-columns:1fr;text-align:center;gap:40px}.hero-title{font-size:clamp(1.8rem,8vw,2.5rem)!important}}

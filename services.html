@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title> Our Core Services | Growthpulse Solutions 
+</title>
+    <meta content="Explore GrowthPulse comprehensive services including software marketing, digital marketing, learning & development, technical development, account management, and event management." name="description" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link href="https://cdn.prod.website-files.com/684a11845c7dd0b4b7745cd9/css/noura-template-supply.webflow.shared.ca770ec91.css" rel="stylesheet" type="text/css" />
+    <link href="src/images/Main-Logo-01.png" rel="shortcut icon" type="image/png" />
+    <link href="src/images/Main-Logo-01.png" rel="apple-touch-icon" />
+    <style>
+      * {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .w-webflow-badge {
+        display: none !important;
+      }
+      body {
+        background: #F9F8F5;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        color: #333;
+        padding-top: 80px;
+      }
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: #ffffff !important;
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+      }
+      .navbar_link:hover {
+        color: #764ba2 !important;
+      }
+      .navbar_link {
+        color: #333 !important;
+      }
+      .hero-section {
+        background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('src/images/Home/landingpage background/landingpage-background2.jpg') center/cover no-repeat;
+        padding: 150px 0 120px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        min-height: 70vh;
+      }
+      .wave-divider {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+        transform: rotate(180deg);
+      }
+      .wave-divider svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 1.3px);
+        height: 120px;
+      }
+      .services-section {
+        background: #F9F8F5;
+        padding: 80px 0;
+        position: relative;
+      }
+      .navbar_logo {
+        height: 80px;
+        width: auto;
+      }
+      .services-content {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 40px;
+      }
+      .services-title {
+        font-size: 3.5rem;
+        font-weight: 700;
+        color: #ffffff;
+        margin-bottom: 30px;
+        letter-spacing: -0.02em;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+      }
+      .services-subtitle {
+        font-size: 1.3rem;
+        color: #ffffff;
+        margin-bottom: 60px;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.6;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+      }
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 40px;
+        margin-top: 60px;
+      }
+      .service-card {
+        background: #ffffff;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        transition: all 0.3s ease;
+        position: relative;
+        cursor: pointer;
+        border: 1px solid #e9ecef;
+      }
+      .service-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+        border-color: #007bff;
+      }
+      .service-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: #007bff;
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+      }
+      .service-card:hover::before {
+        transform: scaleX(1);
+      }
+      .service-image {
+        height: 250px;
+        position: relative;
+        overflow: hidden;
+      }
+      .service-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .service-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 4rem;
+        color: white;
+        z-index: 2;
+        text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        transition: transform 0.3s ease;
+      }
+      .service-card:hover .service-icon {
+        transform: translate(-50%, -50%) scale(1.1);
+      }
+      .service-content {
+        padding: 40px;
+        text-align: center;
+      }
+      .service-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        background: linear-gradient(45deg, #1e3a8a, #f97316);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 15px;
+        line-height: 1.3;
+        transition: all 0.3s ease;
+      }
+      .service-card:hover .service-title {
+        background: linear-gradient(45deg, #1e40af, #ea580c);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .service-description {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #666;
+        margin-bottom: 25px;
+      }
+      .service-link {
+        display: inline-block;
+        background: #007bff;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+      .service-link:hover {
+        background: #0056b3;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+      }
+      .contact-btn {
+        display: inline-block;
+        background: linear-gradient(45deg, #1e3a8a, #f97316);
+        color: white;
+        padding: 15px 35px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin: 60px auto 0;
+        transition: all 0.3s ease;
+      }
+      .contact-btn:hover {
+        background: linear-gradient(45deg, #1e40af, #ea580c);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(30, 58, 138, 0.3);
+      }
+
+      @media (max-width: 1024px) {
+        .services-grid {
+          grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+          gap: 30px;
+        }
+        .services-title {
+          font-size: 3rem;
+        }
+      }
+      @media (max-width: 768px) {
+        body {
+          padding-top: 70px;
+        }
+        .navbar {
+          padding: 10px 0;
+        }
+        .navbar_component {
+          padding: 0 15px;
+        }
+        .navbar_logo {
+          height: 60px;
+        }
+        .services-title {
+          font-size: 2.5rem;
+        }
+        .services-subtitle {
+          font-size: 1.2rem;
+        }
+        .services-grid {
+          grid-template-columns: 1fr;
+          gap: 25px;
+        }
+        .service-image {
+          height: 200px;
+        }
+        .service-content {
+          padding: 30px;
+        }
+        .service-title {
+          font-size: 1.5rem;
+        }
+        .hero-section {
+          padding: 80px 20px 60px;
+        }
+        .services-section {
+          padding: 60px 0;
+        }
+        .services-content {
+          padding: 0 15px;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        .services-title {
+          font-size: 2rem;
+        }
+        .services-subtitle {
+          font-size: 1rem;
+        }
+        .service-content {
+          padding: 20px;
+        }
+        .service-title {
+          font-size: 1.3rem;
+        }
+      }
+      
+      /* Hero Animation */
+      .hero-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="%23667eea" opacity="0.3"><animate attributeName="r" values="2;4;2" dur="3s" repeatCount="indefinite"/></circle><circle cx="80" cy="30" r="1.5" fill="%23764ba2" opacity="0.4"><animate attributeName="cy" values="30;20;30" dur="4s" repeatCount="indefinite"/></circle></svg>') repeat;
+        animation: float 20s ease-in-out infinite;
+      }
+      @keyframes float {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-20px) rotate(2deg); }
+      }
+      @keyframes slideUp {
+        from { opacity: 0; transform: translateY(50px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      
+      /* Advanced Scroll Animations */
+      .animate-on-scroll {
+        opacity: 0;
+        transform: translateY(60px) scale(0.95);
+        transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+      .animate-on-scroll.visible {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+      .slide-left {
+        opacity: 0;
+        transform: translateX(-80px) rotateY(-15deg);
+        transition: all 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+      .slide-left.visible {
+        opacity: 1;
+        transform: translateX(0) rotateY(0deg);
+      }
+      .slide-right {
+        opacity: 0;
+        transform: translateX(80px) rotateY(15deg);
+        transition: all 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+      .slide-right.visible {
+        opacity: 1;
+        transform: translateX(0) rotateY(0deg);
+      }
+      .fade-up {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all 0.8s ease;
+      }
+      .fade-up.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      
+      /* Enhanced Service Card Hover */
+      .service-card {
+        animation-delay: calc(var(--delay) * 0.1s);
+        position: relative;
+        overflow: hidden;
+      }
+      .service-card::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+        transition: left 0.6s;
+      }
+      .service-card:hover::after {
+        left: 100%;
+      }
+      .service-card:hover .service-icon {
+        transform: scale(1.2) rotate(5deg);
+        color: #007bff;
+      }
+      .service-icon {
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        display: inline-block;
+      }
+      
+      /* Staggered Animation */
+      .service-card:nth-child(1) { animation-delay: 0.1s; }
+      .service-card:nth-child(2) { animation-delay: 0.2s; }
+      .service-card:nth-child(3) { animation-delay: 0.3s; }
+      .service-card:nth-child(4) { animation-delay: 0.4s; }
+      .service-card:nth-child(5) { animation-delay: 0.5s; }
+      .service-card:nth-child(6) { animation-delay: 0.6s; }
+      
+      /* Mobile Responsive */
+      @keyframes floatPattern {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-20px) rotate(5deg); }
+      }
+      
+      @media (max-width: 768px) {
+        .animate-on-scroll {
+          transform: translateY(30px) scale(0.98);
+          transition: all 0.6s ease;
+        }
+        .slide-left, .slide-right {
+          transform: translateY(30px);
+          transition: all 0.8s ease;
+        }
+        .slide-left.visible, .slide-right.visible {
+          transform: translateY(0);
+        }
+        .service-card:hover {
+          transform: translateY(-5px);
+        }
+      }
+      
+      /* Modern Curved Section Dividers */
+      .curved-divider {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+        z-index: 10;
+      }
+      
+      .curved-divider svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 1.3px);
+        height: 80px;
+      }
+      
+      /* Template Footer Styles */
+      .template-footer {
+        margin-top: 60px;
+      }
+      
+      /* Green Banner */
+      .footer-banner {
+        background: linear-gradient(45deg, #667eea, #764ba2);
+        padding: 15px 0;
+        overflow: hidden;
+        position: relative;
+      }
+      
+      .banner-content {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        animation: scrollBanner 20s linear infinite;
+        white-space: nowrap;
+      }
+      
+      .banner-text {
+        color: #fff;
+        font-size: 1.2rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+      }
+      
+      .banner-star {
+        color: #fff;
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+      
+      @keyframes scrollBanner {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+      }
+      
+      /* Main Footer */
+      .footer-main {
+        background: #1a1a1a;
+        color: #ffffff;
+        padding: 80px 0 0;
+      }
+      
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      
+      /* Contact Section */
+      .footer-contact-section {
+        text-align: center;
+        margin-bottom: 80px;
+        padding-bottom: 40px;
+        border-bottom: 1px solid #333;
+      }
+      
+      .footer-contact-title {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 300;
+        color: #667eea;
+        margin-bottom: 30px;
+        letter-spacing: -1px;
+      }
+      
+      .footer-cta-btn {
+        display: inline-block;
+        background: linear-gradient(45deg, #667eea, #764ba2);
+        color: #fff;
+        padding: 15px 40px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+      }
+      
+      .footer-cta-btn:hover {
+        background: #764ba2;
+        transform: translateY(-2px);
+      }
+      
+      /* Footer Grid */
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1.5fr;
+        gap: 60px;
+        margin-bottom: 60px;
+      }
+      
+      /* Logo Section */
+      .footer-logo-section {
+        display: flex;
+        align-items: flex-start;
+      }
+      
+      .footer-brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      
+      .footer-logo-text {
+        color: #667eea;
+        font-size: 1.5rem;
+        font-weight: 800;
+        letter-spacing: -1px;
+      }
+      
+      .footer-logo-x {
+        color: #ffffff;
+        font-size: 1.5rem;
+        font-weight: 800;
+      }
+      
+      /* Footer Columns */
+      .footer-column {
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .footer-column-title {
+        color: #667eea;
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 25px;
+      }
+      
+      .footer-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      
+      .footer-links li {
+        margin-bottom: 12px;
+      }
+      
+      .footer-link {
+        color: #cccccc;
+        text-decoration: none;
+        font-size: 0.95rem;
+        transition: color 0.3s ease;
+      }
+      
+      .footer-link:hover {
+        color: #667eea;
+      }
+      
+      /* Contact Info */
+      .footer-contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      
+      .footer-address {
+        color: #cccccc;
+        font-size: 0.95rem;
+        margin: 0;
+        line-height: 1.4;
+      }
+      
+      .footer-email {
+        color: #cccccc;
+        text-decoration: none;
+        font-size: 0.95rem;
+        margin-bottom: 20px;
+        transition: color 0.3s ease;
+      }
+      
+      .footer-email:hover {
+        color: #667eea;
+      }
+      
+      /* Social Icons */
+      .footer-social-icons {
+        display: flex;
+        gap: 15px;
+      }
+      
+      .footer-social-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: #333;
+        border-radius: 50%;
+        color: #cccccc;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+      
+      .footer-social-icon:hover {
+        background: linear-gradient(45deg, #667eea, #764ba2);
+        color: #fff;
+        transform: translateY(-2px);
+      }
+      
+      /* Footer Bottom */
+      .footer-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px 0;
+        border-top: 1px solid #333;
+      }
+      
+      .footer-copyright {
+        color: #cccccc;
+        font-size: 0.9rem;
+        margin: 0;
+      }
+      
+      .footer-bottom-right {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+      
+      .footer-legal-link {
+        color: #cccccc;
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: color 0.3s ease;
+      }
+      
+      .footer-legal-link:hover {
+        color: #667eea;
+      }
+      
+      .footer-divider {
+        color: #666;
+        font-size: 0.9rem;
+      }
+      
+      .navbar_link.w--current {
+        background: linear-gradient(135deg, #1e40af 0%, #3b82f6 30%, #06b6d4 70%, #0ea5e9 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 700;
+        position: relative;
+      }
+      .navbar_link.w--current::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(135deg, #1e40af 0%, #3b82f6 30%, #06b6d4 70%, #0ea5e9 100%);
+        border-radius: 1px;
+      }
+      
+      /* Responsive Design */
+      @media (max-width: 1024px) {
+        .footer-grid {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 40px;
+        }
+      }
+      
+      @media (max-width: 768px) {
+        .footer-main {
+          padding: 60px 0 0;
+        }
+        
+        .footer-contact-section {
+          margin-bottom: 60px;
+        }
+        
+        .footer-contact-title {
+          font-size: 2.5rem;
+        }
+        
+        .footer-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 30px;
+        }
+        
+        .footer-bottom {
+          flex-direction: column;
+          gap: 20px;
+          text-align: center;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        .banner-text {
+          font-size: 1rem;
+        }
+        
+        .footer-main {
+          padding: 40px 0 0;
+        }
+        
+        .footer-contact-section {
+          margin-bottom: 40px;
+        }
+        
+        .footer-contact-title {
+          font-size: 2rem;
+        }
+        
+        .footer-grid {
+          grid-template-columns: 1fr;
+          gap: 30px;
+          text-align: center;
+        }
+        
+        .footer-social-icons {
+          justify-content: center;
+        }
+      }
+    </style>
+</head>
+<body>
+        <!-- Animated Background Orbs -->
+    <div class="bg-orbs">
+      <div class="orb"></div>
+      <div class="orb"></div>
+      <div class="orb"></div>
+      <div class="orb"></div>
+    </div>
+    
+<div class="page-wrapper">
+        <nav class="navbar">
+            <div class="padding-global">
+                <div class="navbar_component">
+                    <a href="index.html" class="navbar_logo-wrap w-inline-block">
+                        <img src="src/images/growthpulse-logo.png" loading="lazy" alt="GrowthPulse Digital Marketing Company Logo" class="navbar_logo" />
+                    </a>
+                    <div class="navbar_links-wrap">
+                        <div class="navbar_links">
+                            <a href="index.html" class="navbar_link w-inline-block">
+                                <div class="navbar_link-text _1">Home</div>
+                                <div class="navbar_link-text _2">Home</div>
+                            </a>
+                            <a href="about.html" class="navbar_link w-inline-block">
+                                <div class="navbar_link-text _1">About</div>
+                                <div class="navbar_link-text _2">About</div>
+                            </a>
+                            <a href="services.html" aria-current="page" class="navbar_link w-inline-block w--current">
+                                <div class="navbar_link-text _1">Services</div>
+                                <div class="navbar_link-text _2">Services</div>
+                            </a>
+                            <a href="contact.html" class="navbar_link w-inline-block">
+                                <div class="navbar_link-text _1">Contact</div>
+                                <div class="navbar_link-text _2">Contact</div>
+                            </a>
+                        </div>
+                        <a href="contact.html" class="button w-variant-994e88c4-baec-2bbf-d0b3-8a2991a92ab2 w-inline-block">
+                            <div class="button_inner w-variant-994e88c4-baec-2bbf-d0b3-8a2991a92ab2">
+                                <div class="button_gradient">
+                                    <div class="button_gradient-ball ball-1 w-variant-994e88c4-baec-2bbf-d0b3-8a2991a92ab2"></div>
+                                    <div class="button_gradient-ball ball-2 w-variant-994e88c4-baec-2bbf-d0b3-8a2991a92ab2"></div>
+                                </div>
+                                <div class="button_text">Get started</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <main class="main-wrapper">
+            <section class="hero-section" hero-animated>
+                <div class="hero-content animate-on-scroll">
+                    <h1 class="services-title" style="animation: slideUp 1s ease-out;">Our <span style="background: linear-gradient(45deg, #1e3a8a 0%, #3b82f6 30%, #06b6d4 60%, #f97316 90%, #ea580c 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Services</span></h1>
+                    <p class="services-subtitle" style="animation: slideUp 1s ease-out 0.3s both;">Comprehensive solutions to accelerate your business growth and digital transformation</p>
+                </div>
+                <div class="curved-divider">
+                    <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                        <path d="M0,0C150,100 350,0 600,50C850,100 1050,0 1200,50L1200,120L0,120Z" fill="#F9F8F5"></path>
+                    </svg>
+                </div>
+            </section>
+
+            <section class="services-section" style="position: relative; overflow: hidden;">
+                <!-- Right Side Pattern Image -->
+                <div style="position: absolute; top: 10%; right: -50px; width: 800px; height: 900px; background-image: url('src/images/style-element.png'); background-repeat: no-repeat; background-size: contain; opacity: 0.8; z-index: 1; transform: rotate(10deg);"></div>
+                <div class="services-content" style="position: relative; z-index: 2;">
+                    <div class="services-grid">
+                        <div class="service-card fade-up" style="--delay: 1;">
+                            <div class="service-image">
+                                <img src="src/images/Service/Software Marketing.jpg" alt="Software Marketing" />
+                                <img src="src/images/Service/Service icon/Software Marketing Icon.png" alt="Software Marketing Icon" class="service-icon" style="width: 80px; height: 80px; object-fit: contain; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2;" />
+                            </div>
+                            <div class="service-content">
+                                <h2 class="service-title">Software Marketing</h2>
+                                <p class="service-description">
+                                    Strategic marketing solutions for software products that drive growth and user acquisition.
+                                </p>
+                                <a href="software-marketing.html" class="service-link">Learn More</a>
+                            </div>
+                        </div>
+                        
+                        <div class="service-card fade-up" style="--delay: 2;">
+                            <div class="service-image">
+                                <img src="src/images/Service/Digital Marketing.jpg" alt="Digital Marketing" />
+                                <img src="src/images/Service/Service icon/Digital Marketing Icons.png" alt="Digital Marketing Icon" class="service-icon" style="width: 80px; height: 80px; object-fit: contain; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2;" />
+                            </div>
+                            <div class="service-content">
+                                <h2 class="service-title">Digital Marketing</h2>
+                                <p class="service-description">
+                                    Comprehensive digital strategies that amplify your brand and drive measurable results.
+                                </p>
+                                <a href="digital-marketing.html" class="service-link">Learn More</a>
+                            </div>
+                        </div>
+                        
+                        <div class="service-card fade-up" style="--delay: 3;">
+                            <div class="service-image">
+                                <img src="src/images/Service/Learning & Development.jpg" alt="Learning & Development" />
+                                <img src="src/images/Service/Service icon/Learning & Development Icon.png" alt="Learning & Development Icon" class="service-icon" style="width: 80px; height: 80px; object-fit: contain; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2;" />
+                            </div>
+                            <div class="service-content">
+                                <h2 class="service-title">Learning & Development</h2>
+                                <p class="service-description">
+                                    Educational programs and training solutions that enhance team capabilities.
+                                </p>
+                                <a href="learning-development.html" class="service-link">Learn More</a>
+                            </div>
+                        </div>
+                        
+                        <div class="service-card fade-up" style="--delay: 4;">
+                            <div class="service-image">
+                                <img src="src/images/Service/Technical Development.jpg" alt="Technical Development" />
+                                <img src="src/images/Service/Service icon/Technical Development Icon.png" alt="Technical Development Icon" class="service-icon" style="width: 80px; height: 80px; object-fit: contain; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2;" />
+                            </div>
+                            <div class="service-content">
+                                <h2 class="service-title">Technical Development</h2>
+                                <p class="service-description">
+                                    Custom software solutions built with cutting-edge technology and best practices.
+                                </p>
+                                <a href="technical-development.html" class="service-link">Learn More</a>
+                            </div>
+                        </div>
+                        
+                        <div class="service-card fade-up" style="--delay: 5;">
+                            <div class="service-image">
+                                <img src="src/images/Service/Account Management.jpg" alt="Account Management" />
+                                <img src="src/images/Service/Service icon/Account Management Icon.png" alt="Account Management Icon" class="service-icon" style="width: 80px; height: 80px; object-fit: contain; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2;" />
+                            </div>
+                            <div class="service-content">
+                                <h2 class="service-title">Account Management</h2>
+                                <p class="service-description">
+                                    Strategic client relationship management that drives long-term success.
+                                </p>
+                                <a href="account-management.html" class="service-link">Learn More</a>
+                            </div>
+                        </div>
+                        
+                        <div class="service-card fade-up" style="--delay: 6;">
+                            <div class="service-image">
+                                <img src="src/images/Service/Event Management.jpg" alt="Event Management" />
+                                <img src="src/images/Service/Service icon/Event Management Icon.png" alt="Event Management Icon" class="service-icon" style="width: 80px; height: 80px; object-fit: contain; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2;" />
+                            </div>
+                            <div class="service-content">
+                                <h2 class="service-title">Event Management</h2>
+                                <p class="service-description">
+                                    Memorable events and experiences that connect, inspire, and deliver results.
+                                </p>
+                                <a href="event-management.html" class="service-link">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 60px;" class="animate-on-scroll">
+                        <a href="contact.html" class="contact-btn">Get Started Today</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="template-footer">
+          <!-- Green Banner with Rotating Text -->
+          <div class="footer-banner">
+            <div class="banner-content">
+              <span class="banner-text">DIGITAL MARKETING</span>
+              <span class="banner-star">✦</span>
+              <span class="banner-text">SOFTWARE SOLUTIONS</span>
+              <span class="banner-star">✦</span>
+              <span class="banner-text">BUSINESS GROWTH</span>
+              <span class="banner-star">✦</span>
+              <span class="banner-text">TECHNOLOGY DEVELOPMENT</span>
+              <span class="banner-star">✦</span>
+              <!-- Duplicate for seamless loop -->
+              <span class="banner-text">DIGITAL MARKETING</span>
+              <span class="banner-star">✦</span>
+              <span class="banner-text">SOFTWARE SOLUTIONS</span>
+              <span class="banner-star">✦</span>
+              <span class="banner-text">BUSINESS GROWTH</span>
+              <span class="banner-star">✦</span>
+              <span class="banner-text">TECHNOLOGY DEVELOPMENT</span>
+              <span class="banner-star">✦</span>
+            </div>
+          </div>
+          
+          <!-- Main Footer Content -->
+          <div class="footer-main">
+            <div class="footer-container">
+              <!-- Contact Section -->
+              <div class="footer-contact-section">
+                <h1 class="footer-contact-title">Let's Contact Us</h1>
+                <a href="contact.html" class="footer-cta-btn">Get In Touch</a>
+              </div>
+              
+              <!-- Footer Grid -->
+              <div class="footer-grid">
+                <!-- Logo Section -->
+                <div class="footer-logo-section">
+                  <div class="footer-brand">
+                    <span class="footer-logo-text">GROWTHPULSE</span>
+  
+                  </div>
+                </div>
+                
+                <!-- Pages Column -->
+                <div class="footer-column">
+                  <h4 class="footer-column-title">Pages</h4>
+                  <ul class="footer-links">
+                    <li><a href="index.html" class="footer-link">Home</a></li>
+                    <li><a href="services.html" class="footer-link">Services</a></li>
+                    <li><a href="about.html" class="footer-link">About</a></li>
+                    <li><a href="contact.html" class="footer-link">Contact</a></li>
+                  </ul>
+                </div>
+                
+                <!-- Services Column -->
+                <div class="footer-column">
+                  <h4 class="footer-column-title">Services</h4>
+                  <ul class="footer-links">
+                    <li><a href="#" class="footer-link">Cloud Solutions</a></li>
+                    <li><a href="#" class="footer-link">Data Analytics</a></li>
+                    <li><a href="#" class="footer-link">AI & Machine Learning</a></li>
+                    <li><a href="#" class="footer-link">Cybersecurity</a></li>
+                  </ul>
+                </div>
+                
+
+                
+                <!-- Contact Info Column -->
+                <div class="footer-column">
+                  <h4 class="footer-column-title">GrowthPulse Agency</h4>
+                  <div class="footer-contact-info">
+                    <p class="footer-address">#2, Avvaiyar Street, Ekkatuthangal</p>
+                    <p class="footer-address">Chennai-32, India</p>
+                    <a href="mailto:sales@growthpulss.com" class="footer-email">sales@growthpulss.com</a>
+                    <div class="footer-social-icons">
+                      <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Follow us on Instagram" class="footer-social-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                      </a>
+                      <a href="https://x.com" target="_blank" rel="noopener" aria-label="Follow us on X (Twitter)" class="footer-social-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                      </a>
+                      <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="Follow us on LinkedIn" class="footer-social-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                      </a>
+                      <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Follow us on Facebook" class="footer-social-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Footer Bottom -->
+              <div class="footer-bottom">
+                <div class="footer-bottom-left">
+                  <p class="footer-copyright">All Right Reserved ©</p>
+                </div>
+                <div class="footer-bottom-right">
+                  <a href="#" class="footer-legal-link">Privacy Policy</a>
+                  <span class="footer-divider">/</span>
+                  <a href="#" class="footer-legal-link">Terms & Conditions</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+    </div>
+
+    <script>
+        // Scroll Animation Observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        
+        // Initialize animations on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const animateElements = document.querySelectorAll('.animate-on-scroll, .slide-left, .slide-right, .fade-up');
+            animateElements.forEach((el, index) => {
+                // Add staggered delay for service cards
+                if (el.classList.contains('fade-up')) {
+                    el.style.transitionDelay = `${index * 0.1}s`;
+                }
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>

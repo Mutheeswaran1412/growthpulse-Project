@@ -1,0 +1,1515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>About Growthpulse Solutions | Business Growth Partner</title>
+    <meta content="Discover our journey, mission, and values that drive business growth. See why we are passionate about helping brands achieve measurable results." name="description" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link href="https://cdn.prod.website-files.com/684a11845c7dd0b4b7745cd9/css/noura-template-supply.webflow.shared.ca770ec91.css" rel="stylesheet" type="text/css" />
+    <link href="src/images/Main-Logo-01.png" rel="shortcut icon" type="image/png" />
+    <link href="src/images/Main-Logo-01.png" rel="apple-touch-icon" />
+    <!-- Cloud Background CSS -->
+    <link rel="stylesheet" href="cloud-background.css" />
+    <!-- Colorful Animations CSS -->
+    <link rel="stylesheet" href="colorful-animations.css" />
+    <!-- Animated Background CSS -->
+    <link rel="stylesheet" href="animated-background.css" />
+    <style>
+      * {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      .w-webflow-badge {
+        display: none !important;
+      }
+      body {
+        background-color: #F9F8F5;
+        padding-top: 80px;
+      }
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: #ffffff !important;
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+      }
+      .navbar_link:hover {
+        color: #764ba2 !important;
+      }
+      .hero-section {
+        position: relative;
+        height: 60vh;
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1920&h=1080&fit=crop&crop=center') center/cover no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ffffff;
+        text-align: center;
+        overflow: hidden;
+      }
+      .wave-divider {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+        transform: rotate(180deg);
+      }
+      .wave-divider svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 1.3px);
+        height: 120px;
+      }
+      .hero-content h1 {
+        font-size: 4rem;
+        margin-bottom: 20px;
+      }
+      .hero-content p {
+        font-size: 1.5rem;
+        max-width: 600px;
+      }
+      .about-section {
+        padding: 80px 0;
+        background-color: #F9F8F5;
+      }
+      .why-choose {
+        background-color: #F9F8F5;
+        padding: 80px 0;
+      }
+      .footer_brand {
+        font-size: 1.2rem;
+      }
+      .navbar_logo {
+        height: 80px;
+        width: auto;
+        display: block;
+      }
+      .about-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .content-with-image {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+        margin-bottom: 80px;
+      }
+      .about-title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 20px;
+      }
+      .about-text {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #666;
+        margin-bottom: 20px;
+      }
+      .about-image {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 12px;
+      }
+      .mission-vision {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        margin: 60px 0;
+      }
+      .mission-box, .vision-box {
+        background: white;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      }
+      .mission-image, .vision-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 20px;
+      }
+      .box-title {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+      .box-icon {
+        width: 50px;
+        height: 50px;
+        background-color: transparent;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #007bff;
+        font-size: 24px;
+      }
+      .why-choose {
+        margin-top: 80px;
+      }
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+        margin-top: 40px;
+      }
+      .feature-item {
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      }
+      .feature-image {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 15px;
+      }
+      .feature-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .feature-icon {
+        width: 40px;
+        height: 40px;
+        background-color: transparent;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #007bff;
+        font-size: 18px;
+      }
+      .services-btn {
+        display: inline-block;
+        background-color: #007bff;
+        color: white;
+        padding: 15px 30px;
+        border-radius: 25px;
+        text-decoration: none;
+        font-size: 1.1rem;
+        margin: 30px 0;
+        transition: background-color 0.3s ease;
+      }
+      .services-btn:hover {
+        background-color: #0056b3;
+      }
+      @media (max-width: 768px) {
+        body {
+          padding-top: 70px;
+        }
+        .navbar {
+          padding: 10px 0;
+        }
+        .navbar_component {
+          padding: 0 15px;
+        }
+        .navbar_logo {
+          height: 60px;
+        }
+        .navbar_links-wrap {
+          display: none;
+        }
+        .navbar_hamburger-wrap {
+          display: block;
+        }
+        .chat-window {
+          width: 300px;
+          height: 450px;
+        }
+        .chatbot-container {
+          bottom: 15px;
+          right: 15px;
+        }
+        .chat-button {
+          width: 50px;
+          height: 50px;
+        }
+        .hero-section {
+          padding: 80px 20px 60px;
+        }
+        .mission-vision, .features-grid, .content-with-image {
+          grid-template-columns: 1fr;
+          gap: 30px;
+        }
+        .hero-content h1 {
+          font-size: 2.5rem;
+        }
+        .about-title {
+          font-size: 2rem;
+        }
+        .about-section {
+          padding: 60px 0;
+        }
+        .about-content {
+          padding: 0 15px;
+        }
+        .about-text {
+          font-size: 1rem;
+        }
+        .mission-box, .vision-box {
+          padding: 30px;
+        }
+        .feature-item {
+          padding: 20px;
+        }
+        .box-title {
+          font-size: 1.5rem;
+        }
+        .feature-title {
+          font-size: 1.3rem;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        .hero-content h1 {
+          font-size: 2rem;
+        }
+        .about-title {
+          font-size: 1.8rem;
+        }
+        .about-content {
+          padding: 0 10px;
+        }
+        .mission-box, .vision-box {
+          padding: 20px;
+        }
+        .feature-item {
+          padding: 15px;
+        }
+      }
+      
+      /* Template Footer Styles */
+      .template-footer {
+        margin-top: 60px;
+      }
+      
+      /* Green Banner */
+      .footer-banner {
+        background: linear-gradient(45deg, #667eea, #764ba2);
+        padding: 15px 0;
+        overflow: hidden;
+        position: relative;
+      }
+      
+      .banner-content {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        animation: scrollBanner 20s linear infinite;
+        white-space: nowrap;
+      }
+      
+      .banner-text {
+        color: #fff;
+        font-size: 1.2rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+      }
+      
+      .banner-star {
+        color: #fff;
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+      
+      @keyframes scrollBanner {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+      }
+      
+      /* Main Footer */
+      .footer-main {
+        background: #1a1a1a;
+        color: #ffffff;
+        padding: 80px 0 0;
+      }
+      
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      
+      /* Contact Section */
+      .footer-contact-section {
+        text-align: center;
+        margin-bottom: 80px;
+        padding-bottom: 40px;
+        border-bottom: 1px solid #333;
+      }
+      
+      .footer-contact-title {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 300;
+        color: #667eea;
+        margin-bottom: 30px;
+        letter-spacing: -1px;
+      }
+      
+      .footer-cta-btn {
+        display: inline-block;
+        background: linear-gradient(45deg, #667eea, #764ba2);
+        color: #fff;
+        padding: 15px 40px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+      }
+      
+      .footer-cta-btn:hover {
+        background: #764ba2;
+        transform: translateY(-2px);
+      }
+      
+      /* Footer Grid */
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1.5fr;
+        gap: 60px;
+        margin-bottom: 60px;
+      }
+      
+      /* Logo Section */
+      .footer-logo-section {
+        display: flex;
+        align-items: flex-start;
+      }
+      
+      .footer-brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      
+      .footer-logo-text {
+        color: #667eea;
+        font-size: 1.5rem;
+        font-weight: 800;
+        letter-spacing: -1px;
+      }
+      
+      .footer-logo-x {
+        color: #ffffff;
+        font-size: 1.5rem;
+        font-weight: 800;
+      }
+      
+      /* Footer Columns */
+      .footer-column {
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .footer-column-title {
+        color: #667eea;
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 25px;
+      }
+      
+      .footer-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      
+      .footer-links li {
+        margin-bottom: 12px;
+      }
+      
+      .footer-link {
+        color: #cccccc;
+        text-decoration: none;
+        font-size: 0.95rem;
+        transition: color 0.3s ease;
+      }
+      
+      .footer-link:hover {
+        color: #667eea;
+      }
+      
+      /* Contact Info */
+      .footer-contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      
+      .footer-address {
+        color: #cccccc;
+        font-size: 0.95rem;
+        margin: 0;
+        line-height: 1.4;
+      }
+      
+      .footer-email {
+        color: #cccccc;
+        text-decoration: none;
+        font-size: 0.95rem;
+        margin-bottom: 20px;
+        transition: color 0.3s ease;
+      }
+      
+      .footer-email:hover {
+        color: #667eea;
+      }
+      
+      /* Social Icons */
+      .footer-social-icons {
+        display: flex;
+        gap: 15px;
+      }
+      
+      .footer-social-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: #333;
+        border-radius: 50%;
+        color: #cccccc;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+      
+      .footer-social-icon:hover {
+        background: linear-gradient(45deg, #667eea, #764ba2);
+        color: #fff;
+        transform: translateY(-2px);
+      }
+      
+      /* Footer Bottom */
+      .footer-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px 0;
+        border-top: 1px solid #333;
+      }
+      
+      .footer-copyright {
+        color: #cccccc;
+        font-size: 0.9rem;
+        margin: 0;
+      }
+      
+      .footer-bottom-right {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+      
+      .footer-legal-link {
+        color: #cccccc;
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: color 0.3s ease;
+      }
+      
+      .footer-legal-link:hover {
+        color: #667eea;
+      }
+      
+      .footer-divider {
+        color: #666;
+        font-size: 0.9rem;
+      }
+      
+      .navbar_link.w--current {
+        background: linear-gradient(135deg, #1e40af 0%, #3b82f6 30%, #06b6d4 70%, #0ea5e9 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 700;
+        position: relative;
+      }
+      .navbar_link.w--current::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(135deg, #1e40af 0%, #3b82f6 30%, #06b6d4 70%, #0ea5e9 100%);
+        border-radius: 1px;
+      }
+      
+      /* Responsive Design */
+      @media (max-width: 1024px) {
+        .footer-grid {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 40px;
+        }
+      }
+      
+      @media (max-width: 768px) {
+        .footer-main {
+          padding: 60px 0 0;
+        }
+        
+        .footer-contact-section {
+          margin-bottom: 60px;
+        }
+        
+        .footer-contact-title {
+          font-size: 2.5rem;
+        }
+        
+        .footer-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 30px;
+        }
+        
+        .footer-bottom {
+          flex-direction: column;
+          gap: 20px;
+          text-align: center;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        .banner-text {
+          font-size: 1rem;
+        }
+        
+        .footer-main {
+          padding: 40px 0 0;
+        }
+        
+        .footer-contact-section {
+          margin-bottom: 40px;
+        }
+        
+        .footer-contact-title {
+          font-size: 2rem;
+        }
+        
+        .footer-grid {
+          grid-template-columns: 1fr;
+          gap: 30px;
+          text-align: center;
+        }
+        
+        .footer-social-icons {
+          justify-content: center;
+        }
+      }
+      
+      /* Scroll Animations */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease;
+      }
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .slide-left {
+        opacity: 0;
+        transform: translateX(-50px);
+        transition: all 0.8s ease;
+      }
+      .slide-left.visible {
+        opacity: 1;
+        transform: translateX(0);
+      }
+      .slide-right {
+        opacity: 0;
+        transform: translateX(50px);
+        transition: all 0.8s ease;
+      }
+      .slide-right.visible {
+        opacity: 1;
+        transform: translateX(0);
+      }
+      
+      @keyframes floatPattern {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-20px) rotate(5deg); }
+      }
+      
+      /* Modern Curved Section Dividers */
+      .curved-divider {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+        z-index: 10;
+      }
+      
+      .curved-divider svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 1.3px);
+        height: 80px;
+      }
+      
+      .curved-divider-top {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+        transform: rotate(180deg);
+        z-index: 10;
+      }
+      
+      .curved-divider-top svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 1.3px);
+        height: 80px;
+      }
+      
+      /* Mobile Menu Styles */
+      .navbar_hamburger-wrap {
+        display: none;
+        cursor: pointer;
+        padding: 10px;
+      }
+      
+      .mobile-hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        transition: all 0.3s ease;
+      }
+      
+      .mobile-hamburger span {
+        width: 25px;
+        height: 3px;
+        background-color: #333;
+        transition: all 0.3s ease;
+        border-radius: 2px;
+      }
+      
+      .mobile-hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+      }
+      
+      .mobile-hamburger.active span:nth-child(2) {
+        opacity: 0;
+      }
+      
+      .mobile-hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+      }
+      
+      .mobile-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(255, 255, 255, 0.98);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+      }
+      
+      .mobile-menu.active {
+        transform: translateX(0);
+      }
+      
+      .mobile-menu-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        text-align: center;
+      }
+      
+      .mobile-menu-link {
+        font-size: 2rem;
+        font-weight: 600;
+        color: #333;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+      
+      .mobile-menu-link:hover {
+        color: #007bff;
+      }
+      
+      .mobile-cta-btn {
+        background: linear-gradient(45deg, #007bff, #0056b3);
+        color: white;
+        padding: 15px 30px;
+        border-radius: 25px;
+        text-decoration: none;
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-top: 20px;
+        transition: all 0.3s ease;
+      }
+      
+      .mobile-cta-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+      }
+      
+      /* Chatbot Styles */
+      .chatbot-container {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1000;
+      }
+      
+      .chat-button {
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(45deg, #007bff, #0056b3);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        cursor: pointer;
+        box-shadow: 0 4px 20px rgba(0, 123, 255, 0.3);
+        transition: all 0.3s ease;
+      }
+      
+      .chat-button:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 25px rgba(0, 123, 255, 0.4);
+      }
+      
+      .chat-window {
+        position: absolute;
+        bottom: 80px;
+        right: 0;
+        width: 350px;
+        height: 500px;
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        display: none;
+        flex-direction: column;
+        overflow: hidden;
+      }
+      
+      .chat-header {
+        background: linear-gradient(45deg, #007bff, #0056b3);
+        color: white;
+        padding: 15px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      .chat-header h3 {
+        margin: 0;
+        font-size: 1.1rem;
+      }
+      
+      .chat-close {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
+        padding: 0;
+        width: 25px;
+        height: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .chat-messages {
+        flex: 1;
+        padding: 20px;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      .message {
+        max-width: 80%;
+        padding: 10px 15px;
+        border-radius: 15px;
+        font-size: 0.9rem;
+        line-height: 1.4;
+      }
+      
+      .bot-message {
+        background: #f0f0f0;
+        color: #333;
+        align-self: flex-start;
+      }
+      
+      .user-message {
+        background: linear-gradient(45deg, #007bff, #0056b3);
+        color: white;
+        align-self: flex-end;
+      }
+      
+      .quick-replies {
+        padding: 15px 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        border-top: 1px solid #eee;
+      }
+      
+      .quick-replies button {
+        background: #f8f9fa;
+        border: 1px solid #dee2e6;
+        color: #495057;
+        padding: 8px 12px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      
+      .quick-replies button:hover {
+        background: #007bff;
+        color: white;
+        border-color: #007bff;
+      }
+      
+      .chat-input {
+        padding: 15px 20px;
+        display: flex;
+        gap: 10px;
+        border-top: 1px solid #eee;
+      }
+      
+      .chat-input input {
+        flex: 1;
+        padding: 10px 15px;
+        border: 1px solid #ddd;
+        border-radius: 25px;
+        outline: none;
+        font-size: 0.9rem;
+      }
+      
+      .chat-input input:focus {
+        border-color: #007bff;
+      }
+      
+      .chat-input button {
+        background: linear-gradient(45deg, #007bff, #0056b3);
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 25px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+      }
+      
+      .chat-input button:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 3px 10px rgba(0, 123, 255, 0.3);
+      }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script>
+      // GSAP Animations
+      document.addEventListener('DOMContentLoaded', function() {
+        gsap.registerPlugin(ScrollTrigger);
+        
+        // Animate elements on scroll
+        gsap.utils.toArray('.fade-in').forEach(element => {
+          gsap.fromTo(element, 
+            { opacity: 0, y: 50 },
+            {
+              opacity: 1,
+              y: 0,
+              duration: 0.8,
+              scrollTrigger: {
+                trigger: element,
+                start: 'top 85%',
+                toggleActions: 'play none none reverse'
+              }
+            }
+          );
+        });
+        
+        gsap.utils.toArray('.slide-left').forEach(element => {
+          gsap.fromTo(element, 
+            { opacity: 0, x: -50 },
+            {
+              opacity: 1,
+              x: 0,
+              duration: 0.8,
+              scrollTrigger: {
+                trigger: element,
+                start: 'top 85%',
+                toggleActions: 'play none none reverse'
+              }
+            }
+          );
+        });
+        
+        gsap.utils.toArray('.slide-right').forEach(element => {
+          gsap.fromTo(element, 
+            { opacity: 0, x: 50 },
+            {
+              opacity: 1,
+              x: 0,
+              duration: 0.8,
+              scrollTrigger: {
+                trigger: element,
+                start: 'top 85%',
+                toggleActions: 'play none none reverse'
+              }
+            }
+          );
+        });
+        
+        // Animate headings
+        if (typeof gsap !== 'undefined') {
+          gsap.utils.toArray('h1, h2, h3').forEach(heading => {
+            gsap.fromTo(heading, 
+              { opacity: 0, y: 50 },
+              {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                scrollTrigger: {
+                  trigger: heading,
+                  start: 'top 85%',
+                  toggleActions: 'play none none reverse'
+                }
+              }
+            );
+          });
+        }
+      });
+      
+      // FAQ Toggle Function
+      function toggleFAQ(element) {
+        const answer = element.nextElementSibling;
+        const isActive = answer.classList.contains('active');
+        
+        // Close all other FAQs
+        document.querySelectorAll('.faq_answer.active').forEach(item => {
+          item.classList.remove('active');
+        });
+        document.querySelectorAll('.faq_question.active').forEach(item => {
+          item.classList.remove('active');
+        });
+        
+        // Toggle current FAQ
+        if (!isActive) {
+          answer.classList.add('active');
+          element.classList.add('active');
+        }
+      }
+      
+      // Chatbot Functions
+      const responses = {
+        'ai': 'Our AI/Data Engineering services include Databricks implementation, real-time data pipelines, ML model development, and data governance. We help clients achieve 300%+ data processing efficiency.',
+        'data': 'Our AI/Data Engineering services include Databricks implementation, real-time data pipelines, ML model development, and data governance. We help clients achieve 300%+ data processing efficiency.',
+        'development': 'We build custom web & mobile apps, cloud infrastructure, API integrations, and AI/ML implementations. From MVP to enterprise solutions, we deliver scalable applications.',
+        'full-stack': 'We build custom web & mobile apps, cloud infrastructure, API integrations, and AI/ML implementations. From MVP to enterprise solutions, we deliver scalable applications.',
+        'marketing': 'Our digital marketing services include PPC & Paid Media, SEO & Content, Analytics & CRO, and Software Marketing. We achieve 127%+ average ROAS increases.',
+        'pricing': 'Our pricing is customized based on your needs. We offer flexible packages starting from $5K/month for marketing services and custom quotes for development projects.',
+        'contact': 'You can reach us at anba@growthpulss.com or book a free consultation to discuss your business needs.',
+        'consultation': 'Perfect! You can book a free 30-minute consultation where we\'ll audit your current setup and provide a custom growth strategy.',
+        'seo': 'Our SEO strategy combines technical optimization, link building, and content marketing. Typical results: 150-300% organic traffic increase within 6 months.',
+        'ppc': 'We manage high-performance PPC campaigns across Google, Meta, and LinkedIn. Our data-driven approach focuses on maximizing ROAS with 127%+ improvement average.'
+      };
+      
+      function toggleChat() {
+        const chatWindow = document.getElementById('chatWindow');
+        chatWindow.style.display = chatWindow.style.display === 'flex' ? 'none' : 'flex';
+      }
+      
+      function sendMessage() {
+        const input = document.getElementById('messageInput');
+        const message = input.value.trim();
+        if (!message) return;
+        
+        addMessage(message, 'user');
+        input.value = '';
+        
+        setTimeout(() => {
+          const botResponse = getBotResponse(message);
+          addMessage(botResponse, 'bot');
+        }, 1000);
+      }
+      
+      function sendQuickReply(message) {
+        addMessage(message, 'user');
+        setTimeout(() => {
+          const botResponse = getBotResponse(message);
+          addMessage(botResponse, 'bot');
+        }, 1000);
+      }
+      
+      function addMessage(text, sender) {
+        const messagesContainer = document.getElementById('chatMessages');
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `message ${sender}-message`;
+        messageDiv.textContent = text;
+        messagesContainer.appendChild(messageDiv);
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+      }
+      
+      function getBotResponse(message) {
+        const lowerMessage = message.toLowerCase();
+        
+        for (const [keyword, response] of Object.entries(responses)) {
+          if (lowerMessage.includes(keyword)) {
+            return response;
+          }
+        }
+        
+        return 'Thanks for your message! Our team specializes in AI/Data Engineering, Full-Stack Development, and Digital Marketing. You can reach us at anba@growthpulss.com or ask me about our specific services!';
+      }
+      
+      function handleKeyPress(event) {
+        if (event.key === 'Enter') {
+          sendMessage();
+        }
+      }
+      
+      // Mobile Menu Functions
+      function toggleMobileMenu() {
+        const mobileMenu = document.getElementById('mobileMenu');
+        const hamburger = document.querySelector('.mobile-hamburger');
+        
+        mobileMenu.classList.toggle('active');
+        hamburger.classList.toggle('active');
+        
+        // Prevent body scroll when menu is open
+        if (mobileMenu.classList.contains('active')) {
+          document.body.style.overflow = 'hidden';
+        } else {
+          document.body.style.overflow = 'auto';
+        }
+      }
+      
+      function closeMobileMenu() {
+        const mobileMenu = document.getElementById('mobileMenu');
+        const hamburger = document.querySelector('.mobile-hamburger');
+        
+        mobileMenu.classList.remove('active');
+        hamburger.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      }
+      
+      // Close mobile menu when clicking outside
+      document.addEventListener('click', function(event) {
+        const mobileMenu = document.getElementById('mobileMenu');
+        const hamburger = document.getElementById('hamburger');
+        const hamburgerWrap = document.querySelector('.navbar_hamburger-wrap');
+        
+        if (mobileMenu.classList.contains('active') && 
+            !mobileMenu.contains(event.target) && 
+            !hamburgerWrap.contains(event.target)) {
+          closeMobileMenu();
+        }
+      });
+      
+      // Close mobile menu on window resize
+      window.addEventListener('resize', function() {
+        if (window.innerWidth > 768) {
+          closeMobileMenu();
+        }
+      });
+      
+      // Industries Card Hover Effects
+      document.addEventListener('DOMContentLoaded', function() {
+        const cards = document.querySelectorAll('.industry_card, .feature-item');
+        
+        cards.forEach(card => {
+          card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-10px) scale(1.02)';
+          });
+          
+          card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+          });
+        });
+      });
+    </script>
+</head>
+<body>
+    <!-- Animated Background Orbs -->
+    <div class="bg-orbs">
+      <div class="orb"></div>
+      <div class="orb"></div>
+      <div class="orb"></div>
+      <div class="orb"></div>
+    </div>
+    
+    <!-- Floating Particles -->
+    <div class="floating-particles">
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+    </div>
+    <!-- Animated Cloud Background -->
+    <div class="cloud-background">
+      <div class="floating-cloud"></div>
+      <div class="floating-cloud"></div>
+      <div class="floating-cloud"></div>
+      <div class="floating-cloud"></div>
+      <div class="texture-overlay"></div>
+    </div>
+    <div class="page-wrapper">
+        <nav class="navbar">
+            <div class="padding-global">
+                <div class="navbar_component">
+                    <a href="index.html" class="navbar_logo-wrap w-inline-block">
+                        <img src="src/images/growthpulse-logo.png" loading="lazy" alt="GrowthPulse Digital Marketing Company Logo" class="navbar_logo" />
+                    </a>
+                    <div class="navbar_links-wrap">
+                        <div class="navbar_links">
+                            <a href="index.html" class="navbar_link w-inline-block">
+                                <div class="navbar_link-text _1">Home</div>
+                                <div class="navbar_link-text _2">Home</div>
+                            </a>
+                            <a href="about.html" aria-current="page" class="navbar_link w-inline-block w--current">
+                                <div class="navbar_link-text _1">About</div>
+                                <div class="navbar_link-text _2">About</div>
+                            </a>
+                            <a href="services.html" class="navbar_link w-inline-block">
+                                <div class="navbar_link-text _1">Services</div>
+                                <div class="navbar_link-text _2">Services</div>
+                            </a>
+                            <a href="contact.html" class="navbar_link w-inline-block">
+                                <div class="navbar_link-text _1">Contact</div>
+                                <div class="navbar_link-text _2">Contact</div>
+                            </a>
+                        </div>
+                        <a href="contact.html" class="button w-variant-994e88c4-baec-2bbf-d0b3-8a2991a92ab2 w-inline-block">
+                            <div class="button_inner w-variant-994e88c4-baec-2bbf-d0b3-8a2991a92ab2">
+                                <div class="button_gradient">
+                                    <div class="button_gradient-ball ball-1 w-variant-994e88c4-baec-2bbf-d0b3-8a2991a92ab2"></div>
+                                    <div class="button_gradient-ball ball-2 w-variant-994e88c4-baec-2bbf-d0b3-8a2991a92ab2"></div>
+                                </div>
+                                <div class="button_text">Get started</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="navbar_hamburger-wrap" id="hamburger" onclick="toggleMobileMenu()">
+                        <div class="mobile-hamburger">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu-content">
+                <a href="index.html" class="mobile-menu-link" onclick="closeMobileMenu()">Home</a>
+                <a href="about.html" class="mobile-menu-link" onclick="closeMobileMenu()">About</a>
+                <a href="services.html" class="mobile-menu-link" onclick="closeMobileMenu()">Services</a>
+                <a href="contact.html" class="mobile-menu-link" onclick="closeMobileMenu()">Contact</a>
+                <a href="contact.html" class="mobile-cta-btn" onclick="closeMobileMenu()">Get Started</a>
+            </div>
+        </div>
+
+        <main class="main-wrapper">
+            <section class="hero-section hero-animated">
+                <div class="hero-content">
+                    <h1>About <span style="background: linear-gradient(45deg, #1e3a8a 0%, #3b82f6 30%, #06b6d4 60%, #f97316 90%, #ea580c 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Growthpulse</span></h1>
+                    <p>Your trusted partner in digital transformation and business growth</p>
+                </div>
+                <div class="curved-divider">
+                    <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                        <path d="M0,0C150,100 350,0 600,50C850,100 1050,0 1200,50L1200,120L0,120Z" fill="#F9F8F5"></path>
+                    </svg>
+                </div>
+            </section>
+
+            <section class="about-section" style="position: relative; overflow: hidden;">
+                <!-- Top Left Flower Pattern -->
+                <div style="position: absolute; top: 50px; left: -50px; width: 400px; height: 300px; background-image: url('src/images/GP Elements .png'); background-repeat: no-repeat; background-size: contain; opacity: 0.3; z-index: 1; filter: blur(2px);"></div>
+                <!-- Middle Right Round Pattern -->
+                <div style="position: absolute; top: 40%; right: -60px; width: 200px; height: 200px; background-image: url('src/images/GP Elements2.png'); background-repeat: no-repeat; background-size: contain; opacity: 0.7; z-index: 1; animation: floatPattern 8s ease-in-out infinite;"></div>
+                <!-- Top Right Flower Pattern -->
+                <div style="position: absolute; top: 10%; right: 10px; width: 120px; height: 120px; background-image: url('src/images/GP Elements .png'); background-repeat: no-repeat; background-size: contain; opacity: 0.8; z-index: 1; transform: rotate(-30deg);"></div>
+                <!-- Bottom Left Round Pattern -->
+                <div style="position: absolute; bottom: -100px; left: -50px; width: 250px; height: 250px; background-image: url('src/images/GP Elements2.png'); background-repeat: no-repeat; background-size: contain; opacity: 0.5; z-index: 1; transform: rotate(45deg);"></div>
+                <div class="about-content" style="position: relative; z-index: 2;">
+                    <div class="content-with-image">
+                        <div class="slide-left">
+                            <h2 class="about-title">Who We Are</h2>
+                            <p class="about-text">
+                                At Growthpulse Solutions, we serve as your business growth partner by developing successful strategies to enhance your brand. Our expert team of industry specialists, combined with creative minds and technology, crafts a result-oriented approach that leverages strategic insights and innovation to enhance business operations, customer engagement, and global market reach.
+                            </p>
+                            <p class="about-text">
+                                With our core values of excellence and a customer-centric approach, we go beyond achieving short-term success; we aim to create lasting impact. By combining tailored strategies with advanced technologies, we deliver measurable results that foster innovation, add value, and ensure sustainable growth for clients worldwide.
+                            </p>
+                            <a href="services.html" class="services-btn">Explore Our Services</a>
+                        </div>
+                        <div class="slide-right">
+                            <img src="src/images/About/Who We Are.jpg" alt="GrowthPulse Team" class="about-image" />
+                        </div>
+                    </div>
+
+                    <div class="mission-vision">
+                        <div class="mission-box fade-in">
+                            <img src="src/images/About/Mission.jpg" alt="Our Mission" class="mission-image" />
+                            <h2 class="box-title">
+                                <div class="box-icon">🎯</div>
+                                Our Mission
+                            </h2>
+                            <p class="about-text">
+                                We focus on delivering innovative, customized technology solutions that empower businesses while creating sustainable client value and reliable growth.
+                            </p>
+                        </div>
+                        <div class="vision-box fade-in">
+                            <img src="src/images/About/Vision.jpg" alt="Our Vision" class="vision-image" />
+                            <h2 class="box-title">
+                                <div class="box-icon">👁️</div>
+                                Our Vision
+                            </h2>
+                            <p class="about-text">
+                                To be a reliable partner in growth-driven technology solutions that revolutionize businesses through innovation, strategic insight, and strong client relationships.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="why-choose animated-section">
+                        <div class="about-header">
+                            <h2 class="about-title">Why Choose Us?</h2>
+                            <p class="about-text">We innovate, accelerate, and elevate.</p>
+                        </div>
+                        
+                        <div class="features-grid">
+                            <div class="feature-item fade-in">
+                                <img src="src/images/About/Customized Strategies.jpg" alt="Customized Strategies" class="feature-image" />
+                                <h3 class="feature-title">
+                                    <div class="feature-icon">⚙️</div>
+                                    Customized Strategies
+                                </h3>
+                                <p class="about-text">
+                                    We create strategies tailored to your specific goal, target audience, and market challenges, ensuring the growth solution is fit for your business.
+                                </p>
+                            </div>
+                            <div class="feature-item fade-in">
+                                <img src="src/images/About/Proven Expertise.jpg" alt="Proven Expertise" class="feature-image" />
+                                <h3 class="feature-title">
+                                    <div class="feature-icon">🏆</div>
+                                    Proven Expertise
+                                </h3>
+                                <p class="about-text">
+                                    Our team of experts with industry knowledge and creative thinking keeps your brand ahead in the highly competitive industry.
+                                </p>
+                            </div>
+                            <div class="feature-item fade-in">
+                                <img src="src/images/About/Scalable Solutions.jpg" alt="Scalable Solutions" class="feature-image" />
+                                <h3 class="feature-title">
+                                    <div class="feature-icon">📈</div>
+                                    Scalable Solutions
+                                </h3>
+                                <p class="about-text">
+                                    From startups to large enterprises, our solution is highly scalable and tailored to meet your business requirements and evolving needs.
+                                </p>
+                            </div>
+                            <div class="feature-item fade-in">
+                                <img src="src/images/About/Growth-Centric Approach.jpg" alt="Growth-Centric Approach" class="feature-image" />
+                                <h3 class="feature-title">
+                                    <div class="feature-icon">💡</div>
+                                    Growth-Centric Approach
+                                </h3>
+                                <p class="about-text">
+                                    We provide measurable results that promote sustainable growth, concentrating on maximizing your return on investment.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="template-footer">
+          <!-- Green Banner with Rotating Text -->
+          <div class="footer-banner">
+            <div class="banner-content">
+              <span class="banner-text">DIGITAL MARKETING</span>
+              <span class="banner-star">✦</span>
+              <span class="banner-text">SOFTWARE SOLUTIONS</span>
+              <span class="banner-star">✦</span>
+              <span class="banner-text">BUSINESS GROWTH</span>
+              <span class="banner-star">✦</span>
+              <span class="banner-text">TECHNOLOGY DEVELOPMENT</span>
+              <span class="banner-star">✦</span>
+              <!-- Duplicate for seamless loop -->
+              <span class="banner-text">DIGITAL MARKETING</span>
+              <span class="banner-star">✦</span>
+              <span class="banner-text">SOFTWARE SOLUTIONS</span>
+              <span class="banner-star">✦</span>
+              <span class="banner-text">BUSINESS GROWTH</span>
+              <span class="banner-star">✦</span>
+              <span class="banner-text">TECHNOLOGY DEVELOPMENT</span>
+              <span class="banner-star">✦</span>
+            </div>
+          </div>
+          
+          <!-- Main Footer Content -->
+          <div class="footer-main">
+            <div class="footer-container">
+              <!-- Contact Section -->
+              <div class="footer-contact-section">
+                <h1 class="footer-contact-title">Let's Contact Us</h1>
+                <a href="contact.html" class="footer-cta-btn">Get In Touch</a>
+              </div>
+              
+              <!-- Footer Grid -->
+              <div class="footer-grid">
+                <!-- Logo Section -->
+                <div class="footer-logo-section">
+                  <div class="footer-brand">
+                    <span class="footer-logo-text">GROWTHPULSE</span>
+                  </div>
+                </div>
+                
+                <!-- Pages Column -->
+                <div class="footer-column">
+                  <h4 class="footer-column-title">Pages</h4>
+                  <ul class="footer-links">
+                    <li><a href="index.html" class="footer-link">Home</a></li>
+                    <li><a href="services.html" class="footer-link">Services</a></li>
+                    <li><a href="about.html" class="footer-link">About</a></li>
+                    <li><a href="contact.html" class="footer-link">Contact</a></li>
+                  </ul>
+                </div>
+                
+                <!-- Services Column -->
+                <div class="footer-column">
+                  <h4 class="footer-column-title">Services</h4>
+                  <ul class="footer-links">
+                    <li><a href="#" class="footer-link">Cloud Solutions</a></li>
+                    <li><a href="#" class="footer-link">Data Analytics</a></li>
+                    <li><a href="#" class="footer-link">AI & Machine Learning</a></li>
+                    <li><a href="#" class="footer-link">Cybersecurity</a></li>
+                  </ul>
+                </div>
+                
+
+                
+                <!-- Contact Info Column -->
+                <div class="footer-column">
+                  <h4 class="footer-column-title">GrowthPulse Agency</h4>
+                  <div class="footer-contact-info">
+                    <p class="footer-address">#2, Avvaiyar Street, Ekkatuthangal</p>
+                    <p class="footer-address">Chennai-32, India</p>
+                    <a href="mailto:sales@growthpulss.com" class="footer-email">sales@growthpulss.com</a>
+                    <div class="footer-social-icons">
+                      <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Follow us on Instagram" class="footer-social-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                      </a>
+                      <a href="https://x.com" target="_blank" rel="noopener" aria-label="Follow us on X (Twitter)" class="footer-social-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                      </a>
+                      <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="Follow us on LinkedIn" class="footer-social-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                      </a>
+                      <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Follow us on Facebook" class="footer-social-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Footer Bottom -->
+              <div class="footer-bottom">
+                <div class="footer-bottom-left">
+                  <p class="footer-copyright">All Right Reserved ©</p>
+                </div>
+                <div class="footer-bottom-right">
+                  <a href="#" class="footer-legal-link">Privacy Policy</a>
+                  <span class="footer-divider">/</span>
+                  <a href="#" class="footer-legal-link">Terms & Conditions</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+    </div>
+    
+    <!-- Chatbot -->
+    <div class="chatbot-container">
+        <div class="chat-button" onclick="toggleChat()">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2ZM20 16H5.17L4 17.17V4H20V16Z" fill="currentColor"/>
+                <path d="M7 9H17V11H7V9ZM7 12H15V14H7V12Z" fill="currentColor"/>
+            </svg>
+        </div>
+        
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <h3>Chat with us!</h3>
+                <button class="chat-close" onclick="toggleChat()">×</button>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot-message">Hi! I'm here to help you learn about our services. What would you like to know?</div>
+            </div>
+            <div class="quick-replies">
+                <button onclick="sendQuickReply('Tell me about your services')">Our Services</button>
+                <button onclick="sendQuickReply('What is your pricing?')">Pricing</button>
+                <button onclick="sendQuickReply('I want to contact you')">Contact</button>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="messageInput" placeholder="Type your message..." onkeypress="handleKeyPress(event)">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

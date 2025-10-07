@@ -1,0 +1,162 @@
+/* Animated Cloud Background - CSS Only */
+.cloud-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: linear-gradient(135deg, #F5DEB3 0%, #EED9C4 50%, #F5DEB3 100%);
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.cloud-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(ellipse 800px 300px at 20% 30%, rgba(255, 255, 255, 0.3) 0%, transparent 50%),
+    radial-gradient(ellipse 600px 200px at 80% 70%, rgba(255, 255, 255, 0.25) 0%, transparent 50%),
+    radial-gradient(ellipse 400px 150px at 40% 80%, rgba(255, 255, 255, 0.2) 0%, transparent 50%),
+    radial-gradient(ellipse 500px 180px at 90% 20%, rgba(255, 255, 255, 0.3) 0%, transparent 50%),
+    radial-gradient(ellipse 700px 250px at 10% 90%, rgba(255, 255, 255, 0.25) 0%, transparent 50%);
+  animation: cloudDrift 20s ease-in-out infinite;
+  filter: blur(2px);
+}
+
+.cloud-background::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(ellipse 600px 200px at 60% 40%, rgba(255, 255, 255, 0.2) 0%, transparent 50%),
+    radial-gradient(ellipse 450px 180px at 30% 60%, rgba(255, 255, 255, 0.25) 0%, transparent 50%),
+    radial-gradient(ellipse 550px 220px at 70% 10%, rgba(255, 255, 255, 0.2) 0%, transparent 50%),
+    radial-gradient(ellipse 400px 160px at 15% 50%, rgba(255, 255, 255, 0.3) 0%, transparent 50%);
+  animation: cloudDrift 25s ease-in-out infinite reverse;
+  filter: blur(3px);
+}
+
+@keyframes cloudDrift {
+  0%, 100% {
+    transform: translateX(0) translateY(0) scale(1);
+    opacity: 0.6;
+  }
+  25% {
+    transform: translateX(-20px) translateY(-10px) scale(1.05);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translateX(15px) translateY(5px) scale(0.95);
+    opacity: 0.5;
+  }
+  75% {
+    transform: translateX(-10px) translateY(-5px) scale(1.02);
+    opacity: 0.45;
+  }
+}
+
+/* Additional floating clouds */
+.floating-cloud {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50px;
+  filter: blur(1px);
+}
+
+.floating-cloud:nth-child(1) {
+  width: 100px;
+  height: 40px;
+  top: 20%;
+  left: 10%;
+  animation: floatCloud1 30s linear infinite;
+}
+
+.floating-cloud:nth-child(2) {
+  width: 80px;
+  height: 30px;
+  top: 60%;
+  left: 70%;
+  animation: floatCloud2 25s linear infinite;
+}
+
+.floating-cloud:nth-child(3) {
+  width: 120px;
+  height: 50px;
+  top: 40%;
+  left: 50%;
+  animation: floatCloud3 35s linear infinite;
+}
+
+.floating-cloud:nth-child(4) {
+  width: 90px;
+  height: 35px;
+  top: 80%;
+  left: 20%;
+  animation: floatCloud4 28s linear infinite;
+}
+
+@keyframes floatCloud1 {
+  0% { transform: translateX(-100px) translateY(0); }
+  100% { transform: translateX(calc(100vw + 100px)) translateY(-20px); }
+}
+
+@keyframes floatCloud2 {
+  0% { transform: translateX(-80px) translateY(0); }
+  100% { transform: translateX(calc(100vw + 80px)) translateY(15px); }
+}
+
+@keyframes floatCloud3 {
+  0% { transform: translateX(-120px) translateY(0); }
+  100% { transform: translateX(calc(100vw + 120px)) translateY(-10px); }
+}
+
+@keyframes floatCloud4 {
+  0% { transform: translateX(-90px) translateY(0); }
+  100% { transform: translateX(calc(100vw + 90px)) translateY(25px); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .cloud-background::before,
+  .cloud-background::after {
+    filter: blur(1px);
+  }
+  
+  .floating-cloud {
+    filter: blur(0.5px);
+  }
+}
+
+/* Overlay control for content visibility */
+.content-overlay {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(0.5px);
+}
+
+/* Optional: Subtle texture overlay */
+.cloud-background .texture-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+  animation: textureShift 40s ease-in-out infinite;
+}
+
+@keyframes textureShift {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.1; }
+}

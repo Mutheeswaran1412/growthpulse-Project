@@ -1,0 +1,1360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title> Technology Development Services | Growthpulse Solutions </title>
+    <meta content="Custom software development and technical solutions to build scalable, robust applications that drive business innovation." name="description" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link href="https://cdn.prod.website-files.com/684a11845c7dd0b4b7745cd9/css/noura-template-supply.webflow.shared.ca770ec91.css" rel="stylesheet" type="text/css" />
+    <link href="src/images/growthpulse-logo.png" rel="shortcut icon" type="image/x-icon" />
+    <link href="src/images/growthpulse-logo.png" rel="apple-touch-icon" />
+    <style>
+      * {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .w-webflow-badge {
+        display: none !important;
+      }
+      body {
+        background: #F9F8F5;
+        overflow-x: hidden;
+        padding-top: 80px;
+      }
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: #ffffff !important;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        padding: 15px 0;
+      }
+      .navbar_component {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .navbar_links-wrap {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+      }
+      .navbar_links {
+        display: flex;
+        gap: 30px;
+      }
+      .navbar_link {
+        text-decoration: none;
+        color: #333;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+      .navbar_link:hover {
+        color: #764ba2 !important;
+      }
+      .navbar_link {
+        color: #333 !important;
+      }
+      .padding-global {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      .navbar_logo {
+        height: 90px;
+        width: auto;
+      }
+      .navbar_link.w--current {
+        background: linear-gradient(135deg, #1e40af 0%, #3b82f6 30%, #06b6d4 70%, #0ea5e9 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 700;
+        position: relative;
+      }
+      .navbar_link.w--current::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(135deg, #1e40af 0%, #3b82f6 30%, #06b6d4 70%, #0ea5e9 100%);
+        border-radius: 1px;
+      }
+      
+      
+      /* Animated Background Shapes for all sections */
+      .hero-section::before,
+      .content-section::before {
+        content: '';
+        position: absolute;
+        top: -50px;
+        right: -50px;
+        width: 200px;
+        height: 200px;
+        background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+        border-radius: 50%;
+        animation: floatShape1 8s ease-in-out infinite;
+        z-index: 1;
+      }
+      
+      .hero-section::after,
+      .content-section::after {
+        content: '';
+        position: absolute;
+        bottom: -30px;
+        left: -30px;
+        width: 150px;
+        height: 150px;
+        background: linear-gradient(45deg, rgba(255, 107, 157, 0.1), rgba(255, 193, 7, 0.1));
+        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+        animation: floatShape2 10s ease-in-out infinite;
+        z-index: 1;
+      }
+      
+      .floating-shape-1 {
+        position: absolute;
+        top: 20%;
+        right: 10%;
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(135deg, rgba(0, 212, 255, 0.15), rgba(102, 126, 234, 0.15));
+        border-radius: 20px;
+        animation: floatShape3 6s ease-in-out infinite;
+        z-index: 1;
+        transform: rotate(45deg);
+      }
+      
+      .floating-shape-2 {
+        position: absolute;
+        top: 60%;
+        right: 20%;
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(45deg, rgba(118, 75, 162, 0.12), rgba(255, 107, 157, 0.12));
+        border-radius: 50%;
+        animation: floatShape4 7s ease-in-out infinite;
+        z-index: 1;
+      }
+      
+      .floating-shape-3 {
+        position: absolute;
+        top: 30%;
+        left: 5%;
+        width: 100px;
+        height: 40px;
+        background: linear-gradient(90deg, rgba(255, 193, 7, 0.1), rgba(255, 107, 157, 0.1));
+        border-radius: 50px;
+        animation: floatShape5 9s ease-in-out infinite;
+        z-index: 1;
+      }
+      
+      @keyframes floatShape1 {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-20px) rotate(180deg); }
+      }
+      
+      @keyframes floatShape2 {
+        0%, 100% { transform: translateX(0px) rotate(0deg); }
+        50% { transform: translateX(15px) rotate(90deg); }
+      }
+      
+      @keyframes floatShape3 {
+        0%, 100% { transform: translateY(0px) rotate(45deg); }
+        50% { transform: translateY(-15px) rotate(225deg); }
+      }
+      
+      @keyframes floatShape4 {
+        0%, 100% { transform: translateX(0px) translateY(0px); }
+        33% { transform: translateX(10px) translateY(-10px); }
+        66% { transform: translateX(-5px) translateY(5px); }
+      }
+      
+      @keyframes floatShape5 {
+        0%, 100% { transform: translateY(0px) scaleX(1); }
+        50% { transform: translateY(-10px) scaleX(1.2); }
+      }
+      
+      /* Scroll Animations */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease;
+      }
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .slide-left {
+        opacity: 0;
+        transform: translateX(-50px);
+        transition: all 0.8s ease;
+      }
+      .slide-left.visible {
+        opacity: 1;
+        transform: translateX(0);
+      }
+      .slide-right {
+        opacity: 0;
+        transform: translateX(50px);
+        transition: all 0.8s ease;
+      }
+      .slide-right.visible {
+        opacity: 1;
+        transform: translateX(0);
+      }
+      
+      /* Service Card Hover */
+      .service-card::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(0,255,136,0.1), transparent);
+        transition: left 0.6s;
+      }
+      .service-card:hover::after {
+        left: 100%;
+      }
+      .service-card:hover .service-icon {
+        transform: scale(1.15) rotate(15deg);
+      }
+      .service-icon {
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      
+      /* Mobile Responsive */
+      .work-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+      }
+      @media (max-width: 768px) {
+        .work-grid {
+          grid-template-columns: 1fr;
+        }
+        body {
+          padding-top: 70px;
+        }
+        .navbar {
+          padding: 10px 0;
+        }
+        .navbar_component {
+          padding: 0 15px;
+        }
+        .navbar_logo {
+          height: 60px;
+        }
+        .navbar_links-wrap {
+          display: none;
+        }
+        .hero-section {
+          height: 50vh;
+          padding: 20px;
+        }
+        .hero-content h1 {
+          font-size: 2.5rem;
+        }
+        .hero-content p {
+          font-size: 1.2rem;
+        }
+        .content-section {
+          padding: 60px 0;
+        }
+        .content-container {
+          padding: 0 15px;
+        }
+        .content-title {
+          font-size: 2rem;
+        }
+        .content-text {
+          font-size: 1rem;
+        }
+        .services-grid {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+        .industries-grid {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+        .service-card {
+          padding: 20px;
+        }
+        .fade-in, .slide-left, .slide-right {
+          transform: translateY(20px);
+          transition: all 0.6s ease;
+        }
+        .service-card:hover {
+          transform: translateY(-3px);
+        }
+      }
+      
+      @media (max-width: 480px) {
+        .hero-content h1 {
+          font-size: 2rem;
+        }
+        .hero-content p {
+          font-size: 1rem;
+        }
+        .content-title {
+          font-size: 1.8rem;
+        }
+        .service-card {
+          padding: 15px;
+        }
+      }
+      
+      /* Hero Section */
+      .hero-section {
+        position: relative;
+        height: 60vh;
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(44, 62, 80, 0.8) 50%, rgba(0, 0, 0, 0.7) 100%), url('https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=1920&h=1080&fit=crop&crop=center') center/cover no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ffffff;
+        text-align: center;
+        overflow: hidden;
+      }
+      .curved-divider {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+        z-index: 10;
+      }
+      .curved-divider svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 1.3px);
+        height: 80px;
+      }
+      .hero-content h1 {
+        font-size: 4rem;
+        margin-bottom: 20px;
+      }
+      .hero-content p {
+        font-size: 1.5rem;
+        max-width: 600px;
+      }
+      
+      /* Content Sections */
+      .content-section {
+        background: #F9F8F5;
+        padding: 100px 0;
+        position: relative;
+              overflow: hidden;
+      }
+      .content-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .content-title {
+        font-size: 3rem;
+        font-weight: 800;
+        color: #2c3e50;
+        margin-bottom: 30px;
+        text-align: center;
+        position: relative;
+      }
+      .content-title::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(45deg, #2c3e50, #34495e);
+        border-radius: 2px;
+      }
+      .content-text {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        color: #555;
+        margin-bottom: 25px;
+      }
+      
+      /* Service Cards */
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+        margin: 60px 0;
+      }
+      .service-card {
+        background: white;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+      .service-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(45deg, #2c3e50, #34495e);
+      }
+      .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      }
+      .service-icon {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        display: block;
+      }
+      .service-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #2c3e50;
+        margin-bottom: 15px;
+      }
+      .service-description {
+        color: #666;
+        line-height: 1.6;
+      }
+      
+      /* Industry Cards */
+      .industries-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin: 40px 0;
+      }
+      .industry-card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+      }
+      .industry-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+      }
+      .industry-image {
+        height: 200px;
+        background: linear-gradient(45deg, #2c3e50, #34495e);
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 4rem;
+      }
+      .industry-content {
+        padding: 30px;
+        text-align: center;
+      }
+      .industry-title {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: #2c3e50;
+        margin-bottom: 15px;
+      }
+      .industry-description {
+        color: #666;
+        line-height: 1.6;
+      }
+      
+      /* CTA Buttons */
+      .cta-btn {
+        background: linear-gradient(45deg, #2c3e50, #34495e);
+        color: white;
+        padding: 15px 40px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-size: 1.1rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        display: inline-block;
+        position: relative;
+        overflow: hidden;
+      }
+      .cta-btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(45deg, rgba(255,255,255,0.2), transparent);
+        transition: left 0.5s ease;
+      }
+      .cta-btn:hover::before {
+        left: 100%;
+      }
+      .cta-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(44, 62, 80, 0.4);
+      }
+      
+      /* Features List */
+      .features-list {
+        list-style: none;
+        padding: 0;
+      }
+      .features-list li {
+        padding: 20px;
+        margin-bottom: 15px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        font-size: 1.1rem;
+        color: #333;
+        transition: all 0.3s ease;
+      }
+      .features-list li:hover {
+        transform: translateX(10px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+      }
+      .features-list li:before {
+        content: "✓";
+        color: #2c3e50;
+        font-weight: bold;
+        margin-right: 15px;
+        font-size: 1.2rem;
+      }
+      
+      /* FAQ Section */
+      .faq-container {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      .faq-item {
+        background: white;
+        margin-bottom: 20px;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        transition: all 0.3s ease;
+        border: 1px solid #f0f0f0;
+      }
+      .faq-item:hover {
+        box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        transform: translateY(-2px);
+      }
+      .faq-question {
+        padding: 25px;
+        cursor: pointer;
+        font-weight: 600;
+        color: #2c3e50;
+        position: relative;
+        transition: all 0.3s ease;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .faq-question:hover {
+        background: #f8f9fa;
+        color: #2c3e50;
+      }
+      .faq-question::after {
+        content: '+';
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #2c3e50;
+        transition: transform 0.3s ease;
+      }
+      .faq-question.active::after {
+        transform: rotate(45deg);
+      }
+      .faq-answer {
+        padding: 0 25px;
+        color: #666;
+        line-height: 1.6;
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+      .faq-answer.active {
+        padding: 25px;
+        max-height: 200px;
+      }
+      
+      @media (max-width: 768px) {
+        .hero-container {
+          grid-template-columns: 1fr;
+          text-align: center;
+          gap: 40px;
+        }
+        .hero-title {
+          font-size: 3rem;
+        }
+        .hero-image {
+          width: 100%;
+          max-width: 350px;
+          margin: 0 auto;
+        }
+        .content-title {
+          font-size: 2.2rem;
+        }
+        .services-grid,
+        .industries-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      /* Template Footer Styles */
+      .template-footer {
+        margin-top: 60px;
+      }
+      .footer-banner {
+        background: linear-gradient(45deg, #667eea, #764ba2);
+        padding: 15px 0;
+        overflow: hidden;
+        position: relative;
+      }
+      .banner-content {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        animation: scrollBanner 20s linear infinite;
+        white-space: nowrap;
+      }
+      .banner-text {
+        color: #fff;
+        font-size: 1.2rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+      }
+      .banner-star {
+        color: #fff;
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+      @keyframes scrollBanner {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+      }
+      .footer-main {
+        background: #1a1a1a;
+        color: #ffffff;
+        padding: 80px 0 0;
+      }
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .footer-contact-section {
+        text-align: center;
+        margin-bottom: 80px;
+        padding-bottom: 40px;
+        border-bottom: 1px solid #333;
+      }
+      .footer-contact-title {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 300;
+        color: #667eea;
+        margin-bottom: 30px;
+        letter-spacing: -1px;
+      }
+      .footer-cta-btn {
+        display: inline-block;
+        background: linear-gradient(45deg, #667eea, #764ba2);
+        color: #fff;
+        padding: 15px 40px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+      }
+      .footer-cta-btn:hover {
+        background: #764ba2;
+        transform: translateY(-2px);
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1.5fr;
+        gap: 60px;
+        margin-bottom: 60px;
+      }
+      .footer-logo-section {
+        display: flex;
+        align-items: flex-start;
+      }
+      .footer-brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .footer-logo-text {
+        color: #667eea;
+        font-size: 1.5rem;
+        font-weight: 800;
+        letter-spacing: -1px;
+      }
+      .footer-logo-x {
+        color: #ffffff;
+        font-size: 1.5rem;
+        font-weight: 800;
+      }
+      .footer-column {
+        display: flex;
+        flex-direction: column;
+      }
+      .footer-column-title {
+        color: #667eea;
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 25px;
+      }
+      .footer-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .footer-links li {
+        margin-bottom: 12px;
+      }
+      .footer-link {
+        color: #cccccc;
+        text-decoration: none;
+        font-size: 0.95rem;
+        transition: color 0.3s ease;
+      }
+      .footer-link:hover {
+        color: #667eea;
+      }
+      .footer-contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .footer-address {
+        color: #cccccc;
+        font-size: 0.95rem;
+        margin: 0;
+        line-height: 1.4;
+      }
+      .footer-email {
+        color: #cccccc;
+        text-decoration: none;
+        font-size: 0.95rem;
+        margin-bottom: 20px;
+        transition: color 0.3s ease;
+      }
+      .footer-email:hover {
+        color: #667eea;
+      }
+      .footer-social-icons {
+        display: flex;
+        gap: 15px;
+      }
+      .footer-social-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: #333;
+        border-radius: 50%;
+        color: #cccccc;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+      .footer-social-icon:hover {
+        background: linear-gradient(45deg, #667eea, #764ba2);
+        color: #fff;
+        transform: translateY(-2px);
+      }
+      .footer-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px 0;
+        border-top: 1px solid #333;
+      }
+      .footer-copyright {
+        color: #cccccc;
+        font-size: 0.9rem;
+        margin: 0;
+      }
+      .footer-bottom-right {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+      .footer-legal-link {
+        color: #cccccc;
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: color 0.3s ease;
+      }
+      .footer-legal-link:hover {
+        color: #667eea;
+      }
+      .footer-divider {
+        color: #666;
+        font-size: 0.9rem;
+      }
+      @media (max-width: 1024px) {
+        .footer-grid {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 40px;
+        }
+      }
+      @media (max-width: 768px) {
+        .footer-main {
+          padding: 60px 0 0;
+        }
+        .footer-contact-section {
+          margin-bottom: 60px;
+        }
+        .footer-contact-title {
+          font-size: 2.5rem;
+        }
+        .footer-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 30px;
+        }
+        .footer-bottom {
+          flex-direction: column;
+          gap: 20px;
+          text-align: center;
+        }
+      }
+      @media (max-width: 480px) {
+        .banner-text {
+          font-size: 1rem;
+        }
+        .footer-main {
+          padding: 40px 0 0;
+        }
+        .footer-contact-section {
+          margin-bottom: 40px;
+        }
+        .footer-contact-title {
+          font-size: 2rem;
+        }
+        .footer-grid {
+          grid-template-columns: 1fr;
+          gap: 30px;
+          text-align: center;
+        }
+        .footer-social-icons {
+          justify-content: center;
+        }
+      }
+    </style>
+    <script>
+      // Scroll Animation Script
+      document.addEventListener('DOMContentLoaded', function() {
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver(function(entries) {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+            }
+          });
+        }, observerOptions);
+        
+        document.querySelectorAll('.fade-in, .slide-left, .slide-right').forEach(el => {
+          observer.observe(el);
+        });
+      });
+      
+      // FAQ Toggle Function
+      function toggleFAQ(element) {
+        const answer = element.nextElementSibling;
+        const isActive = answer.classList.contains('active');
+        
+        // Close all other FAQs
+        document.querySelectorAll('.faq-answer.active').forEach(item => {
+          item.classList.remove('active');
+        });
+        document.querySelectorAll('.faq-question.active').forEach(item => {
+          item.classList.remove('active');
+        });
+        
+        // Toggle current FAQ
+        if (!isActive) {
+          answer.classList.add('active');
+          element.classList.add('active');
+        }
+      }
+    </script>
+</head>
+<body>
+        <!-- Animated Background Orbs -->
+    <div class="bg-orbs">
+      <div class="orb"></div>
+      <div class="orb"></div>
+      <div class="orb"></div>
+      <div class="orb"></div>
+    </div>
+    
+<div class="page-wrapper">
+        <nav class="navbar">
+            <div class="padding-global">
+                <div class="navbar_component">
+                    <a href="index.html" class="navbar_logo-wrap w-inline-block">
+                        <img src="src/images/growthpulse-logo.png" loading="lazy" alt="GrowthPulse Digital Marketing Company Logo" class="navbar_logo" />
+                    </a>
+                    <div class="navbar_links-wrap">
+                        <div class="navbar_links">
+                            <a href="index.html" class="navbar_link w-inline-block">
+                                <div class="navbar_link-text _1">Home</div>
+                                <div class="navbar_link-text _2">Home</div>
+                            </a>
+                            <a href="about.html" class="navbar_link w-inline-block">
+                                <div class="navbar_link-text _1">About</div>
+                                <div class="navbar_link-text _2">About</div>
+                            </a>
+                            <a href="services.html" class="navbar_link w-inline-block">
+                                <div class="navbar_link-text _1">Services</div>
+                                <div class="navbar_link-text _2">Services</div>
+                            </a>
+                            <a href="contact.html" class="navbar_link w-inline-block">
+                                <div class="navbar_link-text _1">Contact</div>
+                                <div class="navbar_link-text _2">Contact</div>
+                            </a>
+                        </div>
+                        <a href="index.html#section_cta" class="button w-variant-994e88c4-baec-2bbf-d0b3-8a2991a92ab2 w-inline-block">
+                            <div class="button_inner w-variant-994e88c4-baec-2bbf-d0b3-8a2991a92ab2">
+                                <div class="button_gradient">
+                                    <div class="button_gradient-ball ball-1 w-variant-994e88c4-baec-2bbf-d0b3-8a2991a92ab2"></div>
+                                    <div class="button_gradient-ball ball-2 w-variant-994e88c4-baec-2bbf-d0b3-8a2991a92ab2"></div>
+                                </div>
+                                <div class="button_text">Get started</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <main class="main-wrapper">
+            <section class="hero-section" hero-animated>
+                <!-- Floating Shapes -->
+                <div class="floating-shape-1"></div>
+                <div class="floating-shape-2"></div>
+                <div class="floating-shape-3"></div>
+                
+                <div class="hero-content">
+                    <h1>Technical Development</h1>
+                    <p>Custom software development and technical solutions to build scalable, robust applications that drive business innovation</p>
+                </div>
+                <div class="curved-divider">
+                    <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                        <path d="M0,0C150,100 350,0 600,50C850,100 1050,0 1200,50L1200,120L0,120Z" fill="#F9F8F5"></path>
+                    </svg>
+                </div>
+            </section>
+
+            <section class="content-section" animated-section style="position: relative; overflow: hidden;">
+                <div style="position: absolute; top: -250px; right: -200px; width: 800px; height: 100%; background-image: url('src/images/GP Elements2.png'); background-repeat: no-repeat; background-position: right center; background-size: contain; opacity: 0.4; z-index: 1; filter: blur(4px);"></div>
+                <!-- Floating Shapes -->
+                <div class="floating-shape-1"></div>
+                <div class="floating-shape-2"></div>
+                <div class="floating-shape-3"></div>
+                
+                <div class="content-container" style="position: relative; z-index: 2;">
+                    <div style="text-align: center; margin-bottom: 60px;">
+                        <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                            <a href="contact.html" class="cta-btn">Get a Free Consultation</a>
+                            <a href="services.html" class="cta-btn" style="background: transparent; color: #007bff; border: 2px solid #007bff;">Explore Our Services</a>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 80px;">
+                        <h2 class="content-title">How Technology Development Drives Business Growth</h2>
+                        <p class="content-text">
+                            Smart technology is not only about building apps or platforms; it is about creating solutions that make the business simple, faster, and more profitable. The right tools can streamline operations, improve customers' experiences, and open new revenue streams.
+                        </p>
+                        <p class="content-text">
+                            At Growthpulse Solutions, we convert your thoughts into digital products that give measurable results. By combining creativity and technical expertise, we design solutions to your goals to scale smarter, cut costs, and stay ahead of the competition.
+                        </p>
+                    </div>
+
+                    <div id="services" style="margin-bottom: 80px;" class="fade-in">
+                        <h2 class="content-title">Our Core Technology Development Services</h2>
+                        <p class="content-text" style="margin-bottom: 40px; text-align: center;">
+                            We combine strategy, design, and advanced technology to deliver a result-driven solution that aligns with your vision.
+                        </p>
+                        
+                        <div class="services-grid">
+                            <div class="service-card slide-left">
+                                <span class="service-icon">🏢</span>
+                                <h3 class="service-title">ERP Solutions</h3>
+                                <p class="service-description">
+                                    We implement and customize ERP systems such as ERPNext and Odoo to centralize data, automate workflows, and give you real-time visibility into your business.
+                                </p>
+                            </div>
+                            
+                            <div class="service-card fade-in">
+                                <span class="service-icon">💻</span>
+                                <h3 class="service-title">Custom Software Development</h3>
+                                <p class="service-description">
+                                    From enterprise platforms to innovative applications, we leverage robust technology and techniques such as Java and Python to create a scalable and secure solution.
+                                </p>
+                            </div>
+                            
+                            <div class="service-card slide-right">
+                                <span class="service-icon">📊</span>
+                                <h3 class="service-title">Data Engineering and Analytics</h3>
+                                <p class="service-description">
+                                    Using advanced platforms such as Databricks, we help you convert raw data into actionable insights with pipelines, analytics, and AI-driven models that fuel smart decisions.
+                                </p>
+                            </div>
+                            
+                            <div class="service-card slide-left">
+                                <span class="service-icon">📱</span>
+                                <h3 class="service-title">Web and App Development</h3>
+                                <p class="service-description">
+                                    We create responsive websites and dynamic applications designed for performance, usability, and scalability, ensuring a seamless digital experience for your customers.
+                                </p>
+                            </div>
+                            
+                            <div class="service-card fade-in">
+                                <span class="service-icon">☁️</span>
+                                <h3 class="service-title">Cloud Solutions and Integration</h3>
+                                <p class="service-description">
+                                    Our experts enable secure cloud adoption, optimization, and system integration so your business can scale without limit.
+                                </p>
+                            </div>
+                            
+                            <div class="service-card slide-right">
+                                <span class="service-icon">🤖</span>
+                                <h3 class="service-title">Automation and Digital Transformation</h3>
+                                <p class="service-description">
+                                    We modernize workflows and processes with intelligent automation, empowering your business to reduce costs and drive innovation.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 80px;">
+                        <h2 class="content-title">Why Choose Growthpulse Solutions for Technology Development?</h2>
+                        <p class="content-text" style="margin-bottom: 30px;">
+                            Our expert team will turn ideas into technology solutions to innovate, scale, and create high impact on your business.
+                        </p>
+                        <ul class="features-list">
+                            <li>We build scalable solutions</li>
+                            <li>We design for the future</li>
+                            <li>We think beyond code</li>
+                            <li>We turn data into growth</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-bottom: 80px;">
+                        <h2 class="content-title">How Do We Work?</h2>
+                        <p class="content-text" style="margin-bottom: 40px; text-align: center;">
+                            Our technology solutions are crafted in simple and effective roadmaps that are completely designed for your business requirements.
+                        </p>
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin-top: 40px;" class="work-grid">
+                            <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); position: relative; border-left: 4px solid #667eea; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.1)'">
+                                <div style="background: linear-gradient(45deg, #667eea, #764ba2); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-bottom: 20px;">1</div>
+                                <h3 style="color: #2c3e50; font-size: 1.3rem; font-weight: 700; margin-bottom: 15px;">Understand your goals</h3>
+                                <p style="color: #666; line-height: 1.6;">Comprehensive requirements gathering, technical feasibility analysis, and project planning with clear milestones and deliverables.</p>
+                            </div>
+                            <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); position: relative; border-left: 4px solid #667eea; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.1)'">
+                                <div style="background: linear-gradient(45deg, #667eea, #764ba2); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-bottom: 20px;">2</div>
+                                <h3 style="color: #2c3e50; font-size: 1.3rem; font-weight: 700; margin-bottom: 15px;">Strategy and plan</h3>
+                                <p style="color: #666; line-height: 1.6;">Create scalable system architecture, database design, API specifications, and technology stack selection for optimal performance.</p>
+                            </div>
+                            <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); position: relative; border-left: 4px solid #667eea; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.1)'">
+                                <div style="background: linear-gradient(45deg, #667eea, #764ba2); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-bottom: 20px;">3</div>
+                                <h3 style="color: #2c3e50; font-size: 1.3rem; font-weight: 700; margin-bottom: 15px;">Design and Develop</h3>
+                                <p style="color: #666; line-height: 1.6;">Agile development with continuous integration, automated testing, code reviews, and regular client feedback cycles.</p>
+                            </div>
+                            <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); position: relative; border-left: 4px solid #667eea; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.1)'">
+                                <div style="background: linear-gradient(45deg, #667eea, #764ba2); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-bottom: 20px;">4</div>
+                                <h3 style="color: #2c3e50; font-size: 1.3rem; font-weight: 700; margin-bottom: 15px;">Test and Optimize</h3>
+                                <p style="color: #666; line-height: 1.6;">Comprehensive testing, performance optimization, and quality assurance to ensure optimal system performance.</p>
+                            </div>
+                            <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); position: relative; border-left: 4px solid #667eea; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.1)'">
+                                <div style="background: linear-gradient(45deg, #667eea, #764ba2); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-bottom: 20px;">1</div>
+                                <h3 style="color: #2c3e50; font-size: 1.3rem; font-weight: 700; margin-bottom: 15px;">Understand your goals</h3>
+                                <p style="color: #666; line-height: 1.6;">Comprehensive requirements gathering, technical feasibility analysis, and project planning with clear milestones and deliverables.</p>
+                            </div>
+                            <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); position: relative; border-left: 4px solid #667eea; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.1)'">
+                                <div style="background: linear-gradient(45deg, #667eea, #764ba2); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-bottom: 20px;">2</div>
+                                <h3 style="color: #2c3e50; font-size: 1.3rem; font-weight: 700; margin-bottom: 15px;">Strategy and plan</h3>
+                                <p style="color: #666; line-height: 1.6;">Create scalable system architecture, database design, API specifications, and technology stack selection for optimal performance.</p>
+                            </div>
+                            <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); position: relative; border-left: 4px solid #667eea; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.1)'">
+                                <div style="background: linear-gradient(45deg, #667eea, #764ba2); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-bottom: 20px;">3</div>
+                                <h3 style="color: #2c3e50; font-size: 1.3rem; font-weight: 700; margin-bottom: 15px;">Design and Develop</h3>
+                                <p style="color: #666; line-height: 1.6;">Agile development with continuous integration, automated testing, code reviews, and regular client feedback cycles.</p>
+                            </div>
+                            <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); position: relative; border-left: 4px solid #667eea; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.1)'">
+                                <div style="background: linear-gradient(45deg, #667eea, #764ba2); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-bottom: 20px;">4</div>
+                                <h3 style="color: #2c3e50; font-size: 1.3rem; font-weight: 700; margin-bottom: 15px;">Test and Optimize</h3>
+                                <p style="color: #666; line-height: 1.6;">Comprehensive testing, performance optimization, and quality assurance to ensure optimal system performance.</p>
+                            </div>
+
+                        </div>
+                        
+                        <div style="text-align: center; margin-top: 60px;">
+                            <p class="content-text" style="font-size: 1.4rem; font-weight: 600; margin-bottom: 30px;">
+                                Drive business growth with smart technology solutions!
+                            </p>
+                            <a href="contact.html" class="cta-btn">Get Started Today</a>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 80px;">
+                        <h2 class="content-title">Industries We Serve</h2>
+                        
+                        <div class="industries-grid">
+                            <div class="industry-card slide-left">
+                                <div class="industry-image">
+                                    <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=200&fit=crop" alt="FinTech & Banking" style="width: 100%; height: 100%; object-fit: cover;" />
+                                </div>
+                                <div class="industry-content">
+                                    <h3 class="industry-title">FinTech & Banking</h3>
+                                    <p class="industry-description">
+                                        Develop secure payment systems, trading platforms, and financial management applications with compliance and security at the core.
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="industry-card fade-in">
+                                <div class="industry-image">
+                                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=200&fit=crop" alt="SaaS & Technology" style="width: 100%; height: 100%; object-fit: cover;" />
+                                </div>
+                                <div class="industry-content">
+                                    <h3 class="industry-title">SaaS & Technology</h3>
+                                    <p class="industry-description">
+                                        Build scalable cloud applications, APIs, and software platforms that serve thousands of users with high performance and reliability.
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="industry-card slide-right">
+                                <div class="industry-image">
+                                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=200&fit=crop" alt="Manufacturing & IoT" style="width: 100%; height: 100%; object-fit: cover;" />
+                                </div>
+                                <div class="industry-content">
+                                    <h3 class="industry-title">Manufacturing & IoT</h3>
+                                    <p class="industry-description">
+                                        Create industrial automation systems, IoT solutions, and data analytics platforms for smart manufacturing and operations.
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="industry-card slide-left">
+                                <div class="industry-image">
+                                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&h=200&fit=crop" alt="EdTech & E-learning" style="width: 100%; height: 100%; object-fit: cover;" />
+                                </div>
+                                <div class="industry-content">
+                                    <h3 class="industry-title">EdTech & E-learning</h3>
+                                    <p class="industry-description">
+                                        Develop learning management systems, educational apps, and interactive platforms that enhance digital learning experiences.
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="industry-card fade-in">
+                                <div class="industry-image">
+                                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=200&fit=crop" alt="Healthcare Technology" style="width: 100%; height: 100%; object-fit: cover;" />
+                                </div>
+                                <div class="industry-content">
+                                    <h3 class="industry-title">Healthcare Technology</h3>
+                                    <p class="industry-description">
+                                        Build HIPAA-compliant healthcare applications, telemedicine platforms, and patient management systems for medical providers.
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="industry-card slide-right">
+                                <div class="industry-image">
+                                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&h=200&fit=crop" alt="Logistics & Supply Chain" style="width: 100%; height: 100%; object-fit: cover;" />
+                                </div>
+                                <div class="industry-content">
+                                    <h3 class="industry-title">Logistics & Supply Chain</h3>
+                                    <p class="industry-description">
+                                        Create inventory management systems, tracking applications, and supply chain optimization tools for efficient operations.
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="industry-card slide-left">
+                                <div class="industry-image">
+                                    <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=400&h=200&fit=crop" alt="Energy & Utilities" style="width: 100%; height: 100%; object-fit: cover;" />
+                                </div>
+                                <div class="industry-content">
+                                    <h3 class="industry-title">Energy & Utilities</h3>
+                                    <p class="industry-description">
+                                        Develop smart grid solutions, energy monitoring systems, and utility management platforms for sustainable operations.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 80px;" class="fade-in">
+                        <h2 class="content-title">Frequently Asked Questions</h2>
+                        <div class="faq-container" style="margin-top: 40px;">
+                            <div class="faq-item">
+                                <div class="faq-question" onclick="toggleFAQ(this)">
+                                    <span>What are technology services and software development?</span>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>Technology services help businesses use digital tools to operate businesses efficiently. Software development is an important part that creates custom applications, web platforms, mobile apps, and enterprise solutions that correspond to business requirements.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <div class="faq-question" onclick="toggleFAQ(this)">
+                                    <span>How to choose the right software development service provider?</span>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>Look for a provider with industry experience, a proven record, and expertise in technologies like Java, Python, ERP systems, and agile practices.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <div class="faq-question" onclick="toggleFAQ(this)">
+                                    <span>What technology is used for custom software development?</span>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>Custom software often uses Java or Python for back-end, React or Angular for front-end, ERPNext and Odoo for ERP solutions, and Databricks for data analytics, with a cloud platform for scalability.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <div class="faq-question" onclick="toggleFAQ(this)">
+                                    <span>How do ERP systems make business operations easier?</span>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>ERP systems such as ERPNext and Odoo centralize data, automate workflows, provide real-time insights, reduce manual work, and improve efficiency in departments.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <div class="faq-question" onclick="toggleFAQ(this)">
+                                    <span>How can web and app development improve customer engagement?</span>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>Websites and apps create seamless, interactive experiences that connect with users, build trust, encourage repeat interactions, and boost conversions and loyalty.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="template-footer">
+          <div class="footer-banner">
+            <div class="banner-content">
+              <span class="banner-text">DIGITAL MARKETING</span>
+              <span class="banner-star">✦</span>
+              <span class="banner-text">SOFTWARE SOLUTIONS</span>
+              <span class="banner-star">✦</span>
+              <span class="banner-text">BUSINESS GROWTH</span>
+              <span class="banner-star">✦</span>
+              <span class="banner-text">TECHNOLOGY DEVELOPMENT</span>
+              <span class="banner-star">✦</span>
+            </div>
+          </div>
+          <div class="footer-main">
+            <div class="footer-container">
+              <div class="footer-contact-section">
+                <h1 class="footer-contact-title">Let's Contact Us</h1>
+                <a href="#section_cta" class="footer-cta-btn">Get In Touch</a>
+              </div>
+              <div class="footer-grid">
+                <div class="footer-logo-section">
+                  <div class="footer-brand">
+                    <span class="footer-logo-text">GROWTHPULSE</span>
+  
+                  </div>
+                </div>
+                <div class="footer-column">
+                  <h4 class="footer-column-title">Pages</h4>
+                  <ul class="footer-links">
+                    <li><a href="index.html" class="footer-link">Home</a></li>
+                    <li><a href="services.html" class="footer-link">Services</a></li>
+                    <li><a href="about.html" class="footer-link">About</a></li>
+                    <li><a href="contact.html" class="footer-link">Contact</a></li>
+                  </ul>
+                </div>
+                <div class="footer-column">
+                  <h4 class="footer-column-title">Services</h4>
+                  <ul class="footer-links">
+                    <li><a href="digital-marketing.html" class="footer-link">Digital Marketing</a></li>
+                    <li><a href="software-marketing.html" class="footer-link">Software Marketing</a></li>
+                    <li><a href="technical-development.html" class="footer-link">Technical Development</a></li>
+                    <li><a href="learning-development.html" class="footer-link">Learning & Development</a></li>
+                    <li><a href="account-management.html" class="footer-link">Account Management</a></li>
+                    <li><a href="event-management.html" class="footer-link">Event Management</a></li>
+                  </ul>
+                </div>
+
+                <div class="footer-column">
+                  <h4 class="footer-column-title">GrowthPulse Agency</h4>
+                  <div class="footer-contact-info">
+                    <p class="footer-address">#2, Avvaiyar Street, Ekkatuthangal</p>
+                    <p class="footer-address">Chennai-32, India</p>
+                    <a href="mailto:sales@growthpulss.com" class="footer-email">sales@growthpulss.com</a>
+                    <div class="footer-social-icons">
+                      <a href="https://instagram.com" target="_blank" rel="noopener" class="footer-social-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                      </a>
+                      <a href="https://x.com" target="_blank" rel="noopener" class="footer-social-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                      </a>
+                      <a href="https://linkedin.com" target="_blank" rel="noopener" class="footer-social-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                      </a>
+                      <a href="https://facebook.com" target="_blank" rel="noopener" class="footer-social-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="footer-bottom">
+                <div class="footer-bottom-left">
+                  <p class="footer-copyright">All Right Reserved ©</p>
+                </div>
+                <div class="footer-bottom-right">
+                  <a href="#" class="footer-legal-link">Privacy Policy</a>
+                  <span class="footer-divider">/</span>
+                  <a href="#" class="footer-legal-link">Terms & Conditions</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+    </div>
+</body>
+</html>
