@@ -21,28 +21,180 @@
         display: none !important;
       }
       body {
-        background: #F9F8F5;
+        background: transparent;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         color: #333;
-        padding-top: 80px;
+        padding-top: 0;
+        margin: 0;
       }
-      .navbar {
+      /* Header Styles - Matching Index.html */
+      .header-container {
+        position: fixed;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1000;
+        width: 95%;
+        max-width: 1400px;
+        transition: transform 0.2s ease, visibility 0.2s ease;
+      }
+      
+      .header-pill {
+        background: white;
+        border-radius: 50px;
+        padding: 8px 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+      }
+      
+      .header-logo {
+        display: flex;
+        align-items: center;
+      }
+      
+      .header-logo-img {
+        height: 70px;
+        width: auto;
+      }
+      
+      .header-nav {
+        display: flex;
+        gap: 32px;
+        align-items: center;
+      }
+      
+      .header-nav-link {
+        color: #374151;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 15px;
+        transition: color 0.3s ease;
+      }
+      
+      .header-nav-link:hover {
+        color: #764ba2 !important;
+      }
+      
+      .header-nav-link.w--current {
+        background: linear-gradient(135deg, #1e40af 0%, #3b82f6 30%, #06b6d4 70%, #0ea5e9 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 700;
+        position: relative;
+      }
+      
+      .header-nav-link.w--current::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(135deg, #1e40af 0%, #3b82f6 30%, #06b6d4 70%, #0ea5e9 100%);
+        border-radius: 1px;
+      }
+      
+      .header-cta-button {
+        background: #4F46E5;
+        color: white;
+        padding: 12px 24px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 15px;
+        transition: all 0.3s ease;
+      }
+      
+      .header-cta-button:hover {
+        background: #4338CA;
+        transform: translateY(-1px);
+      }
+      
+      .mobile-hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 4px;
+        transition: all 0.3s ease;
+      }
+      
+      .mobile-hamburger span {
+        width: 25px;
+        height: 3px;
+        background: #333;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+      }
+      
+      .mobile-hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+      
+      .mobile-hamburger.active span:nth-child(2) {
+        opacity: 0;
+      }
+      
+      .mobile-hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+      }
+      
+      .mobile-menu-overlay {
         position: fixed;
         top: 0;
         left: 0;
-        right: 0;
-        z-index: 1000;
-        background: #ffffff !important;
-        -webkit-backdrop-filter: blur(10px);
-        backdrop-filter: blur(10px);
+        width: 100%;
+        height: 100vh;
+        background: rgba(0,0,0,0.95);
+        z-index: 999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+      }
+      
+      .mobile-menu-overlay.active {
+        transform: translateX(0);
+      }
+      
+      .mobile-menu-content {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+      }
+      
+      .mobile-nav-link {
+        color: white;
+        text-decoration: none;
+        font-size: 1.5rem;
+        font-weight: 600;
+        transition: color 0.3s ease;
+      }
+      
+      .mobile-nav-link:hover {
+        color: #a3e635;
+      }
+      
+      .mobile-cta-button {
+        background: #a3e635;
+        color: #fff;
+        padding: 15px 30px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.1rem;
+        margin-top: 20px;
         transition: all 0.3s ease;
-        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
       }
-      .navbar_link:hover {
-        color: #764ba2 !important;
-      }
-      .navbar_link {
-        color: #333 !important;
+      
+      .mobile-cta-button:hover {
+        background: #84cc16;
       }
       .hero-section {
         background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('src/images/Home/landingpage background/landingpage-background2.jpg') center/cover no-repeat;
@@ -50,7 +202,11 @@
         text-align: center;
         position: relative;
         overflow: hidden;
-        min-height: 70vh;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0;
       }
       .wave-divider {
         position: absolute;
@@ -230,17 +386,26 @@
         }
       }
       @media (max-width: 768px) {
-        body {
-          padding-top: 70px;
+        .header-nav,
+        .header-cta {
+          display: none;
         }
-        .navbar {
-          padding: 10px 0;
+        
+        .mobile-hamburger {
+          display: flex;
         }
-        .navbar_component {
-          padding: 0 15px;
+        
+        .header-pill {
+          padding: 8px 16px;
         }
-        .navbar_logo {
-          height: 60px;
+        
+        .header-logo-img {
+          height: 40px;
+        }
+        
+        .header-container {
+          width: 98%;
+          top: 10px;
         }
         .services-title {
           font-size: 2.5rem;
@@ -753,44 +918,27 @@
     </div>
     
 <div class="page-wrapper">
-        <nav class="navbar">
-            <div class="padding-global">
-                <div class="navbar_component">
-                    <a href="index.html" class="navbar_logo-wrap w-inline-block">
-                        <img src="src/images/growthpulse-logo.png" loading="lazy" alt="GrowthPulse Digital Marketing Company Logo" class="navbar_logo" />
-                    </a>
-                    <div class="navbar_links-wrap">
-                        <div class="navbar_links">
-                            <a href="index.html" class="navbar_link w-inline-block">
-                                <div class="navbar_link-text _1">Home</div>
-                                <div class="navbar_link-text _2">Home</div>
-                            </a>
-                            <a href="about.html" class="navbar_link w-inline-block">
-                                <div class="navbar_link-text _1">About</div>
-                                <div class="navbar_link-text _2">About</div>
-                            </a>
-                            <a href="services.html" aria-current="page" class="navbar_link w-inline-block w--current">
-                                <div class="navbar_link-text _1">Services</div>
-                                <div class="navbar_link-text _2">Services</div>
-                            </a>
-                            <a href="contact.html" class="navbar_link w-inline-block">
-                                <div class="navbar_link-text _1">Contact</div>
-                                <div class="navbar_link-text _2">Contact</div>
-                            </a>
-                        </div>
-                        <a href="contact.html" class="button w-variant-994e88c4-baec-2bbf-d0b3-8a2991a92ab2 w-inline-block">
-                            <div class="button_inner w-variant-994e88c4-baec-2bbf-d0b3-8a2991a92ab2">
-                                <div class="button_gradient">
-                                    <div class="button_gradient-ball ball-1 w-variant-994e88c4-baec-2bbf-d0b3-8a2991a92ab2"></div>
-                                    <div class="button_gradient-ball ball-2 w-variant-994e88c4-baec-2bbf-d0b3-8a2991a92ab2"></div>
-                                </div>
-                                <div class="button_text">Get started</div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+        <header class="header-container">
+          <div class="header-pill">
+            <div class="header-logo">
+              <img src="src/images/growthpulse-logo.png" alt="GrowthPulse" class="header-logo-img">
             </div>
-        </nav>
+            <nav class="header-nav">
+              <a href="index.html" class="header-nav-link">Home</a>
+              <a href="about.html" class="header-nav-link">About</a>
+              <a href="services.html" class="header-nav-link w--current">Services</a>
+              <a href="contact.html" class="header-nav-link">Contact</a>
+            </nav>
+            <div class="header-cta">
+              <a href="contact.html" class="header-cta-button">Get Started</a>
+            </div>
+            <div class="mobile-hamburger" onclick="toggleMobileMenu()">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </header>
 
         <main class="main-wrapper">
             <section class="hero-section" hero-animated>
@@ -874,7 +1022,7 @@
                             <div class="service-content">
                                 <h2 class="service-title">Account Management</h2>
                                 <p class="service-description">
-                                    Strategic client relationship management that drives long-term success.
+                                    Dedicated account management services that ensure client success and long-term partnerships.
                                 </p>
                                 <a href="account-management.html" class="service-link">Learn More</a>
                             </div>
@@ -888,53 +1036,26 @@
                             <div class="service-content">
                                 <h2 class="service-title">Event Management</h2>
                                 <p class="service-description">
-                                    Memorable events and experiences that connect, inspire, and deliver results.
+                                    Professional event planning and management services for corporate events and conferences.
                                 </p>
                                 <a href="event-management.html" class="service-link">Learn More</a>
                             </div>
                         </div>
+
                     </div>
                     
                     <div style="text-align: center; margin-top: 60px;" class="animate-on-scroll">
-                        <a href="contact.html" class="contact-btn">Get Started Today</a>
                     </div>
                 </div>
             </section>
         </main>
 
         <footer class="template-footer">
-          <!-- Green Banner with Rotating Text -->
-          <div class="footer-banner">
-            <div class="banner-content">
-              <span class="banner-text">DIGITAL MARKETING</span>
-              <span class="banner-star">✦</span>
-              <span class="banner-text">SOFTWARE SOLUTIONS</span>
-              <span class="banner-star">✦</span>
-              <span class="banner-text">BUSINESS GROWTH</span>
-              <span class="banner-star">✦</span>
-              <span class="banner-text">TECHNOLOGY DEVELOPMENT</span>
-              <span class="banner-star">✦</span>
-              <!-- Duplicate for seamless loop -->
-              <span class="banner-text">DIGITAL MARKETING</span>
-              <span class="banner-star">✦</span>
-              <span class="banner-text">SOFTWARE SOLUTIONS</span>
-              <span class="banner-star">✦</span>
-              <span class="banner-text">BUSINESS GROWTH</span>
-              <span class="banner-star">✦</span>
-              <span class="banner-text">TECHNOLOGY DEVELOPMENT</span>
-              <span class="banner-star">✦</span>
-            </div>
-          </div>
+
           
           <!-- Main Footer Content -->
           <div class="footer-main">
             <div class="footer-container">
-              <!-- Contact Section -->
-              <div class="footer-contact-section">
-                <h1 class="footer-contact-title">Let's Contact Us</h1>
-                <a href="contact.html" class="footer-cta-btn">Get In Touch</a>
-              </div>
-              
               <!-- Footer Grid -->
               <div class="footer-grid">
                 <!-- Logo Section -->
@@ -1045,5 +1166,6 @@
             });
         });
     </script>
+    <script src="header-scroll.js"></script>
 </body>
 </html>

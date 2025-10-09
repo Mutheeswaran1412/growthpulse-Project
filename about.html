@@ -23,27 +23,101 @@
         display: none !important;
       }
       body {
-        background-color: #F9F8F5;
-        padding-top: 80px;
+        background-color: transparent;
+        padding-top: 0;
+        margin: 0;
       }
-      .navbar {
+      
+      /* Header Styles - Matching Index.html */
+      .header-container {
         position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
         z-index: 1000;
-        background: #ffffff !important;
+        width: 95%;
+        max-width: 1400px;
+        transition: transform 0.2s ease, visibility 0.2s ease;
+      }
+      
+      .header-pill {
+        background: white;
+        border-radius: 50px;
+        padding: 8px 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         -webkit-backdrop-filter: blur(10px);
         backdrop-filter: blur(10px);
-        transition: all 0.3s ease;
-        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
       }
-      .navbar_link:hover {
+      
+      .header-logo {
+        display: flex;
+        align-items: center;
+      }
+      
+      .header-logo-img {
+        height: 70px;
+        width: auto;
+      }
+      
+      .header-nav {
+        display: flex;
+        gap: 32px;
+        align-items: center;
+      }
+      
+      .header-nav-link {
+        color: #374151;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 15px;
+        transition: color 0.3s ease;
+      }
+      
+      .header-nav-link:hover {
         color: #764ba2 !important;
+      }
+      
+      .header-nav-link.w--current {
+        background: linear-gradient(135deg, #1e40af 0%, #3b82f6 30%, #06b6d4 70%, #0ea5e9 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 700;
+        position: relative;
+      }
+      
+      .header-nav-link.w--current::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(135deg, #1e40af 0%, #3b82f6 30%, #06b6d4 70%, #0ea5e9 100%);
+        border-radius: 1px;
+      }
+      
+      .header-cta-button {
+        background: #4F46E5;
+        color: white;
+        padding: 12px 24px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 15px;
+        transition: all 0.3s ease;
+      }
+      
+      .header-cta-button:hover {
+        background: #4338CA;
+        transform: translateY(-1px);
       }
       .hero-section {
         position: relative;
-        height: 60vh;
+        height: 100vh;
         background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1920&h=1080&fit=crop&crop=center') center/cover no-repeat;
         display: flex;
         align-items: center;
@@ -51,6 +125,7 @@
         color: #ffffff;
         text-align: center;
         overflow: hidden;
+        margin-top: 0;
       }
       .wave-divider {
         position: absolute;
@@ -217,24 +292,28 @@
         background-color: #0056b3;
       }
       @media (max-width: 768px) {
-        body {
-          padding-top: 70px;
-        }
-        .navbar {
-          padding: 10px 0;
-        }
-        .navbar_component {
-          padding: 0 15px;
-        }
-        .navbar_logo {
-          height: 60px;
-        }
-        .navbar_links-wrap {
+        .header-nav,
+        .header-cta {
           display: none;
         }
-        .navbar_hamburger-wrap {
-          display: block;
+        
+        .mobile-hamburger {
+          display: flex;
         }
+        
+        .header-pill {
+          padding: 8px 16px;
+        }
+        
+        .header-logo-img {
+          height: 40px;
+        }
+        
+        .header-container {
+          width: 98%;
+          top: 10px;
+        }
+      }
         .chat-window {
           width: 300px;
           height: 450px;
@@ -692,15 +771,10 @@
       }
       
       /* Mobile Menu Styles */
-      .navbar_hamburger-wrap {
-        display: none;
-        cursor: pointer;
-        padding: 10px;
-      }
-      
       .mobile-hamburger {
-        display: flex;
+        display: none;
         flex-direction: column;
+        cursor: pointer;
         gap: 4px;
         transition: all 0.3s ease;
       }
@@ -708,13 +782,13 @@
       .mobile-hamburger span {
         width: 25px;
         height: 3px;
-        background-color: #333;
-        transition: all 0.3s ease;
+        background: #333;
         border-radius: 2px;
+        transition: all 0.3s ease;
       }
       
       .mobile-hamburger.active span:nth-child(1) {
-        transform: rotate(45deg) translate(6px, 6px);
+        transform: rotate(45deg) translate(5px, 5px);
       }
       
       .mobile-hamburger.active span:nth-child(2) {
@@ -722,19 +796,17 @@
       }
       
       .mobile-hamburger.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(6px, -6px);
+        transform: rotate(-45deg) translate(7px, -6px);
       }
       
-      .mobile-menu {
+      .mobile-menu-overlay {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100vh;
-        background: rgba(255, 255, 255, 0.98);
-        -webkit-backdrop-filter: blur(10px);
-        backdrop-filter: blur(10px);
-        z-index: 9999;
+        background: rgba(0,0,0,0.95);
+        z-index: 999;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -742,45 +814,43 @@
         transition: transform 0.3s ease;
       }
       
-      .mobile-menu.active {
+      .mobile-menu-overlay.active {
         transform: translateX(0);
       }
       
       .mobile-menu-content {
         display: flex;
         flex-direction: column;
-        align-items: center;
         gap: 30px;
         text-align: center;
       }
       
-      .mobile-menu-link {
-        font-size: 2rem;
-        font-weight: 600;
-        color: #333;
+      .mobile-nav-link {
+        color: white;
         text-decoration: none;
+        font-size: 1.5rem;
+        font-weight: 600;
         transition: color 0.3s ease;
       }
       
-      .mobile-menu-link:hover {
-        color: #007bff;
+      .mobile-nav-link:hover {
+        color: #a3e635;
       }
       
-      .mobile-cta-btn {
-        background: linear-gradient(45deg, #007bff, #0056b3);
-        color: white;
+      .mobile-cta-button {
+        background: #a3e635;
+        color: #fff;
         padding: 15px 30px;
-        border-radius: 25px;
+        border-radius: 50px;
         text-decoration: none;
-        font-size: 1.2rem;
         font-weight: 600;
+        font-size: 1.1rem;
         margin-top: 20px;
         transition: all 0.3s ease;
       }
       
-      .mobile-cta-btn:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+      .mobile-cta-button:hover {
+        background: #84cc16;
       }
       
       /* Chatbot Styles */
@@ -1196,61 +1266,37 @@
       <div class="texture-overlay"></div>
     </div>
     <div class="page-wrapper">
-        <nav class="navbar">
-            <div class="padding-global">
-                <div class="navbar_component">
-                    <a href="index.html" class="navbar_logo-wrap w-inline-block">
-                        <img src="src/images/growthpulse-logo.png" loading="lazy" alt="GrowthPulse Digital Marketing Company Logo" class="navbar_logo" />
-                    </a>
-                    <div class="navbar_links-wrap">
-                        <div class="navbar_links">
-                            <a href="index.html" class="navbar_link w-inline-block">
-                                <div class="navbar_link-text _1">Home</div>
-                                <div class="navbar_link-text _2">Home</div>
-                            </a>
-                            <a href="about.html" aria-current="page" class="navbar_link w-inline-block w--current">
-                                <div class="navbar_link-text _1">About</div>
-                                <div class="navbar_link-text _2">About</div>
-                            </a>
-                            <a href="services.html" class="navbar_link w-inline-block">
-                                <div class="navbar_link-text _1">Services</div>
-                                <div class="navbar_link-text _2">Services</div>
-                            </a>
-                            <a href="contact.html" class="navbar_link w-inline-block">
-                                <div class="navbar_link-text _1">Contact</div>
-                                <div class="navbar_link-text _2">Contact</div>
-                            </a>
-                        </div>
-                        <a href="contact.html" class="button w-variant-994e88c4-baec-2bbf-d0b3-8a2991a92ab2 w-inline-block">
-                            <div class="button_inner w-variant-994e88c4-baec-2bbf-d0b3-8a2991a92ab2">
-                                <div class="button_gradient">
-                                    <div class="button_gradient-ball ball-1 w-variant-994e88c4-baec-2bbf-d0b3-8a2991a92ab2"></div>
-                                    <div class="button_gradient-ball ball-2 w-variant-994e88c4-baec-2bbf-d0b3-8a2991a92ab2"></div>
-                                </div>
-                                <div class="button_text">Get started</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="navbar_hamburger-wrap" id="hamburger" onclick="toggleMobileMenu()">
-                        <div class="mobile-hamburger">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                    </div>
-                </div>
+        <header class="header-container">
+          <div class="header-pill">
+            <div class="header-logo">
+              <img src="src/images/growthpulse-logo.png" alt="GrowthPulse" class="header-logo-img">
             </div>
-        </nav>
+            <nav class="header-nav">
+              <a href="index.html" class="header-nav-link">Home</a>
+              <a href="about.html" class="header-nav-link w--current">About</a>
+              <a href="services.html" class="header-nav-link">Services</a>
+              <a href="contact.html" class="header-nav-link">Contact</a>
+            </nav>
+            <div class="header-cta">
+              <a href="contact.html" class="header-cta-button">Get Started</a>
+            </div>
+            <div class="mobile-hamburger" onclick="toggleMobileMenu()">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </header>
         
         <!-- Mobile Menu -->
-        <div class="mobile-menu" id="mobileMenu">
-            <div class="mobile-menu-content">
-                <a href="index.html" class="mobile-menu-link" onclick="closeMobileMenu()">Home</a>
-                <a href="about.html" class="mobile-menu-link" onclick="closeMobileMenu()">About</a>
-                <a href="services.html" class="mobile-menu-link" onclick="closeMobileMenu()">Services</a>
-                <a href="contact.html" class="mobile-menu-link" onclick="closeMobileMenu()">Contact</a>
-                <a href="contact.html" class="mobile-cta-btn" onclick="closeMobileMenu()">Get Started</a>
-            </div>
+        <div class="mobile-menu-overlay" id="mobileMenu">
+          <div class="mobile-menu-content">
+            <a href="index.html" class="mobile-nav-link" onclick="closeMobileMenu()">Home</a>
+            <a href="about.html" class="mobile-nav-link" onclick="closeMobileMenu()">About</a>
+            <a href="services.html" class="mobile-nav-link" onclick="closeMobileMenu()">Services</a>
+            <a href="contact.html" class="mobile-nav-link" onclick="closeMobileMenu()">Contact</a>
+            <a href="contact.html" class="mobile-cta-button" onclick="closeMobileMenu()">Get Started</a>
+          </div>
         </div>
 
         <main class="main-wrapper">
@@ -1369,38 +1415,11 @@
         </main>
 
         <footer class="template-footer">
-          <!-- Green Banner with Rotating Text -->
-          <div class="footer-banner">
-            <div class="banner-content">
-              <span class="banner-text">DIGITAL MARKETING</span>
-              <span class="banner-star">✦</span>
-              <span class="banner-text">SOFTWARE SOLUTIONS</span>
-              <span class="banner-star">✦</span>
-              <span class="banner-text">BUSINESS GROWTH</span>
-              <span class="banner-star">✦</span>
-              <span class="banner-text">TECHNOLOGY DEVELOPMENT</span>
-              <span class="banner-star">✦</span>
-              <!-- Duplicate for seamless loop -->
-              <span class="banner-text">DIGITAL MARKETING</span>
-              <span class="banner-star">✦</span>
-              <span class="banner-text">SOFTWARE SOLUTIONS</span>
-              <span class="banner-star">✦</span>
-              <span class="banner-text">BUSINESS GROWTH</span>
-              <span class="banner-star">✦</span>
-              <span class="banner-text">TECHNOLOGY DEVELOPMENT</span>
-              <span class="banner-star">✦</span>
-            </div>
-          </div>
+
           
           <!-- Main Footer Content -->
           <div class="footer-main">
             <div class="footer-container">
-              <!-- Contact Section -->
-              <div class="footer-contact-section">
-                <h1 class="footer-contact-title">Let's Contact Us</h1>
-                <a href="contact.html" class="footer-cta-btn">Get In Touch</a>
-              </div>
-              
               <!-- Footer Grid -->
               <div class="footer-grid">
                 <!-- Logo Section -->
@@ -1511,5 +1530,6 @@
             </div>
         </div>
     </div>
+    <script src="header-scroll.js"></script>
 </body>
 </html>
