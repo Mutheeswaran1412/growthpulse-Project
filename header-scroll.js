@@ -1,30 +1,17 @@
-// Simple header hide on scroll
-let lastScrollY = 0;
+// Header hide on scroll
 const header = document.querySelector('.header-container');
 
 if (header) {
-  const style = document.createElement('style');
-  style.textContent = `
-    .header-container {
-      transition: opacity 0.4s ease, transform 0.4s ease !important;
-    }
-    .header-container.header-hidden {
-      opacity: 0;
-      transform: translateX(-50%) translateY(-100%);
-      pointer-events: none;
-    }
-  `;
-  document.head.appendChild(style);
-  
+  let lastScrollY = 0;
   window.addEventListener('scroll', () => {
-    const currentScrollY = window.pageYOffset;
-    
+    const currentScrollY = window.scrollY;
     if (currentScrollY > 100) {
-      header.classList.add('header-hidden');
+      header.style.transform = 'translateX(-50%) translateY(-100%)';
+      header.style.opacity = '0';
     } else {
-      header.classList.remove('header-hidden');
+      header.style.transform = 'translateX(-50%) translateY(0)';
+      header.style.opacity = '1';
     }
-    
     lastScrollY = currentScrollY;
-  }, { passive: true });
+  });
 }

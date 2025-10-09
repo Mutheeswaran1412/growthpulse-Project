@@ -8,6 +8,8 @@
     <link href="https://cdn.prod.website-files.com/684a11845c7dd0b4b7745cd9/css/noura-template-supply.webflow.shared.ca770ec91.css" rel="stylesheet" type="text/css" />
     <link href="src/images/Main-Logo-01.png" rel="shortcut icon" type="image/png" />
     <link href="src/images/Main-Logo-01.png" rel="apple-touch-icon" />
+    <link href="background-update.css" rel="stylesheet" type="text/css" />
+    <link href="inline-styles.css" rel="stylesheet" type="text/css" />
     <style>
       * {
         -webkit-font-smoothing: antialiased;
@@ -30,29 +32,31 @@
         transform: translateX(-50%);
         z-index: 1000;
         width: 95%;
-        max-width: 1400px;
+        max-width: 1200px;
         transition: transform 0.2s ease, visibility 0.2s ease;
       }
       
       .header-pill {
-        background: white;
-        border-radius: 50px;
-        padding: 8px 24px;
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 12px;
+        padding: 16px 32px;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-        -webkit-backdrop-filter: blur(10px);
-        backdrop-filter: blur(10px);
+        box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+        -webkit-backdrop-filter: blur(20px);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
       }
       
       .header-logo {
         display: flex;
         align-items: center;
+        gap: 8px;
       }
       
       .header-logo-img {
-        height: 70px;
+        height: 55px;
         width: auto;
       }
       
@@ -63,51 +67,49 @@
       }
       
       .header-nav-link {
-        color: #374151;
+        color: #6b7280;
         text-decoration: none;
         font-weight: 500;
         font-size: 15px;
         transition: color 0.3s ease;
-      }
-      
-      .header-nav-link:hover {
-        color: #764ba2 !important;
-      }
-      
-      .header-nav-link.w--current {
-        background: linear-gradient(135deg, #1e40af 0%, #3b82f6 30%, #06b6d4 70%, #0ea5e9 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        font-weight: 700;
         position: relative;
       }
       
-      .header-nav-link.w--current::after {
-        content: '';
-        position: absolute;
-        bottom: -5px;
-        left: 0;
-        width: 100%;
-        height: 2px;
-        background: linear-gradient(135deg, #1e40af 0%, #3b82f6 30%, #06b6d4 70%, #0ea5e9 100%);
-        border-radius: 1px;
+      .header-nav-link:hover {
+        color: #1a1a1a;
+      }
+      
+      .header-nav-link.w--current {
+        color: #1a1a1a;
+        font-weight: 600;
       }
       
       .header-cta-button {
-        background: #4F46E5;
+        background: #ff6b35;
         color: white;
         padding: 12px 24px;
-        border-radius: 50px;
+        border-radius: 8px;
         text-decoration: none;
         font-weight: 600;
         font-size: 15px;
         transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 8px;
       }
       
       .header-cta-button:hover {
-        background: #4338CA;
+        background: #e55a2b;
         transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+      }
+      
+      .header-cta-button-orange {
+        background: #ff6b35;
+      }
+      
+      .header-cta-button-orange:hover {
+        background: #e55a2b;
       }
       
       .mobile-hamburger {
@@ -126,7 +128,7 @@
         transition: all 0.3s ease;
       }
       .hero-section {
-        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=1920&h=1080&fit=crop&crop=center') center/cover no-repeat;
+        background: linear-gradient(180deg, #FEECE5 0%, #F8F1FF 100%);
         padding: 150px 0 120px;
         text-align: center;
         position: relative;
@@ -153,7 +155,7 @@
         height: 120px;
       }
       .contact-section {
-        background-color: #F9F8F5;
+        background-color: #ffffff;
         padding: 80px 0;
       }
       .contact-container {
@@ -164,15 +166,13 @@
       .hero-title {
         font-size: 3rem;
         font-weight: 900;
-        color: #ffffff;
+        color: #000000;
         margin-bottom: 20px;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
       }
       .hero-subtitle {
         font-size: 1.3rem;
-        color: #ffffff;
+        color: #000000;
         margin-bottom: 0;
-        text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
       }
       .contact-title {
         font-size: 3rem;
@@ -277,29 +277,26 @@
         transform: rotate(45deg);
       }
       
-      /* Scroll Animations */
+      /* Static Elements */
       .animate-on-scroll {
-        opacity: 0;
-        transform: translateY(50px);
-        transition: all 0.8s ease;
+        opacity: 1;
+        transform: translateY(0);
       }
       .animate-on-scroll.visible {
         opacity: 1;
         transform: translateY(0);
       }
       .slide-left {
-        opacity: 0;
-        transform: translateX(-50px);
-        transition: all 0.8s ease;
+        opacity: 1;
+        transform: translateX(0);
       }
       .slide-left.visible {
         opacity: 1;
         transform: translateX(0);
       }
       .slide-right {
-        opacity: 0;
-        transform: translateX(50px);
-        transition: all 0.8s ease;
+        opacity: 1;
+        transform: translateX(0);
       }
       .slide-right.visible {
         opacity: 1;
@@ -744,7 +741,12 @@
               <a href="contact.html" class="header-nav-link w--current">Contact</a>
             </nav>
             <div class="header-cta">
-              <a href="contact.html" class="header-cta-button">Get Started</a>
+              <a href="contact.html" class="header-cta-button header-cta-button-orange">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                </svg>
+                Contact Us
+              </a>
             </div>
             <div class="mobile-hamburger" onclick="toggleMobileMenu()">
               <span></span>
@@ -755,24 +757,20 @@
         </header>
 
         <main class="main-wrapper">
-            <section class="hero-section" hero-animated>
+            <section class="hero-section">
                 <div class="hero-content">
-                    <h1 class="hero-title">Contact <span style="background: linear-gradient(45deg, #1e3a8a 0%, #3b82f6 30%, #06b6d4 60%, #f97316 90%, #ea580c 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Us</span></h1>
+                    <h1 class="hero-title">Contact <span class="hero-title-gradient">Us</span></h1>
                     <p class="hero-subtitle">Get in touch with our digital marketing experts</p>
                 </div>
-                <div class="curved-divider">
-                    <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-                        <path d="M0,0C150,100 350,0 600,50C850,100 1050,0 1200,50L1200,120L0,120Z" fill="#F9F8F5"></path>
-                    </svg>
-                </div>
+
             </section>
             
-            <section class="contact-section" style="position: relative; overflow: hidden;">
-                <div style="position: absolute; top: -250px; right: -200px; width: 800px; height: 100%; background-image: url('src/images/GP Elements .png'); background-repeat: no-repeat; background-position: right center; background-size: contain; opacity: 0.4; z-index: 1; filter: blur(4px);"></div>
-                <div class="contact-container" style="position: relative; z-index: 2;">
-                    <h2 class="contact-title animate-on-scroll">Contact Us</h2>
+            <section class="contact-section contact-section-positioned">
+                <div class="contact-background-element"></div>
+                <div class="contact-container contact-container-positioned">
+                    <h2 class="contact-title">Contact Us</h2>
                     
-                    <div class="contact-form slide-left">
+                    <div class="contact-form">
                         <form id="contact-form">
                             <div class="form-group">
                                 <label class="form-label" for="name">Name</label>
@@ -794,7 +792,7 @@
                         </form>
                     </div>
 
-                    <div class="faq-section slide-right">
+                    <div class="faq-section">
                         <h2 class="faq-title">Frequently Asked Questions</h2>
                         
                         <div class="faq-item">
@@ -937,24 +935,15 @@
         // Initialize EmailJS with your public key
         emailjs.init('--qz5Ij2kMe-n3Dvn');
         
-        // Scroll Animation Observer
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-        
-        // Initialize animations on page load
+        // Static website - no animations
         document.addEventListener('DOMContentLoaded', () => {
+            // Make all elements visible immediately
             const animateElements = document.querySelectorAll('.animate-on-scroll, .slide-left, .slide-right');
-            animateElements.forEach(el => observer.observe(el));
+            animateElements.forEach(el => {
+                el.classList.add('visible');
+                el.style.opacity = '1';
+                el.style.transform = 'translateY(0) translateX(0)';
+            });
         });
         
         function toggleFaq(element) {

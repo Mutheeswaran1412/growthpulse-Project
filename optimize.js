@@ -1,4 +1,4 @@
-// Critical performance optimizations
+// Static optimizations - no animations
 document.addEventListener('DOMContentLoaded', function() {
   // Lazy load images
   const images = document.querySelectorAll('img[loading="lazy"]');
@@ -24,25 +24,11 @@ document.addEventListener('DOMContentLoaded', function() {
     document.head.appendChild(link);
   });
 
-  // Optimize animations
-  const animatedElements = document.querySelectorAll('.animate-on-scroll, .scroll-animate');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible', 'animated');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { rootMargin: '50px' });
-
-  animatedElements.forEach(el => observer.observe(el));
+  // Make all animated elements visible immediately
+  const animatedElements = document.querySelectorAll('.animate-on-scroll, .scroll-animate, .fade-in, .slide-left, .slide-right, .fade-up');
+  animatedElements.forEach(el => {
+    el.classList.add('visible');
+    el.style.opacity = '1';
+    el.style.transform = 'translateY(0) translateX(0) scale(1)';
+  });
 });
-
-// Reduce reflows and repaints
-const style = document.createElement('style');
-style.textContent = `
-  .brands_list { will-change: transform; }
-  .hero-slider-image { will-change: transform; }
-  .floating-shape-1, .floating-shape-3 { will-change: transform; }
-`;
-document.head.appendChild(style);

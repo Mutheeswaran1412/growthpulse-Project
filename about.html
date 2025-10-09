@@ -8,12 +8,11 @@
     <link href="https://cdn.prod.website-files.com/684a11845c7dd0b4b7745cd9/css/noura-template-supply.webflow.shared.ca770ec91.css" rel="stylesheet" type="text/css" />
     <link href="src/images/Main-Logo-01.png" rel="shortcut icon" type="image/png" />
     <link href="src/images/Main-Logo-01.png" rel="apple-touch-icon" />
-    <!-- Cloud Background CSS -->
-    <link rel="stylesheet" href="cloud-background.css" />
-    <!-- Colorful Animations CSS -->
-    <link rel="stylesheet" href="colorful-animations.css" />
-    <!-- Animated Background CSS -->
-    <link rel="stylesheet" href="animated-background.css" />
+    <link href="background-update.css" rel="stylesheet" type="text/css" />
+    <!-- Static Background CSS -->
+    <link rel="stylesheet" href="animated-background-static.css" />
+    <!-- Static Colorful Elements CSS -->
+    <link rel="stylesheet" href="colorful-animations-static.css" />
     <style>
       * {
         -webkit-font-smoothing: antialiased;
@@ -36,29 +35,31 @@
         transform: translateX(-50%);
         z-index: 1000;
         width: 95%;
-        max-width: 1400px;
+        max-width: 1200px;
         transition: transform 0.2s ease, visibility 0.2s ease;
       }
       
       .header-pill {
-        background: white;
-        border-radius: 50px;
-        padding: 8px 24px;
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 12px;
+        padding: 16px 32px;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-        -webkit-backdrop-filter: blur(10px);
-        backdrop-filter: blur(10px);
+        box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+        -webkit-backdrop-filter: blur(20px);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
       }
       
       .header-logo {
         display: flex;
         align-items: center;
+        gap: 8px;
       }
       
       .header-logo-img {
-        height: 70px;
+        height: 55px;
         width: auto;
       }
       
@@ -69,60 +70,58 @@
       }
       
       .header-nav-link {
-        color: #374151;
+        color: #6b7280;
         text-decoration: none;
         font-weight: 500;
         font-size: 15px;
         transition: color 0.3s ease;
-      }
-      
-      .header-nav-link:hover {
-        color: #764ba2 !important;
-      }
-      
-      .header-nav-link.w--current {
-        background: linear-gradient(135deg, #1e40af 0%, #3b82f6 30%, #06b6d4 70%, #0ea5e9 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        font-weight: 700;
         position: relative;
       }
       
-      .header-nav-link.w--current::after {
-        content: '';
-        position: absolute;
-        bottom: -5px;
-        left: 0;
-        width: 100%;
-        height: 2px;
-        background: linear-gradient(135deg, #1e40af 0%, #3b82f6 30%, #06b6d4 70%, #0ea5e9 100%);
-        border-radius: 1px;
+      .header-nav-link:hover {
+        color: #1a1a1a;
+      }
+      
+      .header-nav-link.w--current {
+        color: #1a1a1a;
+        font-weight: 600;
       }
       
       .header-cta-button {
-        background: #4F46E5;
+        background: #ff6b35;
         color: white;
         padding: 12px 24px;
-        border-radius: 50px;
+        border-radius: 8px;
         text-decoration: none;
         font-weight: 600;
         font-size: 15px;
         transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 8px;
       }
       
       .header-cta-button:hover {
-        background: #4338CA;
+        background: #e55a2b;
         transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+      }
+      
+      .header-cta-button-orange {
+        background: #ff6b35;
+      }
+      
+      .header-cta-button-orange:hover {
+        background: #e55a2b;
       }
       .hero-section {
         position: relative;
         height: 100vh;
-        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1920&h=1080&fit=crop&crop=center') center/cover no-repeat;
+        background: linear-gradient(180deg, #FEECE5 0%, #F8F1FF 100%);
         display: flex;
         align-items: center;
         justify-content: center;
-        color: #ffffff;
+        color: #000000;
         text-align: center;
         overflow: hidden;
         margin-top: 0;
@@ -145,24 +144,26 @@
       .hero-content h1 {
         font-size: 4rem;
         margin-bottom: 20px;
+        color: #000000;
       }
       .hero-content p {
         font-size: 1.5rem;
         max-width: 600px;
+        color: #000000;
       }
       .about-section {
         padding: 80px 0;
-        background-color: #F9F8F5;
+        background-color: #ffffff;
       }
       .why-choose {
-        background-color: #F9F8F5;
+        background-color: #ffffff;
         padding: 80px 0;
       }
       .footer_brand {
         font-size: 1.2rem;
       }
       .navbar_logo {
-        height: 80px;
+        height: 55px;
         width: auto;
         display: block;
       }
@@ -313,7 +314,7 @@
           width: 98%;
           top: 10px;
         }
-      }
+        
         .chat-window {
           width: 300px;
           height: 450px;
@@ -700,29 +701,26 @@
         }
       }
       
-      /* Scroll Animations */
+      /* Static Elements */
       .fade-in {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: all 0.8s ease;
+        opacity: 1;
+        transform: translateY(0);
       }
       .fade-in.visible {
         opacity: 1;
         transform: translateY(0);
       }
       .slide-left {
-        opacity: 0;
-        transform: translateX(-50px);
-        transition: all 0.8s ease;
+        opacity: 1;
+        transform: translateX(0);
       }
       .slide-left.visible {
         opacity: 1;
         transform: translateX(0);
       }
       .slide-right {
-        opacity: 0;
-        transform: translateX(50px);
-        transition: all 0.8s ease;
+        opacity: 1;
+        transform: translateX(0);
       }
       .slide-right.visible {
         opacity: 1;
@@ -1012,80 +1010,16 @@
         box-shadow: 0 3px 10px rgba(0, 123, 255, 0.3);
       }
     </style>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script>
-      // GSAP Animations
+      // Static website - no animations
       document.addEventListener('DOMContentLoaded', function() {
-        gsap.registerPlugin(ScrollTrigger);
-        
-        // Animate elements on scroll
-        gsap.utils.toArray('.fade-in').forEach(element => {
-          gsap.fromTo(element, 
-            { opacity: 0, y: 50 },
-            {
-              opacity: 1,
-              y: 0,
-              duration: 0.8,
-              scrollTrigger: {
-                trigger: element,
-                start: 'top 85%',
-                toggleActions: 'play none none reverse'
-              }
-            }
-          );
+        // Make all elements visible immediately
+        const animateElements = document.querySelectorAll('.fade-in, .slide-left, .slide-right');
+        animateElements.forEach(el => {
+          el.classList.add('visible');
+          el.style.opacity = '1';
+          el.style.transform = 'translateY(0) translateX(0)';
         });
-        
-        gsap.utils.toArray('.slide-left').forEach(element => {
-          gsap.fromTo(element, 
-            { opacity: 0, x: -50 },
-            {
-              opacity: 1,
-              x: 0,
-              duration: 0.8,
-              scrollTrigger: {
-                trigger: element,
-                start: 'top 85%',
-                toggleActions: 'play none none reverse'
-              }
-            }
-          );
-        });
-        
-        gsap.utils.toArray('.slide-right').forEach(element => {
-          gsap.fromTo(element, 
-            { opacity: 0, x: 50 },
-            {
-              opacity: 1,
-              x: 0,
-              duration: 0.8,
-              scrollTrigger: {
-                trigger: element,
-                start: 'top 85%',
-                toggleActions: 'play none none reverse'
-              }
-            }
-          );
-        });
-        
-        // Animate headings
-        if (typeof gsap !== 'undefined') {
-          gsap.utils.toArray('h1, h2, h3').forEach(heading => {
-            gsap.fromTo(heading, 
-              { opacity: 0, y: 50 },
-              {
-                opacity: 1,
-                y: 0,
-                duration: 0.8,
-                scrollTrigger: {
-                  trigger: heading,
-                  start: 'top 85%',
-                  toggleActions: 'play none none reverse'
-                }
-              }
-            );
-          });
-        }
       });
       
       // FAQ Toggle Function
@@ -1238,7 +1172,7 @@
     </script>
 </head>
 <body>
-    <!-- Animated Background Orbs -->
+    <!-- Static Background Elements -->
     <div class="bg-orbs">
       <div class="orb"></div>
       <div class="orb"></div>
@@ -1246,7 +1180,7 @@
       <div class="orb"></div>
     </div>
     
-    <!-- Floating Particles -->
+    <!-- Static Particles -->
     <div class="floating-particles">
       <div class="particle"></div>
       <div class="particle"></div>
@@ -1256,14 +1190,6 @@
       <div class="particle"></div>
       <div class="particle"></div>
       <div class="particle"></div>
-    </div>
-    <!-- Animated Cloud Background -->
-    <div class="cloud-background">
-      <div class="floating-cloud"></div>
-      <div class="floating-cloud"></div>
-      <div class="floating-cloud"></div>
-      <div class="floating-cloud"></div>
-      <div class="texture-overlay"></div>
     </div>
     <div class="page-wrapper">
         <header class="header-container">
@@ -1278,7 +1204,12 @@
               <a href="contact.html" class="header-nav-link">Contact</a>
             </nav>
             <div class="header-cta">
-              <a href="contact.html" class="header-cta-button">Get Started</a>
+              <a href="contact.html" class="header-cta-button header-cta-button-orange">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                </svg>
+                Contact Us
+              </a>
             </div>
             <div class="mobile-hamburger" onclick="toggleMobileMenu()">
               <span></span>
@@ -1299,17 +1230,14 @@
           </div>
         </div>
 
+      
         <main class="main-wrapper">
-            <section class="hero-section hero-animated">
+            <section class="hero-section">
                 <div class="hero-content">
                     <h1>About <span style="background: linear-gradient(45deg, #1e3a8a 0%, #3b82f6 30%, #06b6d4 60%, #f97316 90%, #ea580c 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Growthpulse</span></h1>
                     <p>Your trusted partner in digital transformation and business growth</p>
                 </div>
-                <div class="curved-divider">
-                    <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-                        <path d="M0,0C150,100 350,0 600,50C850,100 1050,0 1200,50L1200,120L0,120Z" fill="#F9F8F5"></path>
-                    </svg>
-                </div>
+
             </section>
 
             <section class="about-section" style="position: relative; overflow: hidden;">
@@ -1323,7 +1251,7 @@
                 <div style="position: absolute; bottom: -100px; left: -50px; width: 250px; height: 250px; background-image: url('src/images/GP Elements2.png'); background-repeat: no-repeat; background-size: contain; opacity: 0.5; z-index: 1; transform: rotate(45deg);"></div>
                 <div class="about-content" style="position: relative; z-index: 2;">
                     <div class="content-with-image">
-                        <div class="slide-left">
+                        <div>
                             <h2 class="about-title">Who We Are</h2>
                             <p class="about-text">
                                 At Growthpulse Solutions, we serve as your business growth partner by developing successful strategies to enhance your brand. Our expert team of industry specialists, combined with creative minds and technology, crafts a result-oriented approach that leverages strategic insights and innovation to enhance business operations, customer engagement, and global market reach.
@@ -1331,15 +1259,14 @@
                             <p class="about-text">
                                 With our core values of excellence and a customer-centric approach, we go beyond achieving short-term success; we aim to create lasting impact. By combining tailored strategies with advanced technologies, we deliver measurable results that foster innovation, add value, and ensure sustainable growth for clients worldwide.
                             </p>
-                            <a href="services.html" class="services-btn">Explore Our Services</a>
                         </div>
-                        <div class="slide-right">
+                        <div>
                             <img src="src/images/About/Who We Are.jpg" alt="GrowthPulse Team" class="about-image" />
                         </div>
                     </div>
 
                     <div class="mission-vision">
-                        <div class="mission-box fade-in">
+                        <div class="mission-box">
                             <img src="src/images/About/Mission.jpg" alt="Our Mission" class="mission-image" />
                             <h2 class="box-title">
                                 <div class="box-icon">🎯</div>
@@ -1349,7 +1276,7 @@
                                 We focus on delivering innovative, customized technology solutions that empower businesses while creating sustainable client value and reliable growth.
                             </p>
                         </div>
-                        <div class="vision-box fade-in">
+                        <div class="vision-box">
                             <img src="src/images/About/Vision.jpg" alt="Our Vision" class="vision-image" />
                             <h2 class="box-title">
                                 <div class="box-icon">👁️</div>
@@ -1361,14 +1288,14 @@
                         </div>
                     </div>
 
-                    <div class="why-choose animated-section">
+                    <div class="why-choose">
                         <div class="about-header">
                             <h2 class="about-title">Why Choose Us?</h2>
                             <p class="about-text">We innovate, accelerate, and elevate.</p>
                         </div>
                         
                         <div class="features-grid">
-                            <div class="feature-item fade-in">
+                            <div class="feature-item">
                                 <img src="src/images/About/Customized Strategies.jpg" alt="Customized Strategies" class="feature-image" />
                                 <h3 class="feature-title">
                                     <div class="feature-icon">⚙️</div>
@@ -1378,7 +1305,7 @@
                                     We create strategies tailored to your specific goal, target audience, and market challenges, ensuring the growth solution is fit for your business.
                                 </p>
                             </div>
-                            <div class="feature-item fade-in">
+                            <div class="feature-item">
                                 <img src="src/images/About/Proven Expertise.jpg" alt="Proven Expertise" class="feature-image" />
                                 <h3 class="feature-title">
                                     <div class="feature-icon">🏆</div>
@@ -1388,7 +1315,7 @@
                                     Our team of experts with industry knowledge and creative thinking keeps your brand ahead in the highly competitive industry.
                                 </p>
                             </div>
-                            <div class="feature-item fade-in">
+                            <div class="feature-item">
                                 <img src="src/images/About/Scalable Solutions.jpg" alt="Scalable Solutions" class="feature-image" />
                                 <h3 class="feature-title">
                                     <div class="feature-icon">📈</div>
@@ -1398,7 +1325,7 @@
                                     From startups to large enterprises, our solution is highly scalable and tailored to meet your business requirements and evolving needs.
                                 </p>
                             </div>
-                            <div class="feature-item fade-in">
+                            <div class="feature-item">
                                 <img src="src/images/About/Growth-Centric Approach.jpg" alt="Growth-Centric Approach" class="feature-image" />
                                 <h3 class="feature-title">
                                     <div class="feature-icon">💡</div>

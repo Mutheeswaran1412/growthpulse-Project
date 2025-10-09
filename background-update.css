@@ -1,0 +1,102 @@
+/* Background Update CSS - Change sandal (#F9F8F5) to white while preserving hero sections */
+
+/* Main content sections - change from sandal to white */
+.services-section,
+.section_services,
+.section_brands,
+.section_work-list,
+.section_portfolio,
+.section_faq,
+.section_cta,
+.section_home-about,
+.contact-section,
+.about-section,
+.portfolio_dark_bg:not(.dark) {
+  background: #ffffff !important;
+}
+
+/* Specific background overrides */
+.portfolio_dark_bg {
+  background: #F9F8F5 !important;
+}
+
+.portfolio_dark_bg.dark {
+  background: #1a1a1a !important;
+}
+
+/* About section specific */
+.section_home-about {
+  background: #ffffff !important;
+}
+
+/* Services section specific */
+.services-section {
+  background-color: #ffffff !important;
+}
+
+/* Contact section specific */
+.contact-section {
+  background-color: #ffffff !important;
+}
+
+/* FAQ section specific */
+.section_faq {
+  background: #ffffff !important;
+}
+
+/* Brands section specific */
+.section_brands {
+  background: #ffffff !important;
+}
+
+/* CTA section specific */
+.section_cta {
+  background: #ffffff !important;
+}
+
+/* Work list section specific */
+.section_work-list {
+  background: #ffffff !important;
+}
+
+/* Portfolio section (non-dark) specific */
+.section_portfolio:not(.portfolio_dark_bg) {
+  background: #ffffff !important;
+}
+
+/* Ensure hero sections maintain their gradient backgrounds */
+.hero-section,
+.modern-hero-section,
+.home-two-hero {
+  background: linear-gradient(180deg, #FEECE5 0%, #F8F1FF 100%) !important;
+}
+
+/* Ensure dark sections remain dark */
+.section_industries,
+.footer-main,
+.portfolio_dark_bg.dark {
+  background: #1a1a1a !important;
+}
+
+/* Additional specific overrides for any inline styles */
+[style*="background: #F9F8F5"],
+[style*="background-color: #F9F8F5"] {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+}
+
+/* Ensure proper contrast for text on white backgrounds */
+.services-section .service-card,
+.section_brands .brands_item-block,
+.section_faq .faq_item,
+.contact-section .contact-form {
+  background: #ffffff;
+  border: 1px solid #e9ecef;
+}
+
+/* Maintain card shadows for better visibility on white background */
+.service-card,
+.faq_item,
+.brands_item-block {
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}

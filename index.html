@@ -60,6 +60,9 @@
       href="src/images/Main-Logo-01.png"
       rel="apple-touch-icon"
     />
+    <link href="background-update.css" rel="stylesheet" type="text/css" />
+    <link href="inline-styles.css" rel="stylesheet" type="text/css" />
+    <link href="partners-fix.css" rel="stylesheet" type="text/css" />
     <!-- code to improve the font quality -->
     <style>
       * {
@@ -153,8 +156,7 @@
         max-width: 1200px;
         margin: 0;
         padding: 120px 0;
-        opacity: 0;
-        animation: heroFadeIn 1.5s ease-out 0.5s forwards;
+        opacity: 1;
         position: relative;
         z-index: 3;
         display: grid;
@@ -228,16 +230,7 @@
         0%, 100% { transform: translateY(0px); }
         50% { transform: translateY(-20px); }
       }
-      @keyframes heroFadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(50px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
+
       .hero-badge {
         display: inline-block;
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -248,19 +241,9 @@
         font-weight: 600;
         margin-bottom: 30px;
         box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
-        opacity: 0;
-        animation: slideInDown 1s ease-out 0.8s forwards;
+        opacity: 1;
       }
-      @keyframes slideInDown {
-        from {
-          opacity: 0;
-          transform: translateY(-30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
+
       .hero-title {
         font-size: clamp(2rem, 5vw, 3.5rem);
         font-weight: 800;
@@ -268,19 +251,9 @@
         color: #1a1a1a;
         margin-bottom: 30px;
         letter-spacing: -0.02em;
-        opacity: 0;
-        animation: slideInUp 1.2s ease-out 1s forwards;
+        opacity: 1;
       }
-      @keyframes slideInUp {
-        from {
-          opacity: 0;
-          transform: translateY(40px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
+
       .highlight {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         -webkit-background-clip: text;
@@ -295,27 +268,16 @@
         max-width: 600px;
         margin-left: auto;
         margin-right: auto;
-        opacity: 0;
-        animation: fadeInScale 1s ease-out 1.3s forwards;
+        opacity: 1;
       }
-      @keyframes fadeInScale {
-        from {
-          opacity: 0;
-          transform: scale(0.95);
-        }
-        to {
-          opacity: 1;
-          transform: scale(1);
-        }
-      }
+
       .hero-buttons {
         display: flex;
         gap: 20px;
         justify-content: center;
         margin-bottom: 60px;
         flex-wrap: wrap;
-        opacity: 0;
-        animation: slideInUp 1s ease-out 1.6s forwards;
+        opacity: 1;
       }
       .btn-primary {
         background: #a3e635;
@@ -325,16 +287,13 @@
         text-decoration: none;
         font-weight: 700;
         font-size: 1.1rem;
-        transition: all 0.3s ease;
         display: inline-flex;
         align-items: center;
         gap: 10px;
         box-shadow: 0 4px 20px rgba(163, 230, 53, 0.3);
       }
       .btn-primary:hover {
-        transform: translateY(-2px);
         background: #84cc16;
-        box-shadow: 0 8px 30px rgba(163, 230, 53, 0.4);
       }
       
       .btn-primary::after {
@@ -386,11 +345,7 @@
         font-weight: 500;
       }
       @media (max-width: 768px) {
-        .home-two-hero-container {
-          padding-top: 120px;
-          padding-left: 20px !important;
-          padding-right: 20px !important;
-        }
+
         
 
         
@@ -748,18 +703,16 @@
         text-align: center;
       }
       .animate-on-scroll {
-        opacity: 0;
-        transform: translateY(50px);
-        transition: all 0.8s ease;
+        opacity: 1;
+        transform: translateY(0);
       }
       .animate-on-scroll.animated {
         opacity: 1;
         transform: translateY(0);
       }
       .scroll-animate {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: all 0.6s ease;
+        opacity: 1;
+        transform: translateY(0);
       }
       .scroll-animate.visible {
         opacity: 1;
@@ -790,7 +743,7 @@
       
       /* FAQ Section Styles */
       .section_faq {
-        background: #F9F8F5;
+        background: #ffffff;
       }
       .container-large {
         max-width: 1400px;
@@ -965,9 +918,9 @@
       
 
       
-      /* New Hero Section Styles */
-      .home-two-hero {
-        background: #1a1a1a;
+      /* Modern Hero Section Styles */
+      .modern-hero-section {
+        background: linear-gradient(180deg, #FEECE5 0%, #F8F1FF 100%);
         position: relative;
         overflow: hidden;
         min-height: 100vh;
@@ -978,17 +931,178 @@
         margin-top: -80px;
       }
       
-      .home-two-hero::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0,0,0,0.4);
-        z-index: 3;
-        pointer-events: none;
+      .home-two-hero-container {
+        position: relative;
+        z-index: 15;
+        padding-top: 220px;
+        padding-left: 120px !important;
+        display: flex;
+        align-items: flex-start;
+        min-height: 70vh;
+        max-width: none !important;
+        margin: 0 !important;
       }
+      
+      .hero-content-left {
+        text-align: left;
+        max-width: 800px;
+        margin-left: 0;
+        padding-left: 0;
+      }
+      
+      .hero-image {
+        position: absolute;
+        top: 50%;
+        right: 120px;
+        transform: translateY(-50%);
+        width: 500px;
+        height: auto;
+        filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.08));
+        animation: heroFloat 6s ease-in-out infinite;
+        z-index: 12;
+      }
+      
+      .gradient-shape-1 {
+        position: absolute;
+        top: 30%;
+        right: 200px;
+        width: 280px;
+        height: 280px;
+        background: radial-gradient(circle, rgba(255, 182, 193, 0.25) 0%, transparent 65%);
+        border-radius: 50%;
+        z-index: 11;
+        animation: gradientFloat1 8s ease-in-out infinite;
+      }
+      
+      .gradient-shape-2 {
+        position: absolute;
+        top: 60%;
+        right: 50px;
+        width: 220px;
+        height: 220px;
+        background: radial-gradient(circle, rgba(221, 160, 221, 0.2) 0%, transparent 65%);
+        border-radius: 50%;
+        z-index: 11;
+        animation: gradientFloat2 10s ease-in-out infinite reverse;
+      }
+      
+      .gradient-shape-3 {
+        position: absolute;
+        top: 45%;
+        right: 150px;
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(circle, rgba(255, 228, 196, 0.15) 0%, transparent 70%);
+        border-radius: 50%;
+        z-index: 11;
+        animation: gradientFloat3 12s ease-in-out infinite;
+      }
+      
+      @keyframes heroFloat {
+        0%, 100% { transform: translateY(0px) translateX(0px); }
+        50% { transform: translateY(-8px) translateX(-3px); }
+      }
+      
+      @keyframes gradientFloat1 {
+        0%, 100% { transform: translate(0px, 0px) scale(1); opacity: 0.25; }
+        50% { transform: translate(-8px, -12px) scale(1.05); opacity: 0.35; }
+      }
+      
+      @keyframes gradientFloat2 {
+        0%, 100% { transform: translate(0px, 0px) scale(1); opacity: 0.2; }
+        50% { transform: translate(8px, 8px) scale(1.03); opacity: 0.3; }
+      }
+      
+      @keyframes gradientFloat3 {
+        0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.15; }
+        50% { transform: translate(-50%, -50%) scale(1.08); opacity: 0.25; }
+      }
+      
+      .hero-main-title {
+        color: #000000;
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        font-weight: 400;
+        line-height: 1.2;
+        letter-spacing: -0.01em;
+        margin-bottom: 30px;
+      }
+      
+      .hero-main-title .bold-text {
+        font-weight: 700;
+      }
+      
+      .hero-main-title .italic-text {
+        font-style: italic;
+        font-weight: 300;
+      }
+      
+      .hero-subtitle {
+        color: #000000;
+        font-size: 1.3rem;
+        font-weight: 500;
+        line-height: 1.6;
+        margin-bottom: 30px;
+        max-width: 600px;
+      }
+      
+      .hero-cta-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: #a3e635;
+        color: #fff;
+        padding: 15px 30px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 20px rgba(163, 230, 53, 0.3);
+      }
+      
+      .hero-cta-btn:hover {
+        transform: translateY(-2px);
+        background: #84cc16;
+        box-shadow: 0 8px 30px rgba(163, 230, 53, 0.4);
+      }
+      
+      @media (max-width: 768px) {
+        .home-two-hero-container {
+          padding-top: 120px;
+          padding-left: 20px !important;
+          padding-right: 20px !important;
+        }
+        
+        .hero-main-title {
+          font-size: clamp(1.8rem, 8vw, 2.5rem) !important;
+          text-align: center;
+        }
+        
+        .hero-subtitle {
+          font-size: 1.1rem !important;
+          text-align: center;
+        }
+        
+        .hero-content-left {
+          text-align: center;
+          max-width: 100%;
+        }
+        
+        .hero-cta-btn {
+          width: 100%;
+          justify-content: center;
+          margin-top: 20px;
+        }
+        
+        .hero-image,
+        .gradient-shape-1,
+        .gradient-shape-2,
+        .gradient-shape-3 {
+          display: none;
+        }
+      }
+      
+
       
       .w-layout-blockcontainer {
         display: block;
@@ -1360,7 +1474,7 @@
       }
       
       .hero-main-title {
-        color: #ffffff;
+        color: #000000;
         font-size: clamp(2rem, 5vw, 3.5rem);
         font-weight: 400;
         line-height: 1.2;
@@ -1378,7 +1492,7 @@
       }
       
       .hero-subtitle {
-        color: #ffffff;
+        color: #000000;
         font-size: 1.3rem;
         font-weight: 500;
         line-height: 1.6;
@@ -1576,93 +1690,91 @@
         transform: translateX(-50%);
         z-index: 1000;
         width: 95%;
-        max-width: 1400px;
+        max-width: 1200px;
         transition: transform 0.2s ease, visibility 0.2s ease;
       }
       
       .header-pill {
-        background: white;
-        border-radius: 50px;
-        padding: 8px 24px;
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 12px;
+        padding: 16px 32px;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-        -webkit-backdrop-filter: blur(10px);
-        backdrop-filter: blur(10px);
+        box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+        -webkit-backdrop-filter: blur(20px);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
       }
       
       .header-logo {
         display: flex;
         align-items: center;
+        gap: 8px;
       }
       
       .header-logo-img {
-        height: 70px;
+        height: 55px;
         width: auto;
       }
       
       .header-brand-text {
-        font-weight: 800;
+        font-weight: 700;
         font-size: 18px;
-        color: #fff;
+        color: #1a1a1a;
         letter-spacing: -0.5px;
       }
       
       .header-nav {
         display: flex;
-        gap: 32px;
+        gap: 40px;
         align-items: center;
       }
       
       .header-nav-link {
-        color: #374151;
+        color: #6b7280;
         text-decoration: none;
         font-weight: 500;
         font-size: 15px;
         transition: color 0.3s ease;
+        position: relative;
       }
       
       .header-nav-link:hover {
-        color: #764ba2 !important;
-      }
-      .header-nav-link {
-        color: #333 !important;
+        color: #1a1a1a;
       }
       
       .header-nav-link.w--current {
-        background: linear-gradient(135deg, #1e40af 0%, #3b82f6 30%, #06b6d4 70%, #0ea5e9 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        font-weight: 700;
-        position: relative;
-      }
-      .header-nav-link.w--current::after {
-        content: '';
-        position: absolute;
-        bottom: -5px;
-        left: 0;
-        width: 100%;
-        height: 2px;
-        background: linear-gradient(135deg, #1e40af 0%, #3b82f6 30%, #06b6d4 70%, #0ea5e9 100%);
-        border-radius: 1px;
+        color: #1a1a1a;
+        font-weight: 600;
       }
       
       .header-cta-button {
-        background: #4F46E5;
+        background: #ff6b35;
         color: white;
         padding: 12px 24px;
-        border-radius: 50px;
+        border-radius: 8px;
         text-decoration: none;
         font-weight: 600;
         font-size: 15px;
         transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 8px;
       }
       
       .header-cta-button:hover {
-        background: #4338CA;
+        background: #e55a2b;
         transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+      }
+      
+      .header-cta-button-orange {
+        background: #ff6b35;
+      }
+      
+      .header-cta-button-orange:hover {
+        background: #e55a2b;
       }
       
       .mobile-hamburger {
@@ -1772,21 +1884,19 @@
       
       /* Regular sections background */
       .section_brands {
-        background: #F9F8F5;
+        background: #ffffff;
         position: relative;
         overflow: hidden;
       }
       
-      .section_home-about {
-        background: #f8f8f8;
-      }
+
       
       .section_work-list,
       .section_services,
       .section_portfolio,
       .section_faq,
       .section_cta {
-        background: #F9F8F5;
+        background: #ffffff;
       }
       
       /* Animated Background Shapes */
@@ -1903,26 +2013,7 @@
         }
       }
       
-      /* Hero Title - Bold White Text */
-      .hero-title {
-        color: #ffffff !important;
-        font-size: clamp(3rem, 8vw, 5.5rem) !important;
-        font-weight: 800 !important;
-        text-align: left;
-        line-height: 1.1;
-        letter-spacing: -0.02em;
-        margin-bottom: 30px;
-      }
-      
-      /* Hero Description for Dark Background */
-      .hero-description {
-        color: #e0e0e0 !important;
-        font-size: 1.3rem;
-        text-align: left;
-        line-height: 1.6;
-        max-width: 600px;
-        margin-bottom: 40px;
-      }
+
       
       /* Feature points with checkmarks */
       .hero-features {
@@ -2467,19 +2558,14 @@
           font-size: 0.9rem;
         }
         
-        .brands_list {
-          animation-duration: 20s;
-          gap: 40px;
+        .brands_grid-item {
+          padding: 15px;
+          width: 120px;
         }
         
-        .brands_item-block {
-          min-width: 150px;
-          text-align: center;
-        }
-        
-        .brands_item-logo {
-          width: 60px;
-          height: 60px;
+        .brands_grid-logo {
+          width: 40px;
+          height: 40px;
         }
         
         .text-style-label {
@@ -2719,8 +2805,8 @@
           height: 90px;
         }
         
-        .brands_list {
-          gap: 60px;
+        .brands_grid {
+          gap: 25px;
         }
         
 
@@ -2771,8 +2857,8 @@
           margin: 0 auto;
         }
         
-        .brands_list {
-          gap: 80px;
+        .brands_grid {
+          gap: 30px;
         }
         
 
@@ -2803,10 +2889,10 @@
       }
       
       .section_industries {
-        background: #1a1a1a;
+        background: #ffffff !important;
         position: relative;
         overflow: hidden;
-        padding: 80px 0;
+        padding: 80px 0 80px 0;
       }
       
       .section_industries .bg-pattern {
@@ -2830,22 +2916,21 @@
       }
       
       .industries_title_section {
-        position: sticky;
-        top: 100px;
+        position: static;
       }
       
       .industries_main_title {
         font-size: clamp(3rem, 6vw, 5rem);
         font-weight: 700;
-        color: #ffffff;
+        color: #333333;
         line-height: 1.1;
-        margin: -100px 0 10px 0;
+        margin: 0 0 10px 0;
         letter-spacing: -0.02em;
       }
       
       .industries_title_section p {
         font-size: 1.2rem;
-        color: #ffffff;
+        color: #666666;
         line-height: 1.6;
         margin: 0;
         max-width: 400px;
@@ -3106,104 +3191,71 @@
         height: auto;
       }
       
-      /* Moving Partners Logo Row */
-      .brands_list {
-        display: flex;
-        align-items: center;
-        gap: 60px;
-        padding: 40px 0;
-        animation: moveLogos 30s linear infinite;
-        white-space: nowrap;
+      /* Partners Grid Layout */
+      .brands_grid-wrapper {
+        width: 100%;
+        padding: 10px 0 40px 0;
+        overflow: hidden;
         position: relative;
-        z-index: 10;
       }
       
-      @media (max-width: 768px) {
-        .brands_list {
-          gap: 30px;
-          animation-duration: 20s;
-          padding: 20px 0;
-          position: relative;
-          z-index: 10;
-          opacity: 1;
-          visibility: visible;
-        }
-        
-        .brands_item-block {
-          min-width: 120px;
-          flex-direction: column;
-          text-align: center;
-          opacity: 1;
-          visibility: visible;
-        }
-        
-        .brands_item-logo {
-          width: 60px;
-          height: 60px;
-          opacity: 1;
-        }
-        
-        .brands_item-name {
-          font-size: 0.9rem;
-          margin-top: 8px;
-          color: #333;
-          font-weight: 600;
-        }
-        
-        .brands_item-desc {
-          display: none;
-        }
-        
-        .brands_list-wrapper {
-          min-height: 140px;
-          display: flex;
-          align-items: center;
-          position: relative;
-          z-index: 10;
-          background: rgba(249, 248, 245, 0.95);
-        }
-      }
-      
-      @keyframes moveLogos {
-        0% { transform: translateX(0); }
+      @keyframes scrollLogos {
+        0% { transform: translateX(0%); }
         100% { transform: translateX(-50%); }
       }
       
-      .brands_list-wrapper {
-        overflow: hidden;
-        width: 100%;
-        position: relative;
+      .brands_grid {
+        display: flex;
+        gap: 20px;
+        animation: scrollLogos 80s linear infinite;
+        width: max-content;
       }
       
-      .brands_item-block {
+      .brands_grid-item {
+        background: white;
+        border-radius: 12px;
+        padding: 35px 25px;
+        text-align: center;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         flex-shrink: 0;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        min-width: 100px;
+        width: 240px;
       }
       
-      .brands_item-logo {
-        width: 80px;
-        height: 80px;
+      .brands_grid-item:hover {
+        transform: translateY(-5px);
+      }
+      
+      .brands_grid-logo {
+        width: 70px;
+        height: 70px;
         object-fit: contain;
+        margin-bottom: 15px;
       }
       
-      .brands_item-texts {
-        display: flex;
-        flex-direction: column;
-      }
-      
-      .brands_item-name {
-        font-size: 1.1rem;
+      .brands_grid-name {
+        font-size: 1rem;
         font-weight: 600;
-        margin: 0;
+        color: #333;
+        margin: 0 0 8px 0;
       }
       
-      .brands_item-desc {
-        font-size: 0.9rem;
+      .brands_grid-desc {
+        font-size: 0.85rem;
         color: #666;
         margin: 0;
+        line-height: 1.4;
+      }
+      
+      @media (max-width: 768px) {
+        .brands_grid-item {
+          padding: 20px 15px;
+          width: 150px;
+        }
+        
+        .brands_grid-logo {
+          width: 50px;
+          height: 50px;
+        }
       }
       
       .work-list_wrapper {
@@ -3406,15 +3458,14 @@
       }
       
       .industry_card {
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: #ffffff;
+        border: 1px solid #e0e0e0;
         border-radius: 20px;
         padding: 40px;
         transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        -webkit-backdrop-filter: blur(10px);
-        backdrop-filter: blur(10px);
         position: relative;
         overflow: hidden;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
       }
       
       .industry_card::before {
@@ -3479,14 +3530,14 @@
       .industry_card_title {
         font-size: 1.5rem;
         font-weight: 600;
-        color: #ffffff;
+        color: #333333;
         margin: 0 0 15px 0;
         line-height: 1.3;
       }
       
       .industry_card_desc {
         font-size: 1rem;
-        color: #b0b0b0;
+        color: #666666;
         line-height: 1.6;
         margin: 0;
       }
@@ -3745,6 +3796,87 @@
         padding-bottom: clamp(20px, 4vw, 40px);
       }
       
+      /* New About Section Styles */
+      .section_home-about {
+        background: #ffffff;
+        position: relative;
+      }
+      
+      .about-new-layout {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 120px;
+        align-items: center;
+        min-height: 60vh;
+      }
+      
+      .about-title-section {
+        position: sticky;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      
+      .about-main-title {
+        font-size: clamp(4rem, 8vw, 8rem);
+        font-weight: 700;
+        color: #1e3a8a;
+        line-height: 0.9;
+        margin: 0;
+        letter-spacing: -0.02em;
+      }
+      
+      .about-content-section {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+      }
+      
+      .about-description {
+        font-size: 1.2rem;
+        line-height: 1.7;
+        color: #666666;
+        margin: 0;
+        text-align: left;
+      }
+      
+      @media (max-width: 1024px) {
+        .about-new-layout {
+          grid-template-columns: 1fr;
+          gap: 60px;
+          text-align: center;
+        }
+        
+        .about-title-section {
+          position: static;
+          transform: none;
+        }
+        
+        .about-main-title {
+          font-size: clamp(3rem, 10vw, 6rem);
+        }
+      }
+      
+      @media (max-width: 768px) {
+        .about-new-layout {
+          gap: 40px;
+        }
+        
+        .about-main-title {
+          font-size: clamp(2.5rem, 12vw, 4rem);
+        }
+        
+        .about-description {
+          font-size: 1.1rem;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        .about-description {
+          font-size: 1rem;
+          line-height: 1.6;
+        }
+      }
+      
       /* Additional inline styles moved to CSS */
       .section_brands {
         position: relative;
@@ -3769,8 +3901,8 @@
         text-align: left;
       }
       
-      .portfolio_dark_bg.dark {
-        background: #1a1a1a;
+      .portfolio_dark_bg {
+        background: #F9F8F5;
       }
       
       .portfolio_header.text-left {
@@ -3778,12 +3910,12 @@
       }
       
       .text-style-label.white {
-        color: #ffffff;
+        color: #333333;
       }
       
       .heading-style-h4.white {
         margin-top: -20px;
-        color: #ffffff;
+        color: #333333;
       }
       
       .portfolio_card.delay-1 { animation-delay: 0.1s; }
@@ -3940,16 +4072,21 @@
       <header class="header-container">
         <div class="header-pill">
           <div class="header-logo">
-            <img src="src/images/growthpulse-logo.png" alt="GrowthPulse" class="header-logo-img">
+            <img src="src/images/growthpulse-logo.png" alt="aurevix" class="header-logo-img">
           </div>
           <nav class="header-nav">
-            <a href="index.html" class="header-nav-link">Home</a>
+            <a href="index.html" class="header-nav-link w--current">Home</a>
             <a href="about.html" class="header-nav-link">About</a>
             <a href="services.html" class="header-nav-link">Services</a>
             <a href="contact.html" class="header-nav-link">Contact</a>
           </nav>
           <div class="header-cta">
-            <a href="#section_cta" class="header-cta-button">Book Intro Call</a>
+            <a href="#section_cta" class="header-cta-button header-cta-button-orange">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+              </svg>
+              Contact Us
+            </a>
           </div>
           <div class="mobile-hamburger" onclick="toggleMobileMenu()">
             <span></span>
@@ -3971,69 +4108,24 @@
       </div>
       <main class="main-wrapper">
         <!-- 1. HERO SECTION -->
-        <section class="home-two-hero overflow-hidden" id="hero">
-          <!-- Industry Grid Background -->
-          <div class="industry-grid-bg">
-            <div class="industry-item industry-retail"></div>
-            <div class="industry-item industry-finance"></div>
-            <div class="industry-item industry-healthcare"></div>
-            <div class="industry-item industry-edtech"></div>
-            <div class="industry-item industry-realestate"></div>
-            <div class="industry-item industry-retail"></div>
-            <div class="industry-item industry-finance"></div>
-            <div class="industry-item industry-healthcare"></div>
-            <div class="industry-item industry-edtech"></div>
-            <div class="industry-item industry-realestate"></div>
-            <div class="industry-item industry-retail"></div>
-            <div class="industry-item industry-finance"></div>
-            <div class="industry-item industry-healthcare"></div>
-            <div class="industry-item industry-edtech"></div>
-            <div class="industry-item industry-realestate"></div>
-          </div>
-          
+        <section class="modern-hero-section" id="hero">
           <div class="w-layout-blockcontainer home-two-hero-container">
             <div class="hero-content-left">
               <h1 class="hero-main-title">
                 <span class="bold-text">Global Strategy</span> for<br><span class="bold-text">Digital Marketing</span> &<br><span class="italic-text">Software Solutions</span>
               </h1>
               <p class="hero-subtitle">An end-to-end strategic solution for marketing, development, management, and learning to drive sustainable business growth.</p>
-              <a href="#section_cta" class="hero-cta-btn">
+              <a href="#section_cta" class="hero-cta-btn hero-cta-btn-orange">
                 <span>→</span>
                 <span>Book a Free Strategy Call</span>
               </a>
             </div>
-          </div>
-          <div class="w-layout-blockcontainer home-two-hero-bottom-container w-container">
+            <img src="src/images/Home/landing-page.avif" alt="Digital Strategy" class="hero-image-positioned" />
 
-
-          </div>
-          <div class="main-slider">
-            <div class="slider-main">
-              <div class="hero-slider">
-                <div class="sliders-main-background">
-                  <div class="slider-inside-box">
-                    <div class="slide-container">
-                      <div class="hero-slider-image-one">
-                        <img src="src/images/Home/landingpage background/landingpage-background1.jpg" loading="lazy" width="1920" height="1080" alt="Landing Page Background 1" class="hero-slider-image slider-image-first" />
-                      </div>
-                      <div class="hero-slider-image-two">
-                        <img class="hero-slider-image slider-image-second" src="src/images/Home/landingpage background/landingpage-background2.jpg" width="1920" height="1080" alt="Landing Page Background 2" />
-                      </div>
-                      <img class="slider-bottom-image" src="src/images/Home/landingpage background/landingpage-background3.jpg" width="1920" height="1080" alt="Landing Page Background 3" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </section>
         <!-- 2. SERVICES SECTION -->
         <section class="section_services margin-top-negative" id="services">
-          <div class="curved-divider-top">
-            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-              <path d="M0,100C300,0 500,100 800,50C900,25 1100,75 1200,0L1200,120L0,120Z" fill="rgba(249, 248, 245, 0.9)"></path>
-            </svg>
-          </div>
           <div class="padding-global is-tiny"><div class="line"></div></div>
           <div class="padding-section-small"></div>
           <div class="padding-global">
@@ -4058,7 +4150,6 @@ achieve impactful results.
                       <img
                         class="services_img"
                         src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
-                        animation="scale"
                         alt="GrowthPulse Digital Marketing - Strategic Campaign Development"
                         sizes="100vw"
                         loading="lazy"
@@ -4074,7 +4165,6 @@ achieve impactful results.
                       <img
                         class="services_img"
                         src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=600&fit=crop"
-                        animation="scale"
                         alt="GrowthPulse Digital Marketing - Custom Software Development"
                         sizes="100vw"
                         loading="lazy"
@@ -4087,13 +4177,12 @@ achieve impactful results.
                   </div>
                   <div
                     id="w-node-_484cd889-9c9b-9c07-ce5b-d03b07feac89-b7745d39"
-                    class="services_item scroll-animate"
+                    class="services_item"
                   >
                     <div class="services_img-wrap">
                       <img
                         class="services_img"
                         src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop"
-                        animation="scale"
                         alt="GrowthPulse Digital Marketing - Learning and Development Programs"
                         sizes="100vw"
                         loading="lazy"
@@ -4104,12 +4193,11 @@ achieve impactful results.
                       <div class="services_desc">Training programs that empower</div>
                     </div>
                   </div>
-                  <div class="services_item scroll-animate">
+                  <div class="services_item">
                     <div class="services_img-wrap">
                       <img
                         class="services_img"
                         src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=600&fit=crop"
-                        animation="scale"
                         alt="GrowthPulse Digital Marketing - Technical Development Solutions"
                         sizes="100vw"
                         loading="lazy"
@@ -4128,16 +4216,16 @@ achieve impactful results.
         </section>
 
         <!-- 3. PARTNERS SECTION -->
-        <section id="partners" class="section_brands">
+         <section id="section-brands" class="section_brands" style="margin-top: -30px;">
           <!-- Floating Shapes -->
           <div class="floating-shape-1"></div>
           <div class="floating-shape-3"></div>
           
           <div class="padding-global is-tiny"><div class="line"></div></div>
-          <div class="padding-section-medium"></div>
+          <div class="padding-section-small"></div>
           <div class="padding-global z-index-2">
             <div class="container-medium">
-              <div class="brands_head scroll-animate text-left">
+              <div class="brands_head text-left">
                 <div class="label_wrap">
                   <div class="label_line"></div>
                   <h2 class="text-style-label">Partners</h2>
@@ -4152,269 +4240,87 @@ achieve impactful results.
               </div>
             </div>
           </div>
-          <div class="spacer-small"></div>
-          <div class="brands_list-wrapper">
-            <div class="brands_list scroll-animate">
-              <div class="brands_item-block">
-                <div class="brands_item-logo-wrap">
-                  <img
-                    src="src/images/java-coffee-cup-logo.png"
-                    loading="lazy"
-                    alt="GrowthPulse Partner - Java Technology Solutions"
-                    class="brands_item-logo"
-                  />
-                </div>
-                <div class="brands_item-texts">
-                  <h4 class="brands_item-name">Java</h4>
-                  <p class="brands_item-desc">
-                    Programming language and platform.
-                  </p>
-                </div>
+
+          <div class="brands_grid-wrapper">
+            <div class="brands_grid">
+              <div class="brands_grid-item">
+                <img src="src/images/java-coffee-cup-logo.png" alt="Java" class="brands_grid-logo" />
+                <h4 class="brands_grid-name">Java</h4>
+                <p class="brands_grid-desc">Programming language and platform.</p>
               </div>
-              <div class="brands_item-block">
-                <div class="brands_item-logo-wrap">
-                  <img
-                    src="src/images/Microsoft-Azure-Emblem.png"
-                    loading="lazy"
-                    alt="GrowthPulse Partner - Microsoft Azure Cloud Services"
-                    class="brands_item-logo"
-                  />
-                </div>
-                <div class="brands_item-texts">
-                  <h4 class="brands_item-name">Microsoft Azure</h4>
-                  <p class="brands_item-desc">
-                    Cloud computing platform and services.
-                  </p>
-                </div>
+              <div class="brands_grid-item">
+                <img src="src/images/Microsoft-Azure-Emblem.png" alt="Microsoft Azure" class="brands_grid-logo" />
+                <h4 class="brands_grid-name">Microsoft Azure</h4>
+                <p class="brands_grid-desc">Cloud computing platform and services.</p>
               </div>
-              <div class="brands_item-block">
-                <div class="brands_item-logo-wrap">
-                  <img
-                    src="src/images/Odoo_logo_rgb.svg.png"
-                    loading="lazy"
-                    alt="GrowthPulse Partner - Odoo Business Management"
-                    class="brands_item-logo"
-                  />
-                </div>
-                <div class="brands_item-texts">
-                  <h4 class="brands_item-name">Odoo</h4>
-                  <p class="brands_item-desc">
-                    Business management software suite.
-                  </p>
-                </div>
+              <div class="brands_grid-item">
+                <img src="src/images/Odoo_logo_rgb.svg.png" alt="Odoo" class="brands_grid-logo" />
+                <h4 class="brands_grid-name">Odoo</h4>
+                <p class="brands_grid-desc">Business management software suite.</p>
               </div>
-              <div class="brands_item-block">
-                <div class="brands_item-logo-wrap">
-                  <img
-                    src="src/images/SAP-Emblem.png"
-                    loading="lazy"
-                    alt="GrowthPulse Partner - SAP Enterprise Solutions"
-                    class="brands_item-logo"
-                  />
-                </div>
-                <div class="brands_item-texts">
-                  <h4 class="brands_item-name">SAP</h4>
-                  <p class="brands_item-desc">
-                    Enterprise software solutions.
-                  </p>
-                </div>
+              <div class="brands_grid-item">
+                <img src="src/images/SAP-Emblem.png" alt="SAP" class="brands_grid-logo" />
+                <h4 class="brands_grid-name">SAP</h4>
+                <p class="brands_grid-desc">Enterprise software solutions.</p>
               </div>
-              <div class="brands_item-block">
-                <div class="brands_item-logo-wrap">
-                  <img
-                    src="src/images/dbt-icon-2yxlz1fvy25mvn5scgnlw.webp"
-                    loading="lazy"
-                    alt="GrowthPulse Partner - DBT Data Transformation"
-                    class="brands_item-logo"
-                  />
-                </div>
-                <div class="brands_item-texts">
-                  <h4 class="brands_item-name">DBT</h4>
-                  <p class="brands_item-desc">
-                    Data transformation tool.
-                  </p>
-                </div>
+              <div class="brands_grid-item">
+                <img src="src/images/dbt-icon-2yxlz1fvy25mvn5scgnlw.webp" alt="DBT" class="brands_grid-logo" />
+                <h4 class="brands_grid-name">DBT</h4>
+                <p class="brands_grid-desc">Data transformation tool.</p>
               </div>
-              <div class="brands_item-block">
-                <div class="brands_item-logo-wrap">
-                  <img
-                    src="src/images/Databricks-Emblem.png"
-                    loading="lazy"
-                    alt="GrowthPulse partner- Databricks data Analytics"
-                    class="brands_item-logo"
-                  />
-                </div>
-                <div class="brands_item-texts">
-                  <h4 class="brands_item-name">Databricks</h4>
-                  <p class="brands_item-desc">
-                    Trusted business partner.
-                  </p>
-                </div>
+              <div class="brands_grid-item">
+                <img src="src/images/Databricks-Emblem.png" alt="Databricks" class="brands_grid-logo" />
+                <h4 class="brands_grid-name">Databricks</h4>
+                <p class="brands_grid-desc">Data analytics platform.</p>
               </div>
-              <div class="brands_item-block">
-                <div class="brands_item-logo-wrap">
-                  <img
-                    src="src/images/aws.png"
-                    loading="lazy"
-                    alt="GrowthPulse Partner - Amazon Web Services"
-                    class="brands_item-logo"
-                  />
-                </div>
-                <div class="brands_item-texts">
-                  <h4 class="brands_item-name">AWS</h4>
-                  <p class="brands_item-desc">
-                    Strategic business alliance.
-                  </p>
-                </div>
+              <div class="brands_grid-item">
+                <img src="src/images/aws.png" alt="AWS" class="brands_grid-logo" />
+                <h4 class="brands_grid-name">AWS</h4>
+                <p class="brands_grid-desc">Cloud computing services.</p>
               </div>
-              <div class="brands_item-block">
-                <div class="brands_item-logo-wrap">
-                  <img
-                    src="src/images/fivetran.png"
-                    loading="lazy"
-                    alt="GrowthPulse Partner - Fivetran Data Integration"
-                    class="brands_item-logo"
-                  />
-                </div>
-                <div class="brands_item-texts">
-                  <h4 class="brands_item-name">Fivetran</h4>
-                  <p class="brands_item-desc">
-                    Technology collaboration partner.
-                  </p>
-                </div>
+              <div class="brands_grid-item">
+                <img src="src/images/fivetran.png" alt="Fivetran" class="brands_grid-logo" />
+                <h4 class="brands_grid-name">Fivetran</h4>
+                <p class="brands_grid-desc">Data integration platform.</p>
               </div>
-              <!-- Duplicate for seamless loop -->
-              <div class="brands_item-block">
-                <div class="brands_item-logo-wrap">
-                  <img
-                    src="src/images/java-coffee-cup-logo.png"
-                    loading="lazy"
-                    alt="GrowthPulse Partner - Java Technology Solutions"
-                    class="brands_item-logo"
-                  />
-                </div>
-                <div class="brands_item-texts">
-                  <h4 class="brands_item-name">Java</h4>
-                  <p class="brands_item-desc">
-                    Programming language and platform.
-                  </p>
-                </div>
+              <div class="brands_grid-item">
+                <img src="src/images/java-coffee-cup-logo.png" alt="Java" class="brands_grid-logo" />
+                <h4 class="brands_grid-name">Java</h4>
+                <p class="brands_grid-desc">Programming language and platform.</p>
               </div>
-              <div class="brands_item-block">
-                <div class="brands_item-logo-wrap">
-                  <img
-                    src="src/images/Microsoft-Azure-Emblem.png"
-                    loading="lazy"
-                    alt="GrowthPulse Partner - Microsoft Azure Cloud Services"
-                    class="brands_item-logo"
-                  />
-                </div>
-                <div class="brands_item-texts">
-                  <h4 class="brands_item-name">Microsoft Azure</h4>
-                  <p class="brands_item-desc">
-                    Cloud computing platform and services.
-                  </p>
-                </div>
+              <div class="brands_grid-item">
+                <img src="src/images/Microsoft-Azure-Emblem.png" alt="Microsoft Azure" class="brands_grid-logo" />
+                <h4 class="brands_grid-name">Microsoft Azure</h4>
+                <p class="brands_grid-desc">Cloud computing platform and services.</p>
               </div>
-              <div class="brands_item-block">
-                <div class="brands_item-logo-wrap">
-                  <img
-                    src="src/images/Odoo_logo_rgb.svg.png"
-                    loading="lazy"
-                    alt="GrowthPulse Partner - Odoo Business Management"
-                    class="brands_item-logo"
-                  />
-                </div>
-                <div class="brands_item-texts">
-                  <h4 class="brands_item-name">Odoo</h4>
-                  <p class="brands_item-desc">
-                    Business management software suite.
-                  </p>
-                </div>
+              <div class="brands_grid-item">
+                <img src="src/images/Odoo_logo_rgb.svg.png" alt="Odoo" class="brands_grid-logo" />
+                <h4 class="brands_grid-name">Odoo</h4>
+                <p class="brands_grid-desc">Business management software suite.</p>
               </div>
-              <div class="brands_item-block">
-                <div class="brands_item-logo-wrap">
-                  <img
-                    src="src/images/SAP-Emblem.png"
-                    loading="lazy"
-                    alt="GrowthPulse Partner - SAP Enterprise Solutions"
-                    class="brands_item-logo"
-                  />
-                </div>
-                <div class="brands_item-texts">
-                  <h4 class="brands_item-name">SAP</h4>
-                  <p class="brands_item-desc">
-                    Enterprise software solutions.
-                  </p>
-                </div>
+              <div class="brands_grid-item">
+                <img src="src/images/SAP-Emblem.png" alt="SAP" class="brands_grid-logo" />
+                <h4 class="brands_grid-name">SAP</h4>
+                <p class="brands_grid-desc">Enterprise software solutions.</p>
               </div>
-              <div class="brands_item-block">
-                <div class="brands_item-logo-wrap">
-                  <img
-                    src="src/images/dbt-icon-2yxlz1fvy25mvn5scgnlw.webp"
-                    loading="lazy"
-                    alt="GrowthPulse Partner - DBT Data Transformation"
-                    class="brands_item-logo"
-                  />
-                </div>
-                <div class="brands_item-texts">
-                  <h4 class="brands_item-name">DBT</h4>
-                  <p class="brands_item-desc">
-                    Data transformation tool.
-                  </p>
-                </div>
+              <div class="brands_grid-item">
+                <img src="src/images/dbt-icon-2yxlz1fvy25mvn5scgnlw.webp" alt="DBT" class="brands_grid-logo" />
+                <h4 class="brands_grid-name">DBT</h4>
+                <p class="brands_grid-desc">Data transformation tool.</p>
               </div>
-              <div class="brands_item-block">
-                <div class="brands_item-logo-wrap">
-                  <img
-                    src="src/images/Databricks-Emblem.png"
-                    loading="lazy"
-                    alt="GrowthPulse partner- Databricks data Analytics"
-                    class="brands_item-logo"
-                  />
-                </div>
-                <div class="brands_item-texts">
-                  <h4 class="brands_item-name">Databricks</h4>
-                  <p class="brands_item-desc">
-                    Trusted business partner.
-                  </p>
-                </div>
+              <div class="brands_grid-item">
+                <img src="src/images/Databricks-Emblem.png" alt="Databricks" class="brands_grid-logo" />
+                <h4 class="brands_grid-name">Databricks</h4>
+                <p class="brands_grid-desc">Data analytics platform.</p>
               </div>
-              <div class="brands_item-block">
-                <div class="brands_item-logo-wrap">
-                  <img
-                    src="src/images/aws.png"
-                    loading="lazy"
-                    alt="GrowthPulse Partner - Amazon Web Services"
-                    class="brands_item-logo"
-                  />
-                </div>
-                <div class="brands_item-texts">
-                  <h4 class="brands_item-name">AWS</h4>
-                  <p class="brands_item-desc">
-                    Strategic business alliance.
-                  </p>
-                </div>
-              </div>
-              <div class="brands_item-block">
-                <div class="brands_item-logo-wrap">
-                  <img
-                    src="src/images/fivetran.png"
-                    loading="lazy"
-                    alt="GrowthPulse Partner - Fivetran Data Integration"
-                    class="brands_item-logo"
-                  />
-                </div>
-                <div class="brands_item-texts">
-                  <h4 class="brands_item-name">Fivetran</h4>
-                  <p class="brands_item-desc">
-                    Technology collaboration partner.
-                  </p>
-                </div>
+              <div class="brands_grid-item">
+                <img src="src/images/aws.png" alt="AWS" class="brands_grid-logo" />
+                <h4 class="brands_grid-name">AWS</h4>
+                <p class="brands_grid-desc">Cloud computing services.</p>
               </div>
             </div>
           </div>
-          <div class="padding-section-medium"></div>
+          <div style="padding-bottom: 80px;"></div>
         </section>
 
         <!-- 4. INDUSTRY SECTION -->
@@ -4424,17 +4330,17 @@ achieve impactful results.
           
           <div class="padding-global">
             <div class="container-medium">
-              <!-- Left Side - Title -->
-              <div class="industries_title_section">
-                <h2 class="industries_main_title animate-on-scroll">Our<br>Industry<br>Experience</h2>
-                <p>Delivering specialized solutions across diverse industries to drive innovation and growth.</p>
+              <!-- Title Section at Top -->
+              <div class="industries_header_top" style="text-align: left; margin-bottom: 100px;">
+                <h2 class="industries_main_title" style="color: #333333; font-size: clamp(3rem, 6vw, 5rem); font-weight: 700; line-height: 1.1; margin: -20px 0 20px 0;">Our<br>Industry<br>Experience</h2>
+                <p style="font-size: 1.2rem; color: #666666; line-height: 1.6; margin: 0; max-width: 600px;">Delivering specialized solutions across diverse industries to drive innovation and growth.</p>
               </div>
               
-              <!-- Right Side - Cards Grid -->
-              <div class="industries_cards_grid">
+              <!-- Cards Grid -->
+              <div class="industries_cards_grid" style="margin-top: 60px;">
                 <!-- Left Column -->
                 <div class="cards_column">
-                  <div class="industry_card animate-on-scroll">
+                  <div class="industry_card">
                     <div class="industry_icon">
                       <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M7 18c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12L8.1 13h7.45c.75 0 1.41-.41 1.75-1.03L21.7 4H5.21l-.94-2H1zm16 16c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
@@ -4444,7 +4350,7 @@ achieve impactful results.
                     <p class="industry_card_desc">From online store optimization to customer engagement campaigns, we ensure that your brand moves forward in the digital marketplace.</p>
                   </div>
                   
-                  <div class="industry_card animate-on-scroll delay-3">
+                  <div class="industry_card">
                     <div class="industry_icon">
                       <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/>
@@ -4454,7 +4360,7 @@ achieve impactful results.
                     <p class="industry_card_desc">Our strategies empower us to create trust, acquire customers, and simplify digital with secure technology and targeted marketing.</p>
                   </div>
                   
-                  <div class="industry_card animate-on-scroll delay-5">
+                  <div class="industry_card">
                     <div class="industry_icon">
                       <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
@@ -4467,7 +4373,7 @@ achieve impactful results.
                 
                 <!-- Right Column - Offset -->
                 <div class="cards_column offset">
-                  <div class="industry_card animate-on-scroll delay-2">
+                  <div class="industry_card">
                     <div class="industry_icon">
                       <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
@@ -4477,7 +4383,7 @@ achieve impactful results.
                     <p class="industry_card_desc">We craft campaigns and technologies that drive user adoption, learning outcomes, and subscription growth.</p>
                   </div>
                   
-                  <div class="industry_card animate-on-scroll delay-4">
+                  <div class="industry_card">
                     <div class="industry_icon">
                       <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
@@ -4487,7 +4393,7 @@ achieve impactful results.
                     <p class="industry_card_desc">Our solutions enable sales pipelines and lead you to an effective connection with buyers and investors.</p>
                   </div>
                   
-                  <div class="industry_card animate-on-scroll delay-6">
+                  <div class="industry_card">
                     <div class="industry_icon">
                       <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14H7v-2h5v2zm3-4H7v-2h8v2zm0-4H7V7h8v2z"/>
@@ -4505,10 +4411,10 @@ achieve impactful results.
         <!-- 5. BUSINESSES SECTION -->
         <section class="section_portfolio" id="businesses">
           <div class="padding-section-medium"></div>
-          <div class="portfolio_dark_bg dark">
+          <div class="portfolio_dark_bg">
             <div class="padding-global">
               <div class="container-medium">
-                <div class="portfolio_header animate-on-scroll text-left">
+                <div class="portfolio_header text-left">
                   <div class="label_wrap">
                     <div class="label_line"></div>
                     <h2 class="text-style-label white">Our Business Portfolio</h2>
@@ -4516,7 +4422,7 @@ achieve impactful results.
                   <h3 class="heading-style-h4 white">Growthpulse innovative companies delivering transformative solutions across multiple industries</h3>
                 </div>
                 <div class="portfolio_grid">
-                  <div class="portfolio_card animate-on-scroll delay-1">
+                  <div class="portfolio_card">
                     <div class="portfolio_image">
                       <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=250&fit=crop" alt="Hotelier Links" />
                     </div>
@@ -4527,18 +4433,8 @@ achieve impactful results.
                       <a href="https://hotelierlinks.com" target="_blank" rel="noopener" class="portfolio_btn">Visit Website</a>
                     </div>
                   </div>
-                  <div class="portfolio_card animate-on-scroll delay-2">
-                    <div class="portfolio_image">
-                      <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=400&h=250&fit=crop" alt="MyEvents International" />
-                    </div>
-                    <div class="portfolio_card_content">
-                      <h3 class="portfolio_card_title">MyEvents International</h3>
-                      <p class="portfolio_card_desc">Event management company specializing in corporate events, conferences, and memorable experiences worldwide.</p>
 
-                      <a href="http://myevents.com.my/portfolio/2017/portfolio-MYE.html" target="_blank" rel="noopener" class="portfolio_btn">Visit Website</a>
-                    </div>
-                  </div>
-                  <div class="portfolio_card animate-on-scroll delay-3">
+                  <div class="portfolio_card">
                     <div class="portfolio_image">
                       <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop" alt="TNova" />
                     </div>
@@ -4549,7 +4445,7 @@ achieve impactful results.
                       <a href="https://tnova.ai" target="_blank" rel="noopener" class="portfolio_btn">Visit Website</a>
                     </div>
                   </div>
-                  <div class="portfolio_card animate-on-scroll delay-4">
+                  <div class="portfolio_card">
                     <div class="portfolio_image">
                       <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=250&fit=crop" alt="Kalloriconnect" />
                     </div>
@@ -4560,17 +4456,7 @@ achieve impactful results.
                       <span class="portfolio_btn_disabled">Coming Soon</span>
                     </div>
                   </div>
-                  <div class="portfolio_card animate-on-scroll delay-5">
-                    <div class="portfolio_image">
-                      <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=400&h=250&fit=crop" alt="Trinite Tech" />
-                    </div>
-                    <div class="portfolio_card_content">
-                      <h3 class="portfolio_card_title">Trinity Technology Solutions</h3>
-                      <p class="portfolio_card_desc">Advanced data analytics company providing insights and intelligence for business transformation.</p>
 
-                      <a href="https://trinitetech.com" target="_blank" rel="noopener" class="portfolio_btn">Visit Website</a>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -4578,36 +4464,7 @@ achieve impactful results.
           <div class="padding-section-small"></div>
         </section>
 
-        <!-- 6. ABOUT SECTION -->
-        <section class="section_home-about" id="about">
-          <div class="home-about_wrapper">
-            <h2 class="scroll-note_text">About</h2>
-            <div class="home-about_sticky">
-              <div class="home-about_component">
-                <h2 class="home-about_heading _1">We are</h2>
-                <div class="home-about_img-wrap">
-                  <img
-                    src="src/images/Home/About img (Home).jpg"
-                    loading="lazy"
-                    alt="GrowthPulse Digital Marketing Team - Professional Business Partners"
-                    class="home-about_img"
-                  />
-                  <div class="home-about_img-text">
-                    <div>At Growthpulse Solutions, we serve as your business growth partner</div>
-                    <div>by developing successful strategies to enhance your brand. Our expert team</div>
-                    <div>of industry specialists crafts result-oriented approaches for global reach.</div>
-                    <a href="about.html" class="explore-btn">Explore More</a>
-                  </div>
-                </div>
-                <h2 class="home-about_heading _2">Growthpulse</h2>
-                <div class="class-for-animation">
-                  <div class="animation-scroll-border"></div>
-                  <div class="animation-scroll-padding"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+
 
         <!-- 7. FAQ SECTION -->
         <section class="section_faq relative" id="faq">
@@ -4716,28 +4573,12 @@ achieve impactful results.
         </section>
       </main>
       <footer class="template-footer">
-        <!-- Green Banner with Rotating Text -->
-        <div class="footer-banner">
-          <div class="banner-content">
-            <span class="banner-text">DIGITAL MARKETING</span>
-            <span class="banner-star">✦</span>
-            <span class="banner-text">SOFTWARE SOLUTIONS</span>
-            <span class="banner-star">✦</span>
-            <span class="banner-text">BUSINESS GROWTH</span>
-            <span class="banner-star">✦</span>
-            <span class="banner-text">TECHNOLOGY DEVELOPMENT</span>
-            <span class="banner-star">✦</span>
-          </div>
-        </div>
+
         
         <!-- Main Footer Content -->
         <div class="footer-main">
           <div class="footer-container">
-            <!-- Contact Section -->
-            <div class="footer-contact-section">
-              <h1 class="footer-contact-title">Let's Contact Us</h1>
-              <a href="#section_cta" class="footer-cta-btn">Get In Touch</a>
-            </div>
+
             
             <!-- Footer Grid -->
             <div class="footer-grid">
@@ -4889,56 +4730,15 @@ achieve impactful results.
     <script src="scroll.js"></script>
     <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.1/dist/dotlottie-wc.js" type="module"></script>
     <script>
-      // Scroll Animation Observer
-      const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-      };
-      
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animated');
-          }
-        });
-      }, observerOptions);
-      
-      const scrollObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      }, observerOptions);
-      
-      // Observe all elements with animate-on-scroll class
+      // Static website - no scroll animations
       document.addEventListener('DOMContentLoaded', () => {
-        const animateElements = document.querySelectorAll('.animate-on-scroll');
-        animateElements.forEach(el => observer.observe(el));
-        
-        const scrollElements = document.querySelectorAll('.scroll-animate');
-        scrollElements.forEach(el => scrollObserver.observe(el));
-        
-        // GSAP ScrollTrigger for other sections
-        if (typeof gsap !== 'undefined' && gsap.registerPlugin) {
-          gsap.registerPlugin(ScrollTrigger);
-          
-          gsap.utils.toArray('h1:not(.industry-title), h2, h3, h4, h5, h6').forEach(heading => {
-            gsap.fromTo(heading, 
-              { opacity: 0, y: 50 },
-              {
-                opacity: 1,
-                y: 0,
-                duration: 0.8,
-                scrollTrigger: {
-                  trigger: heading,
-                  start: 'top 85%',
-                  toggleActions: 'play none none reverse'
-                }
-              }
-            );
-          });
-        }
+        // Make all elements visible immediately
+        const animateElements = document.querySelectorAll('.animate-on-scroll, .scroll-animate');
+        animateElements.forEach(el => {
+          el.classList.add('animated', 'visible');
+          el.style.opacity = '1';
+          el.style.transform = 'translateY(0) translateX(0) scale(1)';
+        });
       });
       
       // FAQ Toggle Function
@@ -5083,39 +4883,27 @@ achieve impactful results.
       
 
       
-      // Industries Card Hover Effects
+      // Static cards - no hover animations
       document.addEventListener('DOMContentLoaded', function() {
-        const cards = document.querySelectorAll('.industry_card');
-        
-        cards.forEach(card => {
-          card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-10px) scale(1.02)';
-          });
-          
-          card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1)';
-          });
-        });
+        // Remove all hover animations
       });
       
-      // Header hide on scroll for index.html only
+      // Header hide on scroll
       const header = document.querySelector('.header-container');
-      const heroSection = document.querySelector('.home-two-hero');
-      
-      window.addEventListener('scroll', function() {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        const heroHeight = heroSection ? heroSection.offsetHeight : 0;
-        
-        if (scrollTop > heroHeight) {
-          // Outside hero section - hide header
-          header.style.transform = 'translateX(-50%) translateY(-120px)';
-          header.style.visibility = 'hidden';
-        } else {
-          // In hero section - show header
-          header.style.transform = 'translateX(-50%) translateY(0)';
-          header.style.visibility = 'visible';
-        }
-      });
+      if (header) {
+        let lastScrollY = 0;
+        window.addEventListener('scroll', () => {
+          const currentScrollY = window.scrollY;
+          if (currentScrollY > 100) {
+            header.style.transform = 'translateX(-50%) translateY(-100%)';
+            header.style.opacity = '0';
+          } else {
+            header.style.transform = 'translateX(-50%) translateY(0)';
+            header.style.opacity = '1';
+          }
+          lastScrollY = currentScrollY;
+        });
+      }
       
 
       

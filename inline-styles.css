@@ -1,0 +1,58 @@
+/* Inline styles moved to external CSS file */
+
+/* Header CTA Button */
+.header-cta-button-orange {
+  background: #FF6B47;
+  color: white;
+}
+
+/* Hero CTA Button */
+.hero-cta-btn-orange {
+  background: #FF6B47;
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(255, 107, 71, 0.3);
+}
+
+/* Hero Image */
+.hero-image-positioned {
+  position: absolute;
+  top: 65%;
+  right: 50px;
+  transform: translateY(-50%);
+  width: 700px;
+  height: auto;
+  z-index: 12;
+}
+
+/* Contact Page Styles */
+.hero-title-gradient {
+  background: linear-gradient(45deg, #1e3a8a 0%, #3b82f6 30%, #06b6d4 60%, #f97316 90%, #ea580c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.contact-section-positioned {
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-background-element {
+  position: absolute;
+  top: -250px;
+  right: -200px;
+  width: 800px;
+  height: 100%;
+  background-image: url('src/images/GP Elements .png');
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: contain;
+  opacity: 0.4;
+  z-index: 1;
+  filter: blur(4px);
+}
+
+.contact-container-positioned {
+  position: relative;
+  z-index: 2;
+}
