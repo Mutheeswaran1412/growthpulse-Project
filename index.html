@@ -935,7 +935,7 @@
         position: relative;
         z-index: 15;
         padding-top: 220px;
-        padding-left: 120px !important;
+        padding-left: 160px !important;
         display: flex;
         align-items: flex-start;
         min-height: 70vh;
@@ -950,16 +950,54 @@
         padding-left: 0;
       }
       
-      .hero-image {
+      .hero-image-positioned {
         position: absolute;
-        top: 50%;
-        right: 120px;
+        top: 30%;
+        right: 50px;
         transform: translateY(-50%);
-        width: 500px;
+        width: 700px;
         height: auto;
         filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.08));
         animation: heroFloat 6s ease-in-out infinite;
         z-index: 12;
+      }
+      
+      @media (max-width: 1200px) {
+        .hero-image-positioned {
+          width: 550px;
+          right: 20px;
+          top: 30%;
+        }
+      }
+      
+      @media (max-width: 1024px) {
+        .hero-image-positioned {
+          width: 500px;
+          right: 10px;
+          top: 30%;
+        }
+      }
+      
+      @media (max-width: 900px) {
+        .hero-image-positioned {
+          width: 450px;
+          right: 5px;
+          top: 30%;
+        }
+      }
+      
+      @media (max-width: 768px) {
+        .hero-image-positioned {
+          position: static;
+          transform: none;
+          width: 95%;
+          max-width: 400px;
+          margin: 40px auto 0;
+          display: block;
+          right: auto;
+          top: auto;
+          order: 2;
+        }
       }
       
       .gradient-shape-1 {
@@ -1071,6 +1109,10 @@
           padding-top: 120px;
           padding-left: 20px !important;
           padding-right: 20px !important;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
         }
         
         .hero-main-title {
@@ -1086,6 +1128,8 @@
         .hero-content-left {
           text-align: center;
           max-width: 100%;
+          position: relative;
+          z-index: 10;
         }
         
         .hero-cta-btn {
@@ -1094,7 +1138,6 @@
           margin-top: 20px;
         }
         
-        .hero-image,
         .gradient-shape-1,
         .gradient-shape-2,
         .gradient-shape-3 {
@@ -1504,7 +1547,7 @@
         display: inline-flex;
         align-items: center;
         gap: 10px;
-        background: #a3e635;
+        background: linear-gradient(45deg, #667eea, #764ba2);
         color: #fff;
         padding: 15px 30px;
         border-radius: 50px;
@@ -1512,13 +1555,13 @@
         font-weight: 600;
         font-size: 1rem;
         transition: all 0.3s ease;
-        box-shadow: 0 4px 20px rgba(163, 230, 53, 0.3);
+        box-shadow: 0 4px 20px rgba(102, 126, 234, 0.3);
       }
       
       .hero-cta-btn:hover {
         transform: translateY(-2px);
-        background: #84cc16;
-        box-shadow: 0 8px 30px rgba(163, 230, 53, 0.4);
+        background: linear-gradient(45deg, #764ba2, #667eea);
+        box-shadow: 0 8px 30px rgba(102, 126, 234, 0.4);
       }
       
       .hero-cta-btn span:first-child {
@@ -1885,11 +1928,7 @@
       /* Regular sections background */
       .section_brands {
         background: #ffffff;
-        position: relative;
-        overflow: hidden;
       }
-      
-
       
       .section_work-list,
       .section_services,
@@ -1897,60 +1936,6 @@
       .section_faq,
       .section_cta {
         background: #ffffff;
-      }
-      
-      /* Animated Background Shapes */
-      .section_brands::before {
-        content: '';
-        position: absolute;
-        top: -50px;
-        right: -50px;
-        width: 200px;
-        height: 200px;
-        background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
-        border-radius: 50%;
-        animation: floatShape1 8s ease-in-out infinite;
-        z-index: 1;
-      }
-      
-      .section_brands::after {
-        content: '';
-        position: absolute;
-        bottom: -30px;
-        left: -30px;
-        width: 150px;
-        height: 150px;
-        background: linear-gradient(45deg, rgba(255, 107, 157, 0.1), rgba(255, 193, 7, 0.1));
-        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-        animation: floatShape2 10s ease-in-out infinite;
-        z-index: 1;
-      }
-      
-      .floating-shape-1 {
-        position: absolute;
-        top: 20%;
-        right: 10%;
-        width: 80px;
-        height: 80px;
-        background: linear-gradient(135deg, rgba(0, 212, 255, 0.15), rgba(102, 126, 234, 0.15));
-        border-radius: 20px;
-        animation: floatShape3 6s ease-in-out infinite;
-        z-index: 1;
-        transform: rotate(45deg);
-      }
-      
-
-      
-      .floating-shape-3 {
-        position: absolute;
-        top: 30%;
-        left: 5%;
-        width: 100px;
-        height: 40px;
-        background: linear-gradient(90deg, rgba(255, 193, 7, 0.1), rgba(255, 107, 157, 0.1));
-        border-radius: 50px;
-        animation: floatShape5 9s ease-in-out infinite;
-        z-index: 1;
       }
       
       @keyframes floatShape1 {
@@ -2523,6 +2508,14 @@
           padding-right: 15px;
         }
         
+        .container-medium {
+          padding: 0 15px !important;
+        }
+        
+        .container-large {
+          padding: 0 15px !important;
+        }
+        
         .header-container {
           width: 95%;
           top: 5px;
@@ -2560,7 +2553,8 @@
         
         .brands_grid-item {
           padding: 15px;
-          width: 120px;
+          width: 180px;
+          min-width: 180px;
         }
         
         .brands_grid-logo {
@@ -2679,11 +2673,20 @@
         
         .services_items {
           grid-template-columns: 1fr !important;
+          gap: 30px !important;
+        }
+        
+        .services_item {
+          margin-bottom: 20px;
         }
         
         .portfolio_grid {
           grid-template-columns: 1fr !important;
           gap: 20px;
+        }
+        
+        .portfolio_card {
+          margin: 0 !important;
         }
       }
       
@@ -2692,6 +2695,14 @@
         .padding-global {
           padding-left: 20px;
           padding-right: 20px;
+        }
+        
+        .container-medium {
+          padding: 0 20px !important;
+        }
+        
+        .container-large {
+          padding: 0 20px !important;
         }
         
         .hero-content {
@@ -2850,11 +2861,13 @@
         .container-medium {
           max-width: 1400px;
           margin: 0 auto;
+          padding: 0 20px;
         }
         
         .container-large {
           max-width: 1400px;
           margin: 0 auto;
+          padding: 0 20px;
         }
         
         .brands_grid {
@@ -3249,7 +3262,8 @@
       @media (max-width: 768px) {
         .brands_grid-item {
           padding: 20px 15px;
-          width: 150px;
+          width: 200px;
+          min-width: 200px;
         }
         
         .brands_grid-logo {
@@ -3486,23 +3500,32 @@
       
       @media (max-width: 1024px) {
         .section_industries .container-medium {
-          grid-template-columns: 1fr !important;
-          gap: 50px !important;
+          display: block !important;
         }
         
         .industries_title_section {
           position: static !important;
           text-align: center;
+          margin-bottom: 50px;
+        }
+        
+        .industries_cards_grid {
+          grid-template-columns: 1fr !important;
         }
       }
       
       @media (max-width: 768px) {
-        .section_industries .container-medium > div:last-child {
+        .industries_cards_grid {
           grid-template-columns: 1fr !important;
+          gap: 20px !important;
         }
         
-        .section_industries .container-medium > div:last-child > div:last-child {
+        .cards_column.offset {
           margin-top: 0 !important;
+        }
+        
+        .industry_card {
+          padding: 30px !important;
         }
       }
       
@@ -3877,6 +3900,144 @@
         }
       }
       
+      /* Talk to Expert Section Styles */
+      .talk-to-expert-container {
+        background: linear-gradient(135deg, #f8f1ff 0%, #feece5 100%);
+        border-radius: 25px;
+        padding: 60px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .talk-to-expert-container::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -20%;
+        width: 300px;
+        height: 300px;
+        background: radial-gradient(circle, rgba(255, 182, 193, 0.15) 0%, transparent 70%);
+        border-radius: 50%;
+        z-index: 1;
+      }
+      
+      .talk-to-expert-container::after {
+        content: '';
+        position: absolute;
+        bottom: -30%;
+        left: -10%;
+        width: 200px;
+        height: 200px;
+        background: radial-gradient(circle, rgba(221, 160, 221, 0.12) 0%, transparent 70%);
+        border-radius: 50%;
+        z-index: 1;
+      }
+      
+      .talk-to-expert-content {
+        position: relative;
+        z-index: 2;
+      }
+      
+      .expert-badge {
+        display: inline-block;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 8px 20px;
+        border-radius: 25px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin-bottom: 30px;
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+      }
+      
+      .expert-title {
+        font-size: clamp(1.8rem, 3vw, 2.5rem);
+        font-weight: 700;
+        line-height: 1.1;
+        color: #1a1a1a;
+        margin-bottom: 25px;
+        letter-spacing: -0.02em;
+      }
+      
+      .expert-description {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: #666;
+        margin-bottom: 0;
+        max-width: 450px;
+      }
+      
+      .expert-meeting-link {
+        margin: 30px 0;
+      }
+      
+      .meeting-btn {
+        display: inline-block;
+        background: #000;
+        color: white;
+        padding: 15px 30px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+      
+      .meeting-btn:hover {
+        background: #333;
+        transform: translateY(-2px);
+      }
+      
+      .expert-animation-container {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .expert-lottie {
+        width: 500px;
+        height: 500px;
+      }
+      
+      @media (max-width: 768px) {
+        .talk-to-expert-container {
+          grid-template-columns: 1fr;
+          gap: 40px;
+          padding: 40px 30px;
+          text-align: center;
+        }
+        
+        .expert-title {
+          font-size: clamp(2rem, 6vw, 2.5rem);
+        }
+        
+        .expert-description {
+          max-width: 100%;
+        }
+        
+        .expert-lottie {
+          width: 350px;
+          height: 350px;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        .talk-to-expert-container {
+          padding: 30px 20px;
+          gap: 30px;
+        }
+        
+        .expert-lottie {
+          width: 300px;
+          height: 300px;
+        }
+      }
+      
       /* Additional inline styles moved to CSS */
       .section_brands {
         position: relative;
@@ -4078,16 +4239,10 @@
             <a href="index.html" class="header-nav-link w--current">Home</a>
             <a href="about.html" class="header-nav-link">About</a>
             <a href="services.html" class="header-nav-link">Services</a>
+            <a href="product.html" class="header-nav-link">Product</a>
             <a href="contact.html" class="header-nav-link">Contact</a>
           </nav>
-          <div class="header-cta">
-            <a href="#section_cta" class="header-cta-button header-cta-button-orange">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-              </svg>
-              Contact Us
-            </a>
-          </div>
+
           <div class="mobile-hamburger" onclick="toggleMobileMenu()">
             <span></span>
             <span></span>
@@ -4102,6 +4257,7 @@
           <a href="index.html" class="mobile-nav-link" onclick="closeMobileMenu()">Home</a>
           <a href="about.html" class="mobile-nav-link" onclick="closeMobileMenu()">About</a>
           <a href="services.html" class="mobile-nav-link" onclick="closeMobileMenu()">Services</a>
+          <a href="product.html" class="mobile-nav-link" onclick="closeMobileMenu()">Product</a>
           <a href="contact.html" class="mobile-nav-link" onclick="closeMobileMenu()">Contact</a>
           <a href="#section_cta" class="mobile-cta-button" onclick="closeMobileMenu()">Book Intro Call</a>
         </div>
@@ -4217,10 +4373,6 @@ achieve impactful results.
 
         <!-- 3. PARTNERS SECTION -->
          <section id="section-brands" class="section_brands" style="margin-top: -30px;">
-          <!-- Floating Shapes -->
-          <div class="floating-shape-1"></div>
-          <div class="floating-shape-3"></div>
-          
           <div class="padding-global is-tiny"><div class="line"></div></div>
           <div class="padding-section-small"></div>
           <div class="padding-global z-index-2">
@@ -4532,39 +4684,22 @@ achieve impactful results.
           </div>
           <div class="padding-section-medium"></div>
         </section>
-        <!-- 8. OTHERS (CTA) SECTION -->
+        <!-- 8. TALK TO EXPERT SECTION -->
         <section id="section_cta" class="section_cta">
           <div class="padding-section-medium"></div>
           <div class="padding-global">
             <div class="container-medium">
-              <div class="cta_component grid">
-                <div class="cta_graphic-wrap flex-center">
-                  <dotlottie-wc src="https://lottie.host/15f286e9-e60c-46f0-a6e0-050ecb4c4a55/LqCo3OIx9H.lottie" class="cta_lottie" autoplay loop></dotlottie-wc>
+              <div class="talk-to-expert-container">
+                <div class="talk-to-expert-content">
+                  <div class="expert-badge">Book a Meeting</div>
+                  <h2 class="expert-title">Partner with Growthpulse to turn your ideas into measurable business growth 🚀</h2>
+                  <div class="expert-meeting-link">
+                    <a href="#" class="meeting-btn">Book a Meeting</a>
+                  </div>
+                  <p class="expert-description">Book a free 30-minute consultation with one of our data experts to discuss your project.</p>
                 </div>
-                <div class="cta_content styled">
-                  <div class="cta_head">
-                    <div class="pill_wrap">
-                      <div class="cta_pill">Book a Meeting</div>
-                    </div>
-                    <div class="spacer-medium"></div>
-                    <h2 class="heading-style-h5 margin-bottom">
-                       Partner with Growthpulse to turn your ideas into measurable business growth 🚀
-                    </h2>
-                    <div class="cta_meeting_container">
-                      <a href="#" class="cta_meeting_link">Book a Meeting</a>
-                    </div>
-                  </div>
-                  <div class="floating-emojis">
-                    <span class="emoji-float top-right">💡</span>
-                    <span class="emoji-float top-right-2">⭐</span>
-                    <span class="emoji-float bottom-right">🎯</span>
-                    <span class="emoji-float bottom-right-2">✨</span>
-                  </div>
-                  <div class="cta_button-wrap margin-top">
-                    <p class="cta_text styled">
-                     Book a free 30-minute consultation with one of our data experts to discuss your project.
-                    </p>
-                  </div>
+                <div class="expert-animation-container">
+                  <dotlottie-wc src="https://lottie.host/15f286e9-e60c-46f0-a6e0-050ecb4c4a55/LqCo3OIx9H.lottie" class="expert-lottie" autoplay loop></dotlottie-wc>
                 </div>
               </div>
             </div>
