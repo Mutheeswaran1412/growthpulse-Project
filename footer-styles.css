@@ -1,0 +1,13 @@
+/* Footer Font Size Override - Apply to all pages */
+.footer-logo-img {
+  height: 65px !important;
+  width: auto !important;
+}
+
+.footer-link {
+  font-size: 1rem !important;
+}
+
+.footer-copyright {
+  font-size: 1rem !important;
+}

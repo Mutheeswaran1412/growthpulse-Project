@@ -63,6 +63,9 @@
     <link href="background-update.css" rel="stylesheet" type="text/css" />
     <link href="inline-styles.css" rel="stylesheet" type="text/css" />
     <link href="partners-fix.css" rel="stylesheet" type="text/css" />
+    <link href="full-width.css" rel="stylesheet" type="text/css" />
+    <link href="footer-styles.css" rel="stylesheet" type="text/css" />
+    <link href="industry-redesign.css" rel="stylesheet" type="text/css" />
     <!-- code to improve the font quality -->
     <style>
       * {
@@ -450,9 +453,7 @@
       .scroll-note_text {
         font-size: 2rem;
       }
-      .footer_brand {
-        font-size: 1.2rem;
-      }
+
       .text-style-label {
         font-size: 2rem !important;
         font-weight: 600 !important;
@@ -743,18 +744,20 @@
       
       /* FAQ Section Styles */
       .section_faq {
-        background: #ffffff;
+        background: #2E3862 !important;
+        padding: 80px 0;
       }
       .container-large {
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 0 20px;
+        max-width: 100vw;
+        width: 100%;
+        margin: 0;
+        padding: 0 40px;
       }
       .faq_layout {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 60px;
+        gap: 80px;
       }
       .faq_header_left {
         text-align: center;
@@ -762,121 +765,146 @@
       .faq_main_title {
         font-size: clamp(2.5rem, 5vw, 4rem);
         font-weight: bold;
-        color: #333;
+        color: #ffffff;
         line-height: 1.2;
         margin: 0;
       }
       .faq_container_right {
         display: flex;
         flex-direction: column;
-        gap: 20px;
-        max-width: 800px;
+        gap: 0;
+        max-width: 100vw;
         width: 100%;
+        background: transparent;
+        border-radius: 0;
+        padding: 0;
+        box-shadow: none;
       }
-      .faq_item {
-        background: white;
-        border-radius: 15px;
-        overflow: hidden;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      .faq_item_new {
         transition: all 0.3s ease;
-        border: 1px solid #e0e0e0;
       }
-      .faq_item:hover {
-        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      .faq_item_new:not(:last-child) {
+        margin-bottom: 24px;
+        border-bottom: 1px solid #e5e7eb;
+        padding-bottom: 24px;
       }
-      .faq_question {
-        padding: 25px;
+      .faq_question_new {
         cursor: pointer;
-        font-weight: 600;
-        color: #333;
-        transition: all 0.3s ease;
         display: flex;
-        justify-content: space-between;
         align-items: center;
-        font-size: 1.1rem;
+        gap: 60px;
+        transition: all 0.3s ease;
+        padding: 0;
       }
-      .faq_question:hover {
-        background: #f8f9fa;
-      }
-      .faq_icon {
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: #007bff;
-        transition: transform 0.3s ease;
+      .faq_number {
+        font-size: 3rem;
+        font-weight: 300;
+        color: #ffffff;
+        min-width: 100px;
         flex-shrink: 0;
       }
-      .faq_question.active .faq_icon {
+      .faq_text {
+        flex: 1;
+        font-size: 1.8rem;
+        font-weight: 400;
+        color: #ffffff;
+        line-height: 1.3;
+      }
+      .faq_icon_new {
+        width: 60px;
+        height: 60px;
+        background: #f4d03f;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.8rem;
+        font-weight: 300;
+        color: #333;
+        transition: all 0.3s ease;
+        flex-shrink: 0;
+      }
+      .faq_question_new.active .faq_icon_new {
         transform: rotate(45deg);
       }
       .faq_answer {
-        padding: 0 25px;
-        color: #666;
+        padding: 40px 160px 0 160px;
+        color: #cccccc;
         line-height: 1.6;
         max-height: 0;
         overflow: hidden;
         transition: all 0.3s ease;
       }
       .faq_answer.active {
-        padding: 25px;
-        max-height: 200px;
+        max-height: 300px;
       }
       .faq_answer p {
         margin: 0;
-        font-size: 1rem;
+        font-size: 1.1rem;
       }
       @media (max-width: 768px) {
         .faq_layout {
-          grid-template-columns: 1fr;
-          gap: 30px;
+          gap: 40px;
         }
-        .faq_header_left {
-          position: static;
-          text-align: center;
+        .faq_container_right {
+          padding: 40px 30px;
         }
-        
         .faq_main_title {
           font-size: 2rem !important;
-          margin-bottom: 20px;
         }
-        
-        .faq_question {
-          padding: 20px;
-          font-size: 1rem;
+        .faq_question_new {
+          gap: 30px;
         }
-        
-        .faq_answer {
-          padding: 0 20px;
+        .faq_item_new:not(:last-child) {
+          margin-bottom: 40px;
         }
-        
-        .faq_answer.active {
-          padding: 20px;
+        .faq_number {
+          font-size: 2rem;
+          min-width: 60px;
         }
-        
-        .faq_icon {
+        .faq_text {
           font-size: 1.3rem;
+        }
+        .faq_icon_new {
+          width: 50px;
+          height: 50px;
+          font-size: 1.5rem;
+        }
+        .faq_answer {
+          padding: 30px 90px 0 90px;
         }
       }
       
       @media (max-width: 480px) {
+        .faq_container_right {
+          padding: 30px 20px;
+        }
         .faq_main_title {
           font-size: 1.8rem !important;
         }
-        
-        .faq_question {
-          padding: 15px;
-          font-size: 0.95rem;
+        .faq_question_new {
+          gap: 20px;
         }
-        
+        .faq_item_new:not(:last-child) {
+          margin-bottom: 30px;
+        }
+        .faq_number {
+          font-size: 1.5rem;
+          min-width: 50px;
+        }
+        .faq_text {
+          font-size: 1.1rem;
+        }
+        .faq_icon_new {
+          width: 40px;
+          height: 40px;
+          font-size: 1.2rem;
+        }
         .faq_answer {
-          padding: 0 15px;
+          padding: 25px 70px 0 70px;
         }
-        
-        .faq_answer.active {
-          padding: 15px;
-        }
-        
         .faq_answer p {
-          font-size: 0.9rem;
+          font-size: 0.95rem;
         }
       }
       body {
@@ -2038,305 +2066,215 @@
         }
       }
       
-      /* Template Footer Styles */
-      .template-footer {
-        margin-top: 60px;
-      }
-      
-      /* Green Banner */
-      .footer-banner {
-        background: linear-gradient(45deg, #667eea, #764ba2);
-        padding: 15px 0;
-        overflow: hidden;
+      /* Modern Footer Styles */
+      .modern-footer {
+        background: #ffffff;
+        color: #000000;
+        padding: 120px 0 80px;
         position: relative;
-      }
-      
-      .banner-content {
-        display: flex;
-        align-items: center;
-        gap: 40px;
-        animation: scrollBanner 20s linear infinite;
-        white-space: nowrap;
-      }
-      
-      .banner-text {
-        color: #fff;
-        font-size: 1.2rem;
-        font-weight: 700;
-        letter-spacing: 1px;
-      }
-      
-      .banner-star {
-        color: #fff;
-        font-size: 1.5rem;
-        font-weight: bold;
-      }
-      
-      @keyframes scrollBanner {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(-50%); }
-      }
-      
-      /* Main Footer */
-      .footer-main {
-        background: #1a1a1a;
-        color: #ffffff;
-        padding: 80px 0 0;
+        overflow: hidden;
       }
       
       .footer-container {
         max-width: 1200px;
         margin: 0 auto;
         padding: 0 20px;
+        position: relative;
+        z-index: 2;
       }
       
-      /* Contact Section */
-      .footer-contact-section {
-        text-align: center;
-        margin-bottom: 80px;
-        padding-bottom: 40px;
-        border-bottom: 1px solid #333;
-      }
-      
-      .footer-contact-title {
-        font-size: clamp(2.5rem, 5vw, 4rem);
-        font-weight: 300;
-        color: #667eea;
-        margin-bottom: 30px;
-        letter-spacing: -1px;
-      }
-      
-      .footer-cta-btn {
-        display: inline-block;
-        background: linear-gradient(45deg, #667eea, #764ba2);
-        color: #fff;
-        padding: 15px 40px;
-        border-radius: 50px;
-        text-decoration: none;
-        font-weight: 600;
-        font-size: 1.1rem;
-        transition: all 0.3s ease;
-      }
-      
-      .footer-cta-btn:hover {
-        background: #764ba2;
-        transform: translateY(-2px);
-      }
-      
-      /* Footer Grid */
-      .footer-grid {
+      .footer-content {
         display: grid;
-        grid-template-columns: 1fr 1fr 1.2fr 1.5fr;
-        gap: 40px;
-        margin-bottom: 60px;
+        grid-template-columns: 1fr 2fr;
+        gap: 120px;
+        align-items: start;
       }
       
-      /* Logo Section */
-      .footer-logo-section {
+      /* Brand Section */
+      .footer-brand-section {
         display: flex;
-        align-items: flex-start;
+        flex-direction: column;
+        gap: 20px;
       }
       
-      .footer-brand {
+      .footer-logo {
         display: flex;
         align-items: center;
-        gap: 10px;
+        gap: 12px;
+        margin-bottom: 20px;
       }
       
-      .footer-logo-text {
-        color: #667eea;
-        font-size: 1.5rem;
-        font-weight: 800;
-        letter-spacing: -1px;
+      .footer-logo-img {
+        height: 65px;
+        width: auto;
       }
       
-      .footer-logo-x {
-        color: #ffffff;
-        font-size: 1.5rem;
-        font-weight: 800;
+      .footer-brand-name {
+        color: #000000;
+        font-size: 1.2rem;
+        font-weight: 600;
       }
       
-      /* Footer Columns */
+      .footer-copyright {
+        color: #333333;
+        font-size: 1rem;
+        margin: 0;
+        line-height: 1.4;
+      }
+      
+      /* Links Grid */
+      .footer-links-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 100px;
+      }
+      
       .footer-column {
         display: flex;
         flex-direction: column;
       }
       
       .footer-column-title {
-        color: #667eea;
-        font-size: 1.1rem;
+        color: #000000;
+        font-size: 1rem;
         font-weight: 600;
-        margin-bottom: 25px;
+        margin-bottom: 20px;
       }
       
       .footer-links {
         list-style: none;
         padding: 0;
         margin: 0;
-      }
-      
-      .footer-links li {
-        margin-bottom: 8px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
       }
       
       .footer-link {
-        color: #cccccc;
+        color: #666666;
         text-decoration: none;
-        font-size: 0.9rem;
+        font-size: 1rem;
         transition: color 0.3s ease;
         line-height: 1.4;
       }
       
       .footer-link:hover {
-        color: #667eea;
+        color: #000000;
       }
       
-      /* Contact Info */
-      .footer-contact-info {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-      }
-      
-      .footer-address {
-        color: #cccccc;
-        font-size: 0.95rem;
-        margin: 0;
-        line-height: 1.4;
-      }
-      
-      .footer-email {
-        color: #cccccc;
-        text-decoration: none;
-        font-size: 0.95rem;
-        margin-bottom: 20px;
-        transition: color 0.3s ease;
-      }
-      
-      .footer-email:hover {
-        color: #667eea;
-      }
-      
-      /* Social Icons */
       .footer-social-icons {
         display: flex;
         gap: 15px;
+        margin-top: 20px;
       }
       
-      .footer-social-icon {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 40px;
-        height: 40px;
-        background: #333;
-        border-radius: 50%;
-        color: #cccccc;
-        text-decoration: none;
-        transition: all 0.3s ease;
-      }
-      
-      .footer-social-icon:hover {
-        background: linear-gradient(45deg, #667eea, #764ba2);
-        color: #fff;
-        transform: translateY(-2px);
-      }
-      
-      /* Footer Bottom */
-      .footer-bottom {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 30px 0;
-        border-top: 1px solid #333;
-      }
-      
-      .footer-copyright {
-        color: #cccccc;
-        font-size: 0.9rem;
-        margin: 0;
-      }
-      
-      .footer-bottom-right {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-      }
-      
-      .footer-legal-link {
-        color: #cccccc;
-        text-decoration: none;
-        font-size: 0.9rem;
+      .footer-social-link {
+        color: #666666;
         transition: color 0.3s ease;
       }
       
-      .footer-legal-link:hover {
-        color: #667eea;
+      .footer-social-link:hover {
+        color: #000000;
       }
       
-      .footer-divider {
-        color: #666;
-        font-size: 0.9rem;
+      .footer-email-highlight {
+        background: #f0f8ff;
+        padding: 8px 12px;
+        border-radius: 6px;
+        border: 1px solid #e0e0e0;
+        font-weight: 600;
+        color: #000000 !important;
+      }
+      
+      .footer-email-highlight:hover {
+        background: #e6f3ff;
+        border-color: #ccc;
+      }
+      
+      .footer-link-with-icon {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      
+      .footer-link-with-icon svg {
+        flex-shrink: 0;
+      }
+      
+      /* Background Text */
+      .footer-bg-text {
+        position: absolute;
+        bottom: -50px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: clamp(8rem, 15vw, 20rem);
+        font-weight: 900;
+        color: rgba(0, 0, 0, 0.03);
+        z-index: 1;
+        pointer-events: none;
+        white-space: nowrap;
+        user-select: none;
       }
       
       /* Responsive Design */
       @media (max-width: 1024px) {
-        .footer-grid {
-          grid-template-columns: repeat(3, 1fr);
+        .footer-content {
+          grid-template-columns: 1fr;
+          gap: 60px;
+        }
+        
+        .footer-links-grid {
+          grid-template-columns: repeat(2, 1fr);
           gap: 40px;
         }
       }
       
       @media (max-width: 768px) {
-        .footer-main {
-          padding: 60px 0 0;
+        .modern-footer {
+          padding: 60px 0 40px;
         }
         
-        .footer-contact-section {
-          margin-bottom: 60px;
+        .footer-content {
+          gap: 40px;
         }
         
-        .footer-contact-title {
-          font-size: 2.5rem;
-        }
-        
-        .footer-grid {
+        .footer-links-grid {
           grid-template-columns: repeat(2, 1fr);
           gap: 30px;
         }
         
-        .footer-bottom {
-          flex-direction: column;
-          gap: 20px;
-          text-align: center;
+        .footer-bg-text {
+          font-size: clamp(6rem, 20vw, 12rem);
+          bottom: -30px;
         }
       }
       
       @media (max-width: 480px) {
-        .banner-text {
-          font-size: 1rem;
+        .modern-footer {
+          padding: 40px 0 30px;
         }
         
-        .footer-main {
-          padding: 40px 0 0;
+        .footer-content {
+          gap: 30px;
         }
         
-        .footer-contact-section {
-          margin-bottom: 40px;
-        }
-        
-        .footer-contact-title {
-          font-size: 2rem;
-        }
-        
-        .footer-grid {
+        .footer-links-grid {
           grid-template-columns: 1fr;
           gap: 30px;
           text-align: center;
         }
         
-        .footer-social-icons {
+        .footer-brand-section {
+          text-align: center;
+        }
+        
+        .footer-logo {
           justify-content: center;
+        }
+        
+        .footer-bg-text {
+          font-size: clamp(4rem, 25vw, 8rem);
+          bottom: -20px;
         }
       }
       
@@ -4271,9 +4209,9 @@
                 <span class="bold-text">Global Strategy</span> for<br><span class="bold-text">Digital Marketing</span> &<br><span class="italic-text">Software Solutions</span>
               </h1>
               <p class="hero-subtitle">An end-to-end strategic solution for marketing, development, management, and learning to drive sustainable business growth.</p>
-              <a href="#section_cta" class="hero-cta-btn hero-cta-btn-orange">
+              <a href="about.html" class="hero-cta-btn hero-cta-btn-orange">
                 <span>→</span>
-                <span>Book a Free Strategy Call</span>
+                <span>Know More</span>
               </a>
             </div>
             <img src="src/images/Home/landing-page.avif" alt="Digital Strategy" class="hero-image-positioned" />
@@ -4281,7 +4219,7 @@
           </div>
         </section>
         <!-- 2. SERVICES SECTION -->
-        <section class="section_services margin-top-negative" id="services">
+        <section class="section_services" id="services" style="margin-top: 0; background: linear-gradient(180deg, #FEECE5 0%, #F8F1FF 100%);">
           <div class="padding-global is-tiny"><div class="line"></div></div>
           <div class="padding-section-small"></div>
           <div class="padding-global">
@@ -4294,8 +4232,8 @@
                   </div>
                   <div class="spacer-large"></div>
                   <h3 class="heading-style-h3">
-                  We provide comprehensive services to accelerate growth, streamline workflows, and
-achieve impactful results.
+                We provide comprehensive services to accelerate growth, streamline workflows, and achieve impactful results. From enterprise automation and ERP integration to digital marketing, corporate training, and analytics, our solutions empower organizations to innovate faster, work smarter, and achieve long-term scalability.
+
                   </h3>
                   <div class="spacer-medium"></div>
                   <a href="services.html" class="explore-btn">Explore Our Services</a>
@@ -4372,7 +4310,7 @@ achieve impactful results.
         </section>
 
         <!-- 3. PARTNERS SECTION -->
-         <section id="section-brands" class="section_brands" style="margin-top: -30px;">
+         <section id="section-brands" class="section_brands" style="margin-top: 0; background: #ffffff;">
           <div class="padding-global is-tiny"><div class="line"></div></div>
           <div class="padding-section-small"></div>
           <div class="padding-global z-index-2">
@@ -4477,202 +4415,125 @@ achieve impactful results.
 
         <!-- 4. INDUSTRY SECTION -->
         <section class="section_industries" id="industry">
-          <!-- Background Pattern -->
-          <div class="bg-pattern"></div>
-          
-          <div class="padding-global">
-            <div class="container-medium">
-              <!-- Title Section at Top -->
-              <div class="industries_header_top" style="text-align: left; margin-bottom: 100px;">
-                <h2 class="industries_main_title" style="color: #333333; font-size: clamp(3rem, 6vw, 5rem); font-weight: 700; line-height: 1.1; margin: -20px 0 20px 0;">Our<br>Industry<br>Experience</h2>
-                <p style="font-size: 1.2rem; color: #666666; line-height: 1.6; margin: 0; max-width: 600px;">Delivering specialized solutions across diverse industries to drive innovation and growth.</p>
+          <div class="industries_new_container">
+            <div class="industries_header_new">
+              <h2 class="industries_title_new">Industries We Serve</h2>
+              <p class="industries_subtitle_new">Delivering specialized solutions across diverse industries to drive innovation and growth.</p>
+            </div>
+            
+            <div class="industries_grid_new">
+              <div class="industry_card_new">
+                <div class="industry_icon_new">
+                  🛒
+                </div>
+                <h3 class="industry_title_new">Retail & E-commerce</h3>
+                <p class="industry_desc_new">Optimize digital storefronts and customer journeys with our TNova ERP and customized Odoo for seamless inventory, order, and CRM management.</p>
               </div>
               
-              <!-- Cards Grid -->
-              <div class="industries_cards_grid" style="margin-top: 60px;">
-                <!-- Left Column -->
-                <div class="cards_column">
-                  <div class="industry_card">
-                    <div class="industry_icon">
-                      <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M7 18c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12L8.1 13h7.45c.75 0 1.41-.41 1.75-1.03L21.7 4H5.21l-.94-2H1zm16 16c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
-                      </svg>
-                    </div>
-                    <h3 class="industry_card_title">Retail and E-commerce</h3>
-                    <p class="industry_card_desc">From online store optimization to customer engagement campaigns, we ensure that your brand moves forward in the digital marketplace.</p>
-                  </div>
-                  
-                  <div class="industry_card">
-                    <div class="industry_icon">
-                      <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/>
-                      </svg>
-                    </div>
-                    <h3 class="industry_card_title">Finance and FinTech</h3>
-                    <p class="industry_card_desc">Our strategies empower us to create trust, acquire customers, and simplify digital with secure technology and targeted marketing.</p>
-                  </div>
-                  
-                  <div class="industry_card">
-                    <div class="industry_icon">
-                      <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
-                      </svg>
-                    </div>
-                    <h3 class="industry_card_title">Healthcare and Life Sciences</h3>
-                    <p class="industry_card_desc">We provide digital solutions that improve patient engagement, streamline operations, and expand the research outreach.</p>
-                  </div>
+              <div class="industry_card_new">
+                <div class="industry_icon_new">
+                  💰
                 </div>
-                
-                <!-- Right Column - Offset -->
-                <div class="cards_column offset">
-                  <div class="industry_card">
-                    <div class="industry_icon">
-                      <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                      </svg>
-                    </div>
-                    <h3 class="industry_card_title">EdTech and SaaS</h3>
-                    <p class="industry_card_desc">We craft campaigns and technologies that drive user adoption, learning outcomes, and subscription growth.</p>
-                  </div>
-                  
-                  <div class="industry_card">
-                    <div class="industry_icon">
-                      <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
-                      </svg>
-                    </div>
-                    <h3 class="industry_card_title">Real Estate</h3>
-                    <p class="industry_card_desc">Our solutions enable sales pipelines and lead you to an effective connection with buyers and investors.</p>
-                  </div>
-                  
-                  <div class="industry_card">
-                    <div class="industry_icon">
-                      <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14H7v-2h5v2zm3-4H7v-2h8v2zm0-4H7V7h8v2z"/>
-                      </svg>
-                    </div>
-                    <h3 class="industry_card_title">Accounting</h3>
-                    <p class="industry_card_desc">Streamlining financial processes with automated bookkeeping, tax compliance solutions, and real-time financial reporting systems.</p>
-                  </div>
+                <h3 class="industry_title_new">Finance and FinTech</h3>
+                <p class="industry_desc_new">Provide secure, compliant financial services with agile platforms enhanced by TNova ERP and Odoo for real-time reporting, analysis, and operational control.</p>
+              </div>
+              
+              <div class="industry_card_new">
+                <div class="industry_icon_new">
+                  🏥
                 </div>
+                <h3 class="industry_title_new">Healthcare and Life Sciences</h3>
+                <p class="industry_desc_new">Streamline clinic workflows, patient records, and supply chains using TNova ERP and Odoo integrated with HIPAA-ready digital engagement tools.</p>
+              </div>
+              
+              <div class="industry_card_new">
+                <div class="industry_icon_new">
+                  🎓
+                </div>
+                <h3 class="industry_title_new">EdTech and SaaS</h3>
+                <p class="industry_desc_new">Drive learning outcomes and user growth with KallooriConnect, a career aggregation and student engagement platform, and GrowthPulse L&D, our corporate upskilling solution.</p>
+              </div>
+              
+              <div class="industry_card_new">
+                <div class="industry_icon_new">
+                  🏠
+                </div>
+                <h3 class="industry_title_new">Real Estate</h3>
+                <p class="industry_desc_new">Accelerate sales cycles with smart lead tracking and virtual engagement backed by TNova ERP and Odoo for property management, billing, and investor reporting.</p>
+              </div>
+              
+              <div class="industry_card_new">
+                <div class="industry_icon_new">
+                  📊
+                </div>
+                <h3 class="industry_title_new">Accounting</h3>
+                <p class="industry_desc_new">Streamlining financial processes with automated bookkeeping, tax compliance solutions, and real-time financial reporting systems.</p>
               </div>
             </div>
           </div>
         </section>
 
-        <!-- 5. BUSINESSES SECTION -->
-        <section class="section_portfolio" id="businesses">
-          <div class="padding-section-medium"></div>
-          <div class="portfolio_dark_bg">
-            <div class="padding-global">
-              <div class="container-medium">
-                <div class="portfolio_header text-left">
-                  <div class="label_wrap">
-                    <div class="label_line"></div>
-                    <h2 class="text-style-label white">Our Business Portfolio</h2>
-                  </div>
-                  <h3 class="heading-style-h4 white">Growthpulse innovative companies delivering transformative solutions across multiple industries</h3>
-                </div>
-                <div class="portfolio_grid">
-                  <div class="portfolio_card">
-                    <div class="portfolio_image">
-                      <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=250&fit=crop" alt="Hotelier Links" />
-                    </div>
-                    <div class="portfolio_card_content">
-                      <h3 class="portfolio_card_title">Hotelierlinks</h3>
-                      <p class="portfolio_card_desc">Hotelierlinks specializes in transforming the hospitality industry through innovative technology solutions.</p>
 
-                      <a href="https://hotelierlinks.com" target="_blank" rel="noopener" class="portfolio_btn">Visit Website</a>
-                    </div>
-                  </div>
-
-                  <div class="portfolio_card">
-                    <div class="portfolio_image">
-                      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop" alt="TNova" />
-                    </div>
-                    <div class="portfolio_card_content">
-                      <h3 class="portfolio_card_title">TNova</h3>
-                      <p class="portfolio_card_desc">Leading provider of ERPNext implementation and customization services for business optimization.</p>
-
-                      <a href="https://tnova.ai" target="_blank" rel="noopener" class="portfolio_btn">Visit Website</a>
-                    </div>
-                  </div>
-                  <div class="portfolio_card">
-                    <div class="portfolio_image">
-                      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=250&fit=crop" alt="Kalloriconnect" />
-                    </div>
-                    <div class="portfolio_card_content">
-                      <h3 class="portfolio_card_title">KallooriConnect</h3>
-                      <p class="portfolio_card_desc">Comprehensive educational networking platform bridging students, institutions, and career opportunities.</p>
-
-                      <span class="portfolio_btn_disabled">Coming Soon</span>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="padding-section-small"></div>
-        </section>
 
 
 
         <!-- 7. FAQ SECTION -->
         <section class="section_faq relative" id="faq">
-          <div class="faq_background_element"></div>
-          <div class="padding-section-small"></div>
           <div class="padding-global z-index-2">
-            <div class="container-large">
               <div class="faq_layout">
                 <div class="faq_header_left text-left">
                   <h2 class="faq_main_title">Frequently Asked Questions</h2>
                 </div>
                 <div class="faq_container_right">
-                  <div class="faq_item">
-                    <div class="faq_question" onclick="toggleFAQ(this)">
-                      <span>What is software marketing, and why is it important?</span>
-                      <span class="faq_icon">+</span>
+                  <div class="faq_item_new">
+                    <div class="faq_question_new" onclick="toggleFAQ(this)">
+                      <div class="faq_number">01</div>
+                      <span class="faq_text">What is software marketing, and why is it important?</span>
+                      <div class="faq_icon_new">+</div>
                     </div>
                     <div class="faq_answer">
                       <p>Software marketing is the process of promoting software products and SaaS solutions using targeted marketing approaches, including digital campaigns, demos, and customer education. Companies need software marketing to differentiate themselves in the market while connecting with their right audience and to build trust.</p>
                     </div>
                   </div>
                   
-                  <div class="faq_item">
-                    <div class="faq_question" onclick="toggleFAQ(this)">
-                      <span>How can digital marketing support my business growth?</span>
-                      <span class="faq_icon">+</span>
+                  <div class="faq_item_new">
+                    <div class="faq_question_new" onclick="toggleFAQ(this)">
+                      <div class="faq_number">02</div>
+                      <span class="faq_text">How can digital marketing support my business growth?</span>
+                      <div class="faq_icon_new">+</div>
                     </div>
                     <div class="faq_answer">
                       <p>Digital marketing helps businesses maximize their online visibility while engaging their customers and achieving their highest ROI through data-driven methods that include SEO, paid advertising, social media, and email automation.</p>
                     </div>
                   </div>
                   
-                  <div class="faq_item">
-                    <div class="faq_question" onclick="toggleFAQ(this)">
-                      <span>What services are included in technology development?</span>
-                      <span class="faq_icon">+</span>
+                  <div class="faq_item_new">
+                    <div class="faq_question_new" onclick="toggleFAQ(this)">
+                      <div class="faq_number">03</div>
+                      <span class="faq_text">What services are included in technology development?</span>
+                      <div class="faq_icon_new">+</div>
                     </div>
                     <div class="faq_answer">
                       <p>The technology development includes custom web and mobile applications alongside API integrations and cloud solutions, as well as software designed for operational efficiency management and performance optimization.</p>
                     </div>
                   </div>
                   
-                  <div class="faq_item">
-                    <div class="faq_question" onclick="toggleFAQ(this)">
-                      <span>Why should businesses invest in learning & development?</span>
-                      <span class="faq_icon">+</span>
+                  <div class="faq_item_new">
+                    <div class="faq_question_new" onclick="toggleFAQ(this)">
+                      <div class="faq_number">04</div>
+                      <span class="faq_text">Why should businesses invest in learning & development?</span>
+                      <div class="faq_icon_new">+</div>
                     </div>
                     <div class="faq_answer">
                       <p>The implementation of learning and development programs boosts employee skills while enhancing productivity levels and creating better preparation for business transitions, which produces lasting organizational development.</p>
                     </div>
                   </div>
                   
-                  <div class="faq_item">
-                    <div class="faq_question" onclick="toggleFAQ(this)">
-                      <span>Does Growthpulse Solutions build custom technology solutions?</span>
-                      <span class="faq_icon">+</span>
+                  <div class="faq_item_new">
+                    <div class="faq_question_new" onclick="toggleFAQ(this)">
+                      <div class="faq_number">05</div>
+                      <span class="faq_text">Does Growthpulse Solutions build custom technology solutions?</span>
+                      <div class="faq_icon_new">+</div>
                     </div>
                     <div class="faq_answer">
                       <p>Yes. Our team creates and implements custom web and mobile applications together with integrations and cloud solutions that match your business objectives to deliver scalable results.</p>
@@ -4680,13 +4541,11 @@ achieve impactful results.
                   </div>
                 </div>
               </div>
-            </div>
           </div>
-          <div class="padding-section-medium"></div>
         </section>
         <!-- 8. TALK TO EXPERT SECTION -->
         <section id="section_cta" class="section_cta">
-          <div class="padding-section-medium"></div>
+          <div class="padding-section-small"></div>
           <div class="padding-global">
             <div class="container-medium">
               <div class="talk-to-expert-container">
@@ -4707,24 +4566,41 @@ achieve impactful results.
           <div class="padding-section-medium"></div>
         </section>
       </main>
-      <footer class="template-footer">
-
-        
-        <!-- Main Footer Content -->
-        <div class="footer-main">
-          <div class="footer-container">
-
-            
-            <!-- Footer Grid -->
-            <div class="footer-grid">
-              <!-- Logo Section -->
-              <div class="footer-logo-section">
-                <div class="footer-brand">
-                  <span class="footer-logo-text">GROWTHPULSE</span>
-                </div>
+      <footer class="modern-footer">
+        <div class="footer-container">
+          <div class="footer-content">
+            <!-- Logo and Copyright -->
+            <div class="footer-brand-section">
+              <div class="footer-logo">
+                <img src="src/images/growthpulse-logo.png" alt="GrowthPulse" class="footer-logo-img">
               </div>
-              
-              <!-- Pages Column -->
+              <p class="footer-copyright">© copyright GrowthPulse 2024. All rights reserved.</p>
+              <div class="footer-social-icons">
+                <a href="https://x.com" class="footer-social-link" target="_blank" rel="noopener" title="Follow us on X (Twitter)">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                  </svg>
+                </a>
+                <a href="https://facebook.com" class="footer-social-link" target="_blank" rel="noopener" title="Follow us on Facebook">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                  </svg>
+                </a>
+                <a href="https://instagram.com" class="footer-social-link" target="_blank" rel="noopener" title="Follow us on Instagram">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                  </svg>
+                </a>
+                <a href="https://linkedin.com" class="footer-social-link" target="_blank" rel="noopener" title="Follow us on LinkedIn">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            
+            <!-- Footer Links -->
+            <div class="footer-links-grid">
               <div class="footer-column">
                 <h4 class="footer-column-title">Pages</h4>
                 <ul class="footer-links">
@@ -4732,10 +4608,10 @@ achieve impactful results.
                   <li><a href="services.html" class="footer-link">Services</a></li>
                   <li><a href="about.html" class="footer-link">About</a></li>
                   <li><a href="contact.html" class="footer-link">Contact</a></li>
+                  <li><a href="product.html" class="footer-link">Product</a></li>
                 </ul>
               </div>
               
-              <!-- Services Column -->
               <div class="footer-column">
                 <h4 class="footer-column-title">Services</h4>
                 <ul class="footer-links">
@@ -4743,58 +4619,29 @@ achieve impactful results.
                   <li><a href="software-marketing.html" class="footer-link">Software Marketing</a></li>
                   <li><a href="technical-development.html" class="footer-link">Technical Development</a></li>
                   <li><a href="learning-development.html" class="footer-link">Learning & Development</a></li>
-                  <li><a href="account-management.html" class="footer-link">Account Management</a></li>
-                  <li><a href="event-management.html" class="footer-link">Event Management</a></li>
                 </ul>
               </div>
               
-
-              
-              <!-- Contact Info Column -->
               <div class="footer-column">
-                <h4 class="footer-column-title">GrowthPulse Agency</h4>
-                <div class="footer-contact-info">
-                  <p class="footer-address">#2, Avvaiyar Street, Ekkatuthangal</p>
-                  <p class="footer-address">Chennai-32, India</p>
-                  <a href="mailto:sales@growthpulss.com" class="footer-email">sales@growthpulss.com</a>
-                  <div class="footer-social-icons">
-                    <a href="https://instagram.com" target="_blank" rel="noopener" title="Follow GrowthPulse on Instagram" class="footer-social-icon">
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                      </svg>
-                    </a>
-                    <a href="https://x.com" target="_blank" rel="noopener" title="Follow GrowthPulse on X (Twitter)" class="footer-social-icon">
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                      </svg>
-                    </a>
-                    <a href="https://linkedin.com" target="_blank" rel="noopener" title="Connect with GrowthPulse on LinkedIn" class="footer-social-icon">
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                      </svg>
-                    </a>
-                    <a href="https://facebook.com" target="_blank" rel="noopener" title="Like GrowthPulse on Facebook" class="footer-social-icon">
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                      </svg>
-                    </a>
-                  </div>
-                </div>
+                <h4 class="footer-column-title">Address</h4>
+                <ul class="footer-links">
+                  <li><span class="footer-link footer-link-with-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>#2, Avvaiyar Street, Ekkatuthangal</span></li>
+                  <li><span class="footer-link footer-link-with-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Chennai-32, India</span></li>
+                </ul>
               </div>
-            </div>
-            
-            <!-- Footer Bottom -->
-            <div class="footer-bottom">
-              <div class="footer-bottom-left">
-                <p class="footer-copyright">All Right Reserved ©</p>
-              </div>
-              <div class="footer-bottom-right">
-                <a href="#" class="footer-legal-link">Privacy Policy</a>
-                <span class="footer-divider">/</span>
-                <a href="#" class="footer-legal-link">Terms & Conditions</a>
+              
+              <div class="footer-column">
+                <h4 class="footer-column-title">Contact</h4>
+                <ul class="footer-links">
+                  <li><a href="mailto:sales@growthpulss.com" class="footer-link footer-email-highlight footer-link-with-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>sales@growthpulss.com</a></li>
+                  <li style="margin-top: 15px;"><a href="tel:+919876543210" class="footer-link footer-link-with-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>+91 98765 43210</a></li>
+                </ul>
               </div>
             </div>
           </div>
+          
+          <!-- Large Background Text -->
+          <div class="footer-bg-text">GrowthPulse</div>
         </div>
       </footer>
     </div>
@@ -4885,7 +4732,7 @@ achieve impactful results.
         document.querySelectorAll('.faq_answer.active').forEach(item => {
           item.classList.remove('active');
         });
-        document.querySelectorAll('.faq_question.active').forEach(item => {
+        document.querySelectorAll('.faq_question_new.active').forEach(item => {
           item.classList.remove('active');
         });
         

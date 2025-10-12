@@ -1,0 +1,14 @@
+/* Full Width Override - Apply to all pages */
+.container-medium, 
+.container-large, 
+.w-container,
+.padding-global .container-medium,
+.padding-global .container-large {
+  max-width: 100vw !important;
+  width: 100% !important;
+}
+
+.page-wrapper {
+  width: 100vw !important;
+  max-width: 100vw !important;
+}

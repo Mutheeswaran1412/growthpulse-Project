@@ -41,12 +41,12 @@
 
 /* FAQ section specific */
 .section_faq {
-  background: #ffffff !important;
+  background: #1D2A4B !important;
 }
 
 /* Brands section specific */
 .section_brands {
-  background: #ffffff !important;
+  background: linear-gradient(180deg, #FEECE5 0%, #F8F1FF 100%) !important;
 }
 
 /* CTA section specific */
@@ -72,7 +72,9 @@
 }
 
 /* Ensure dark sections remain dark */
-.section_industries,
+.section_industries {
+  background: #ffffff !important;
+}
 .footer-main,
 .portfolio_dark_bg.dark {
   background: #1a1a1a !important;
