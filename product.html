@@ -8,9 +8,12 @@
     <link href="src/images/Main-Logo-01.png" rel="shortcut icon" type="image/png"/>
     <link href="background-update.css" rel="stylesheet" type="text/css"/>
     <link href="inline-styles.css" rel="stylesheet" type="text/css"/>
+    <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.1/dist/dotlottie-wc.js" type="module"></script>
     <link href="partners-fix.css" rel="stylesheet" type="text/css"/>
     <link href="full-width.css" rel="stylesheet" type="text/css"/>
     <link href="footer-styles.css" rel="stylesheet" type="text/css"/>
+    <link href="hide-scrollbar.css" rel="stylesheet" type="text/css"/>
+    <link href="mobile-responsive.css" rel="stylesheet" type="text/css"/>
     <style>
         * {
             -webkit-font-smoothing: antialiased;
@@ -27,9 +30,10 @@
             top: 20px;
             left: 50%;
             transform: translateX(-50%);
-            z-index: 1000;
+            z-index: 9999;
             width: 95%;
             max-width: 1200px;
+            transition: transform 0.2s ease, visibility 0.2s ease;
         }
         .header-pill {
             background: #ffffff;
@@ -102,76 +106,79 @@
                 text-align: center;
             }
         }
-        .portfolio_grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-top: 60px;
+        .products-header {
+            text-align: center;
+            margin-bottom: 80px;
         }
-        .portfolio_card {
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            transition: transform 0.3s ease;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-        .portfolio_card:hover {
-            transform: translateY(-8px);
-        }
-        .portfolio_image {
-            height: 200px;
-            overflow: hidden;
-        }
-        .portfolio_image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .portfolio_card_content {
-            padding: 24px;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-        }
-        .portfolio_card_title {
+        .products-main-title {
+            font-size: 3rem;
+            font-weight: 600;
             color: #333;
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-bottom: 12px;
-        }
-        .portfolio_card_desc {
-            color: #666;
-            font-size: 0.95rem;
-            line-height: 1.5;
             margin-bottom: 20px;
         }
-        .portfolio_btn {
+        .products-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 60px 40px;
+            margin-top: 60px;
+        }
+        .product-item {
+            text-align: center;
+            padding: 40px 20px;
+            transition: transform 0.3s ease;
+        }
+        .product-item:hover {
+            transform: translateY(-5px);
+        }
+        .product-logo {
+            margin-bottom: 30px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .product-logo-img {
+            max-height: 80px;
+            max-width: 200px;
+            object-fit: contain;
+        }
+        .product-description {
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            min-height: 80px;
+        }
+        .product-link {
+            display: inline-block;
             background: #007bff;
             color: white;
-            padding: 10px 20px;
+            padding: 12px 24px;
             border-radius: 6px;
             text-decoration: none;
             font-size: 0.9rem;
             font-weight: 500;
-            transition: background 0.3s ease;
-            margin-top: auto;
-            text-align: center;
+            transition: all 0.3s ease;
         }
-        .portfolio_btn:hover {
+        .product-link:hover {
             background: #0056b3;
+            transform: translateY(-1px);
         }
-        .portfolio_btn_disabled {
-            background: #ddd;
-            color: #999;
-            padding: 10px 20px;
+        .product-link-disabled {
+            display: inline-block;
+            background: #e9ecef;
+            color: #6c757d;
+            padding: 12px 24px;
             border-radius: 6px;
             font-size: 0.9rem;
             font-weight: 500;
-            margin-top: auto;
-            text-align: center;
         }
         /* Modern Footer Styles */
         .modern-footer {
@@ -330,13 +337,103 @@
             background: #ffffff;
             padding: 80px 0;
         }
+        .mobile-hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+        .mobile-hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #333;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+        .mobile-hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .mobile-hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .mobile-hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0,0,0,0.95);
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+        .mobile-menu-overlay.active {
+            transform: translateX(0);
+        }
+        .mobile-menu-content {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            text-align: center;
+        }
+        .mobile-nav-link {
+            color: white;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        .mobile-nav-link:hover {
+            color: #a3e635;
+        }
         @media (max-width: 768px) {
             .header-nav {
                 display: none;
             }
-            .portfolio_grid {
+            .mobile-hamburger {
+                display: flex;
+            }
+            .header-pill {
+                padding: 8px 16px;
+            }
+            .header-logo img {
+                height: 40px;
+            }
+            .product-hero > div {
+                flex-direction: column !important;
+                text-align: center;
+                padding: 0 20px !important;
+            }
+            .hero-content {
+                margin-right: 0 !important;
+            }
+            .product-title {
+                font-size: 2.5rem;
+            }
+            .products-main-title {
+                font-size: 2.5rem;
+            }
+            .products-subtitle {
+                font-size: 1.1rem;
+            }
+            .products-grid {
                 grid-template-columns: 1fr;
-                gap: 20px;
+                gap: 40px;
+            }
+            .product-description {
+                min-height: auto;
+            }
+        }
+        @media (max-width: 1024px) {
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 50px 30px;
             }
         }
     </style>
@@ -345,7 +442,9 @@
     <header class="header-container">
         <div class="header-pill">
             <div class="header-logo">
-                <img src="src/images/growthpulse-logo.png" alt="Growthpulse">
+                <a href="index.html">
+                  <img src="src/images/growthpulse-logo.png" alt="Growthpulse">
+                </a>
             </div>
             <nav class="header-nav">
                 <a href="index.html" class="header-nav-link">Home</a>
@@ -354,55 +453,72 @@
                 <a href="product.html" class="header-nav-link w--current">Product</a>
                 <a href="contact.html" class="header-nav-link">Contact</a>
             </nav>
+            <div class="mobile-hamburger" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </header>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu-overlay" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <a href="index.html" class="mobile-nav-link">Home</a>
+            <a href="about.html" class="mobile-nav-link">About</a>
+            <a href="services.html" class="mobile-nav-link">Services</a>
+            <a href="product.html" class="mobile-nav-link">Product</a>
+            <a href="contact.html" class="mobile-nav-link">Contact</a>
+        </div>
+    </div>
 
     <main>
         <section class="product-hero">
-            <div class="hero-container">
-                <div class="hero-content">
+            <div style="display: flex; align-items: center; max-width: 1600px; margin: 0 auto; padding: 0 40px; position: relative;">
+                <div class="hero-content" style="flex: 0 0 400px; margin-right: 200px;">
                     <h1 class="product-title">Growthpulse <span class="gradient-text">Products</span></h1>
                     <p class="product-subtitle">In-house projects delivering transformative solutions across multiple industries</p>
+                </div>
+                <div style="flex: 0 0 550px;">
+                    <dotlottie-wc src="https://lottie.host/bcc6807d-f365-4200-af08-69a95f4dbe7e/qzLJQtQdOq.lottie" style="width: 550px;height: 550px;opacity: 1;visibility: visible" autoplay loop speed="2" preload></dotlottie-wc>
                 </div>
             </div>
         </section>
         
         <section class="products-section">
             <div class="container">
+                <div class="products-header">
+                    <h2 class="products-main-title">The GrowthPulse Universe</h2>
+                    <p class="products-subtitle">Extend your business growth and digital transformation experience with our partner platforms</p>
+                </div>
                 
-                <div class="portfolio_grid">
-                    <div class="portfolio_card">
-                        <div class="portfolio_image">
-                            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=250&fit=crop" alt="Hotelier Links">
+                <div class="products-content">
+                    <div class="products-grid">
+                    <div class="product-item">
+                        <div class="product-logo">
+                            <img src="src/images/products/hotelierlinks.jpg" alt="Hotelierlinks" class="product-logo-img">
                         </div>
-                        <div class="portfolio_card_content">
-                            <h3 class="portfolio_card_title">Hotelierlinks</h3>
-                            <p class="portfolio_card_desc">Hotelierlinks specializes in transforming the hospitality industry through innovative technology solutions.</p>
-                            <a href="https://hotelierlinks.com" target="_blank" rel="noopener" class="portfolio_btn">Visit Website</a>
-                        </div>
+                        <p class="product-description">Our hospitality management platform that transforms hotel operations with innovative technology solutions and seamless guest experiences.</p>
+                        <a href="https://hotelierlinks.com" target="_blank" rel="noopener" class="product-link">Visit Platform</a>
                     </div>
 
-                    <div class="portfolio_card">
-                        <div class="portfolio_image">
-                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop" alt="TNova">
+                    <div class="product-item">
+                        <div class="product-logo">
+                            <img src="src/images/products/TNova-Logo-01.png" alt="TNova" class="product-logo-img">
                         </div>
-                        <div class="portfolio_card_content">
-                            <h3 class="portfolio_card_title">TNova</h3>
-                            <p class="portfolio_card_desc">Leading provider of ERPNext implementation and customization services for business optimization.</p>
-                            <a href="https://tnova.ai" target="_blank" rel="noopener" class="portfolio_btn">Visit Website</a>
-                        </div>
+                        <p class="product-description">Leading provider of ERPNext implementation and customization services that optimize business processes and drive operational efficiency.</p>
+                        <a href="https://tnova.ai" target="_blank" rel="noopener" class="product-link">Visit Platform</a>
                     </div>
 
-                    <div class="portfolio_card">
-                        <div class="portfolio_image">
-                            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=250&fit=crop" alt="Kalloriconnect">
+                    <div class="product-item">
+                        <div class="product-logo">
+                            <img src="src/images/products/kallooriconnect.jpeg" alt="KallooriConnect" class="product-logo-img">
                         </div>
-                        <div class="portfolio_card_content">
-                            <h3 class="portfolio_card_title">KallooriConnect</h3>
-                            <p class="portfolio_card_desc">Comprehensive educational networking platform bridging students, institutions, and career opportunities.</p>
-                            <span class="portfolio_btn_disabled">Coming Soon</span>
-                        </div>
+                        <p class="product-description">Comprehensive educational networking platform that bridges students, institutions, and career opportunities in the digital age.</p>
+                        <span class="product-link-disabled">Coming Soon</span>
                     </div>
+
+
                 </div>
             </div>
         </section>
@@ -483,5 +599,38 @@
             <div class="footer-bg-text">GrowthPulse</div>
         </div>
     </footer>
+    <script>
+        // Mobile Menu Functions
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const hamburger = document.querySelector('.mobile-hamburger');
+            
+            mobileMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+            
+            if (mobileMenu.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = 'auto';
+            }
+        }
+        
+        // Header hide on scroll
+        const header = document.querySelector('.header-container');
+        if (header) {
+            let lastScrollY = 0;
+            window.addEventListener('scroll', () => {
+                const currentScrollY = window.scrollY;
+                if (currentScrollY > 100) {
+                    header.style.transform = 'translateX(-50%) translateY(-100%)';
+                    header.style.opacity = '0';
+                } else {
+                    header.style.transform = 'translateX(-50%) translateY(0)';
+                    header.style.opacity = '1';
+                }
+                lastScrollY = currentScrollY;
+            });
+        }
+    </script>
 </body>
 </html>

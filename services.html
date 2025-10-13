@@ -11,7 +11,10 @@
     <link href="src/images/Main-Logo-01.png" rel="apple-touch-icon" />
     <link href="background-update.css" rel="stylesheet" type="text/css" />
     <link href="full-width.css" rel="stylesheet" type="text/css" />
+    <link href="hide-scrollbar.css" rel="stylesheet" type="text/css" />
+    <link href="mobile-responsive.css" rel="stylesheet" type="text/css" />
     <link href="footer-styles.css" rel="stylesheet" type="text/css" />
+    <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.1/dist/dotlottie-wc.js" type="module"></script>
     <style>
       * {
         -webkit-font-smoothing: antialiased;
@@ -185,7 +188,7 @@
       }
       
       .mobile-cta-button {
-        background: #a3e635;
+        background: #5818C1;
         color: #fff;
         padding: 15px 30px;
         border-radius: 50px;
@@ -197,12 +200,11 @@
       }
       
       .mobile-cta-button:hover {
-        background: #84cc16;
+        background: #4A15A3;
       }
       .hero-section {
         background: linear-gradient(180deg, #FEECE5 0%, #F8F1FF 100%);
         padding: 150px 0 120px;
-        text-align: center;
         position: relative;
         overflow: hidden;
         height: 100vh;
@@ -210,6 +212,23 @@
         align-items: center;
         justify-content: center;
         margin-top: 0;
+      }
+      .hero-container {
+        max-width: 1400px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 80px;
+        padding: 0 40px;
+      }
+      .hero-content {
+        flex: 1;
+        text-align: left;
+        max-width: 600px;
+      }
+      .hero-animation {
+        flex: 0 0 400px;
       }
       .wave-divider {
         position: absolute;
@@ -275,7 +294,7 @@
       .service-card:hover {
         transform: translateY(-8px);
         box-shadow: 0 12px 40px rgba(0,0,0,0.15);
-        border-color: #007bff;
+        border-color: #5818C1;
       }
       .service-card::before {
         content: '';
@@ -284,7 +303,7 @@
         left: 0;
         right: 0;
         height: 4px;
-        background: #007bff;
+        background: #5818C1;
         transform: scaleX(0);
         transition: transform 0.3s ease;
       }
@@ -345,7 +364,7 @@
       }
       .service-link {
         display: inline-block;
-        background: #007bff;
+        background: #5818C1;
         color: white;
         padding: 10px 20px;
         border-radius: 6px;
@@ -355,9 +374,9 @@
         transition: all 0.3s ease;
       }
       .service-link:hover {
-        background: #0056b3;
+        background: #4A15A3;
         transform: translateY(-1px);
-        box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+        box-shadow: 0 4px 12px rgba(88, 24, 193, 0.3);
       }
       .contact-btn {
         display: inline-block;
@@ -429,6 +448,21 @@
         }
         .hero-section {
           padding: 80px 20px 60px;
+        }
+        .hero-container {
+          flex-direction: column;
+          text-align: center;
+          gap: 30px;
+        }
+        .hero-content {
+          text-align: center;
+        }
+        .hero-animation {
+          flex: 0 0 300px;
+        }
+        .hero-animation dotlottie-wc {
+          width: 300px !important;
+          height: 300px !important;
         }
         .services-section {
           padding: 60px 0;
@@ -1050,7 +1084,9 @@
         <header class="header-container">
           <div class="header-pill">
             <div class="header-logo">
-              <img src="src/images/growthpulse-logo.png" alt="GrowthPulse" class="header-logo-img">
+              <a href="index.html">
+                <img src="src/images/growthpulse-logo.png" alt="GrowthPulse" class="header-logo-img">
+              </a>
             </div>
             <nav class="header-nav">
               <a href="index.html" class="header-nav-link">Home</a>
@@ -1066,14 +1102,30 @@
             </div>
           </div>
         </header>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu-overlay" id="mobileMenu">
+          <div class="mobile-menu-content">
+            <a href="index.html" class="mobile-nav-link" onclick="closeMobileMenu()">Home</a>
+            <a href="about.html" class="mobile-nav-link" onclick="closeMobileMenu()">About</a>
+            <a href="services.html" class="mobile-nav-link" onclick="closeMobileMenu()">Services</a>
+            <a href="product.html" class="mobile-nav-link" onclick="closeMobileMenu()">Product</a>
+            <a href="contact.html" class="mobile-nav-link" onclick="closeMobileMenu()">Contact</a>
+            <a href="contact.html" class="mobile-cta-button" onclick="closeMobileMenu()">Get Started</a>
+          </div>
+        </div>
 
         <main class="main-wrapper">
             <section class="hero-section">
-                <div class="hero-content">
-                    <h1 class="services-title">Our <span style="background: linear-gradient(45deg, #1e3a8a 0%, #3b82f6 30%, #06b6d4 60%, #f97316 90%, #ea580c 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Services</span></h1>
-                    <p class="services-subtitle">Comprehensive solutions to accelerate your business growth and digital transformation</p>
+                <div style="display: flex; align-items: center; max-width: 1600px; margin: 0 auto; padding: 0 40px; position: relative;">
+                    <div class="hero-content" style="flex: 0 0 400px; margin-right: 200px;">
+                        <h1 class="services-title">Our <span style="background: linear-gradient(45deg, #1e3a8a 0%, #3b82f6 30%, #06b6d4 60%, #f97316 90%, #ea580c 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Services</span></h1>
+                        <p class="services-subtitle">Comprehensive solutions to accelerate your business growth and digital transformation</p>
+                    </div>
+                    <div style="flex: 0 0 550px;">
+                        <dotlottie-wc src="https://lottie.host/31df57fe-c84c-4554-9741-5da30f5bbe9d/9OKUWrOspM.lottie" style="width: 550px;height: 550px;opacity: 1;visibility: visible" autoplay loop speed="2" preload></dotlottie-wc>
+                    </div>
                 </div>
-
             </section>
 
             <section class="services-section" style="position: relative; overflow: hidden;">
@@ -1091,7 +1143,7 @@
                                 <p class="service-description">
                                     Strategic marketing solutions for software products that drive growth and user acquisition.
                                 </p>
-                                <a href="software-marketing.html" class="service-link">Learn More</a>
+                                <a href="software-marketing.html" class="service-link" style="background: #5818C1; color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: all 0.3s ease;">Learn More</a>
                             </div>
                         </div>
                         
@@ -1105,7 +1157,7 @@
                                 <p class="service-description">
                                     Comprehensive digital strategies that amplify your brand and drive measurable results.
                                 </p>
-                                <a href="digital-marketing.html" class="service-link">Learn More</a>
+                                <a href="digital-marketing.html" class="service-link" style="background: #5818C1; color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: all 0.3s ease;">Learn More</a>
                             </div>
                         </div>
                         
@@ -1119,7 +1171,7 @@
                                 <p class="service-description">
                                     Educational programs and training solutions that enhance team capabilities.
                                 </p>
-                                <a href="learning-development.html" class="service-link">Learn More</a>
+                                <a href="learning-development.html" class="service-link" style="background: #5818C1; color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: all 0.3s ease;">Learn More</a>
                             </div>
                         </div>
                         
@@ -1133,7 +1185,7 @@
                                 <p class="service-description">
                                     Custom software solutions built with cutting-edge technology and best practices.
                                 </p>
-                                <a href="technical-development.html" class="service-link">Learn More</a>
+                                <a href="technical-development.html" class="service-link" style="background: #5818C1; color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: all 0.3s ease;">Learn More</a>
                             </div>
                         </div>
                         
@@ -1147,7 +1199,7 @@
                                 <p class="service-description">
                                     Dedicated account management services that ensure client success and long-term partnerships.
                                 </p>
-                                <a href="account-management.html" class="service-link">Learn More</a>
+                                <a href="account-management.html" class="service-link" style="background: #5818C1; color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: all 0.3s ease;">Learn More</a>
                             </div>
                         </div>
                         
@@ -1161,7 +1213,7 @@
                                 <p class="service-description">
                                     Professional event planning and management services for corporate events and conferences.
                                 </p>
-                                <a href="event-management.html" class="service-link">Learn More</a>
+                                <a href="event-management.html" class="service-link" style="background: #5818C1; color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: all 0.3s ease;">Learn More</a>
                             </div>
                         </div>
 
@@ -1261,6 +1313,30 @@
                 el.style.transform = 'translateY(0) translateX(0) scale(1)';
             });
         });
+        
+        // Mobile Menu Functions
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const hamburger = document.querySelector('.mobile-hamburger');
+            
+            mobileMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+            
+            if (mobileMenu.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = 'auto';
+            }
+        }
+        
+        function closeMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const hamburger = document.querySelector('.mobile-hamburger');
+            
+            mobileMenu.classList.remove('active');
+            hamburger.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
     </script>
     <script src="header-scroll.js"></script>
 </body>

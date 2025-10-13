@@ -1,0 +1,105 @@
+/* Footer Overlap Fix for Individual Service Pages */
+
+/* Ensure main content has proper bottom margin */
+.main-wrapper {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* Add proper spacing before footer */
+.modern-footer {
+  margin-top: 40px !important;
+  clear: both;
+  position: relative;
+  z-index: 1;
+}
+
+/* Ensure content sections don't overlap footer */
+.content-section:last-of-type {
+  margin-bottom: 20px !important;
+  padding-bottom: 20px !important;
+}
+
+/* Fix for footer container */
+.footer-container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Ensure footer content is properly spaced */
+.footer-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 60px;
+  align-items: start;
+  margin-bottom: 40px;
+}
+
+.footer-brand-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer-links-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+
+/* Footer background text positioning */
+.footer-bg-text {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-size: 8rem;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.03);
+  pointer-events: none;
+  z-index: 1;
+  line-height: 1;
+}
+
+/* Responsive fixes */
+@media (max-width: 768px) {
+  .modern-footer {
+    margin-top: 30px !important;
+  }
+  
+  .content-section:last-of-type {
+    margin-bottom: 15px !important;
+    padding-bottom: 15px !important;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .footer-links-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+  
+  .footer-bg-text {
+    font-size: 4rem;
+    bottom: 10px;
+    right: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-links-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    text-align: center;
+  }
+  
+  .footer-brand-section {
+    text-align: center;
+  }
+  
+  .footer-social-icons {
+    justify-content: center;
+  }
+}

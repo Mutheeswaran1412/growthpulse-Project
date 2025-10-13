@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="colorful-animations-static.css" />
     <link href="full-width.css" rel="stylesheet" type="text/css" />
     <link href="footer-styles.css" rel="stylesheet" type="text/css" />
+    <link href="hide-scrollbar.css" rel="stylesheet" type="text/css" />
+    <link href="mobile-responsive.css" rel="stylesheet" type="text/css" />
     <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.1/dist/dotlottie-wc.js" type="module"></script>
     <style>
       * {
@@ -169,8 +171,8 @@
           text-align: center;
         }
         .hero-lottie {
-          width: 400px !important;
-          height: 400px !important;
+          width: 350px !important;
+          height: 350px !important;
         }
       }
       .about-section {
@@ -1008,7 +1010,7 @@
       }
       
       .mobile-cta-button {
-        background: #a3e635;
+        background: #5818C1;
         color: #fff;
         padding: 15px 30px;
         border-radius: 50px;
@@ -1020,7 +1022,7 @@
       }
       
       .mobile-cta-button:hover {
-        background: #84cc16;
+        background: #4A15A3;
       }
       
       /* Chatbot Styles */
@@ -1034,20 +1036,20 @@
       .chat-button {
         width: 60px;
         height: 60px;
-        background: linear-gradient(45deg, #007bff, #0056b3);
+        background: #5818C1;
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
         color: white;
         cursor: pointer;
-        box-shadow: 0 4px 20px rgba(0, 123, 255, 0.3);
+        box-shadow: 0 4px 20px rgba(88, 24, 193, 0.3);
         transition: all 0.3s ease;
       }
       
       .chat-button:hover {
         transform: scale(1.1);
-        box-shadow: 0 6px 25px rgba(0, 123, 255, 0.4);
+        box-shadow: 0 6px 25px rgba(88, 24, 193, 0.4);
       }
       
       .chat-window {
@@ -1065,7 +1067,7 @@
       }
       
       .chat-header {
-        background: linear-gradient(45deg, #007bff, #0056b3);
+        background: #5818C1;
         color: white;
         padding: 15px 20px;
         display: flex;
@@ -1116,7 +1118,7 @@
       }
       
       .user-message {
-        background: linear-gradient(45deg, #007bff, #0056b3);
+        background: #5818C1;
         color: white;
         align-self: flex-end;
       }
@@ -1141,9 +1143,9 @@
       }
       
       .quick-replies button:hover {
-        background: #007bff;
+        background: #5818C1;
         color: white;
-        border-color: #007bff;
+        border-color: #5818C1;
       }
       
       .chat-input {
@@ -1163,11 +1165,11 @@
       }
       
       .chat-input input:focus {
-        border-color: #007bff;
+        border-color: #5818C1;
       }
       
       .chat-input button {
-        background: linear-gradient(45deg, #007bff, #0056b3);
+        background: #5818C1;
         color: white;
         border: none;
         padding: 10px 20px;
@@ -1179,7 +1181,7 @@
       
       .chat-input button:hover {
         transform: translateY(-1px);
-        box-shadow: 0 3px 10px rgba(0, 123, 255, 0.3);
+        box-shadow: 0 3px 10px rgba(88, 24, 193, 0.3);
       }
     </style>
     <script>
@@ -1367,7 +1369,9 @@
         <header class="header-container">
           <div class="header-pill">
             <div class="header-logo">
-              <img src="src/images/growthpulse-logo.png" alt="GrowthPulse" class="header-logo-img">
+              <a href="index.html">
+                <img src="src/images/growthpulse-logo.png" alt="GrowthPulse" class="header-logo-img">
+              </a>
             </div>
             <nav class="header-nav">
               <a href="index.html" class="header-nav-link">Home</a>
@@ -1405,20 +1409,13 @@
                         <p>Your trusted partner in digital transformation and business growth</p>
                     </div>
                     <div style="display: flex; align-items: center; justify-content: center; position: relative; z-index: 10;">
-                        <dotlottie-wc src="https://lottie.host/54b894f2-b759-4cff-a318-021c1267a588/SNO9UysbWl.lottie" style="width: 600px; height: 600px; position: relative; z-index: 10;" autoplay loop class="hero-lottie"></dotlottie-wc>
+                        <dotlottie-wc src="https://lottie.host/faedf187-0aeb-428f-bfdb-6ae866a01da2/b6rhRm9Mjs.lottie" style="width: 600px;height: 600px;opacity: 1;visibility: visible" autoplay loop speed="2" preload></dotlottie-wc>
                     </div>
                 </div>
             </section>
 
             <section class="about-section" style="position: relative; overflow: hidden;">
-                <!-- Top Left Flower Pattern -->
-                <div style="position: absolute; top: 50px; left: -50px; width: 400px; height: 300px; background-image: url('src/images/GP Elements .png'); background-repeat: no-repeat; background-size: contain; opacity: 0.3; z-index: 1; filter: blur(2px);"></div>
-                <!-- Middle Right Round Pattern -->
-                <div style="position: absolute; top: 40%; right: -60px; width: 200px; height: 200px; background-image: url('src/images/GP Elements2.png'); background-repeat: no-repeat; background-size: contain; opacity: 0.7; z-index: 1; animation: floatPattern 8s ease-in-out infinite;"></div>
-                <!-- Top Right Flower Pattern -->
-                <div style="position: absolute; top: 10%; right: 10px; width: 120px; height: 120px; background-image: url('src/images/GP Elements .png'); background-repeat: no-repeat; background-size: contain; opacity: 0.8; z-index: 1; transform: rotate(-30deg);"></div>
-                <!-- Bottom Left Round Pattern -->
-                <div style="position: absolute; bottom: -100px; left: -50px; width: 250px; height: 250px; background-image: url('src/images/GP Elements2.png'); background-repeat: no-repeat; background-size: contain; opacity: 0.5; z-index: 1; transform: rotate(45deg);"></div>
+
                 <div class="about-content" style="position: relative; z-index: 2;">
                     <div class="content-with-image">
                         <div>

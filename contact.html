@@ -12,6 +12,8 @@
     <link href="inline-styles.css" rel="stylesheet" type="text/css" />
     <link href="full-width.css" rel="stylesheet" type="text/css" />
     <link href="footer-styles.css" rel="stylesheet" type="text/css" />
+    <link href="hide-scrollbar.css" rel="stylesheet" type="text/css" />
+    <link href="mobile-responsive.css" rel="stylesheet" type="text/css" />
     <style>
       * {
         -webkit-font-smoothing: antialiased;
@@ -129,13 +131,79 @@
         border-radius: 2px;
         transition: all 0.3s ease;
       }
+      
+      .mobile-hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+      
+      .mobile-hamburger.active span:nth-child(2) {
+        opacity: 0;
+      }
+      
+      .mobile-hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+      }
+      
+      .mobile-menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0,0,0,0.95);
+        z-index: 999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+      }
+      
+      .mobile-menu-overlay.active {
+        transform: translateX(0);
+      }
+      
+      .mobile-menu-content {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+      }
+      
+      .mobile-nav-link {
+        color: white;
+        text-decoration: none;
+        font-size: 1.5rem;
+        font-weight: 600;
+        transition: color 0.3s ease;
+      }
+      
+      .mobile-nav-link:hover {
+        color: #a3e635;
+      }
+      
+      .mobile-cta-button {
+        background: #5818C1;
+        color: #fff;
+        padding: 15px 30px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.1rem;
+        margin-top: 20px;
+        transition: all 0.3s ease;
+      }
+      
+      .mobile-cta-button:hover {
+        background: #4A15A3;
+      }
       .hero-section {
         background: linear-gradient(180deg, #FEECE5 0%, #F8F1FF 100%);
         padding: 150px 0 120px;
         text-align: center;
         position: relative;
         overflow: hidden;
-        height: 100vh;
+        height: 60vh;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -281,8 +349,8 @@
       
       /* Modern Footer Styles */
       .modern-footer {
-        background: #ffffff;
-        color: #000000;
+        background: #f8f9fa;
+        color: #6c757d;
         padding: 120px 0 80px;
         position: relative;
         overflow: hidden;
@@ -317,13 +385,13 @@
       }
       
       .footer-logo-img {
-        height: 55px;
+        height: 65px;
         width: auto;
       }
       
       .footer-copyright {
-        color: #333333;
-        font-size: 0.9rem;
+        color: #6c757d;
+        font-size: 1rem;
         margin: 0;
         line-height: 1.4;
       }
@@ -340,7 +408,7 @@
       }
       
       .footer-column-title {
-        color: #000000;
+        color: #1a1a1a;
         font-size: 1rem;
         font-weight: 600;
         margin-bottom: 20px;
@@ -356,15 +424,15 @@
       }
       
       .footer-link {
-        color: #666666;
+        color: #888888;
         text-decoration: none;
-        font-size: 0.9rem;
+        font-size: 1rem;
         transition: color 0.3s ease;
         line-height: 1.4;
       }
       
       .footer-link:hover {
-        color: #000000;
+        color: #1a1a1a;
       }
       
       .footer-social-icons {
@@ -374,7 +442,7 @@
       }
       
       .footer-social-link {
-        color: #666666;
+        color: #6c757d;
         transition: color 0.3s ease;
       }
       
@@ -383,17 +451,16 @@
       }
       
       .footer-email-highlight {
-        background: #f0f8ff;
-        padding: 8px 12px;
-        border-radius: 6px;
-        border: 1px solid #e0e0e0;
-        font-weight: 600;
-        color: #000000 !important;
+        background: transparent;
+        padding: 0;
+        border: none;
+        font-weight: 400;
+        color: #6c757d !important;
       }
       
       .footer-email-highlight:hover {
-        background: #e6f3ff;
-        border-color: #ccc;
+        background: transparent;
+        color: #000000 !important;
       }
       
       .footer-link-with-icon {
@@ -485,206 +552,7 @@
         100% { transform: translateX(-50%); }
       }
       
-      /* Main Footer */
-      .footer-main {
-        background: #1a1a1a;
-        color: #ffffff;
-        padding: 80px 0 0;
-      }
-      
-      .footer-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-      }
-      
-      /* Contact Section */
-      .footer-contact-section {
-        text-align: center;
-        margin-bottom: 80px;
-        padding-bottom: 40px;
-        border-bottom: 1px solid #333;
-      }
-      
-      .footer-contact-title {
-        font-size: clamp(2.5rem, 5vw, 4rem);
-        font-weight: 300;
-        color: #667eea;
-        margin-bottom: 30px;
-        letter-spacing: -1px;
-      }
-      
-      .footer-cta-btn {
-        display: inline-block;
-        background: linear-gradient(45deg, #667eea, #764ba2);
-        color: #fff;
-        padding: 15px 40px;
-        border-radius: 50px;
-        text-decoration: none;
-        font-weight: 600;
-        font-size: 1.1rem;
-        transition: all 0.3s ease;
-      }
-      
-      .footer-cta-btn:hover {
-        background: #764ba2;
-        transform: translateY(-2px);
-      }
-      
-      /* Footer Grid */
-      .footer-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1.5fr;
-        gap: 60px;
-        margin-bottom: 60px;
-      }
-      
-      /* Logo Section */
-      .footer-logo-section {
-        display: flex;
-        align-items: flex-start;
-      }
-      
-      .footer-brand {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
-      
-      .footer-logo-text {
-        color: #667eea;
-        font-size: 1.5rem;
-        font-weight: 800;
-        letter-spacing: -1px;
-      }
-      
-      .footer-logo-x {
-        color: #ffffff;
-        font-size: 1.5rem;
-        font-weight: 800;
-      }
-      
-      /* Footer Columns */
-      .footer-column {
-        display: flex;
-        flex-direction: column;
-      }
-      
-      .footer-column-title {
-        color: #667eea;
-        font-size: 1.1rem;
-        font-weight: 600;
-        margin-bottom: 25px;
-      }
-      
-      .footer-links {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-      }
-      
-      .footer-links li {
-        margin-bottom: 12px;
-      }
-      
-      .footer-link {
-        color: #cccccc;
-        text-decoration: none;
-        font-size: 0.95rem;
-        transition: color 0.3s ease;
-      }
-      
-      .footer-link:hover {
-        color: #667eea;
-      }
-      
-      /* Contact Info */
-      .footer-contact-info {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-      }
-      
-      .footer-address {
-        color: #cccccc;
-        font-size: 0.95rem;
-        margin: 0;
-        line-height: 1.4;
-      }
-      
-      .footer-email {
-        color: #cccccc;
-        text-decoration: none;
-        font-size: 0.95rem;
-        margin-bottom: 20px;
-        transition: color 0.3s ease;
-      }
-      
-      .footer-email:hover {
-        color: #667eea;
-      }
-      
-      /* Social Icons */
-      .footer-social-icons {
-        display: flex;
-        gap: 15px;
-      }
-      
-      .footer-social-icon {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 40px;
-        height: 40px;
-        background: #333;
-        border-radius: 50%;
-        color: #cccccc;
-        text-decoration: none;
-        transition: all 0.3s ease;
-      }
-      
-      .footer-social-icon:hover {
-        background: linear-gradient(45deg, #667eea, #764ba2);
-        color: #fff;
-        transform: translateY(-2px);
-      }
-      
-      /* Footer Bottom */
-      .footer-bottom {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 30px 0;
-        border-top: 1px solid #333;
-      }
-      
-      .footer-copyright {
-        color: #cccccc;
-        font-size: 0.9rem;
-        margin: 0;
-      }
-      
-      .footer-bottom-right {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-      }
-      
-      .footer-legal-link {
-        color: #cccccc;
-        text-decoration: none;
-        font-size: 0.9rem;
-        transition: color 0.3s ease;
-      }
-      
-      .footer-legal-link:hover {
-        color: #667eea;
-      }
-      
-      .footer-divider {
-        color: #666;
-        font-size: 0.9rem;
-      }
+
       
       .navbar_link.w--current {
         background: linear-gradient(135deg, #1e40af 0%, #3b82f6 30%, #06b6d4 70%, #0ea5e9 100%);
@@ -759,6 +627,9 @@
         }
         .faq-title {
           font-size: 1.5rem;
+        }
+        .services-grid {
+          grid-template-columns: 1fr;
         }
         
         .footer-main {
@@ -860,6 +731,45 @@
         width: calc(100% + 1.3px);
         height: 80px;
       }
+      
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        margin-top: 10px;
+      }
+      
+      .service-option {
+        cursor: pointer;
+      }
+      
+      .service-checkbox {
+        display: none;
+      }
+      
+      .service-button {
+        display: block;
+        padding: 12px 20px;
+        border: 2px solid #ddd;
+        border-radius: 8px;
+        background: transparent;
+        color: #333;
+        font-size: 0.9rem;
+        font-weight: 500;
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+      
+      .service-checkbox:checked + .service-button {
+        background: #5818C1;
+        color: white;
+        border-color: #5818C1;
+      }
+      
+      .service-button:hover {
+        border-color: #5818C1;
+        color: #5818C1;
+      }
     </style>
 </head>
 <body>
@@ -875,7 +785,9 @@
         <header class="header-container">
           <div class="header-pill">
             <div class="header-logo">
-              <img src="src/images/growthpulse-logo.png" alt="GrowthPulse" class="header-logo-img">
+              <a href="index.html">
+                <img src="src/images/growthpulse-logo.png" alt="GrowthPulse" class="header-logo-img">
+              </a>
             </div>
             <nav class="header-nav">
               <a href="index.html" class="header-nav-link">Home</a>
@@ -891,6 +803,18 @@
             </div>
           </div>
         </header>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu-overlay" id="mobileMenu">
+          <div class="mobile-menu-content">
+            <a href="index.html" class="mobile-nav-link" onclick="closeMobileMenu()">Home</a>
+            <a href="about.html" class="mobile-nav-link" onclick="closeMobileMenu()">About</a>
+            <a href="services.html" class="mobile-nav-link" onclick="closeMobileMenu()">Services</a>
+            <a href="product.html" class="mobile-nav-link" onclick="closeMobileMenu()">Product</a>
+            <a href="contact.html" class="mobile-nav-link" onclick="closeMobileMenu()">Contact</a>
+            <a href="contact.html" class="mobile-cta-button" onclick="closeMobileMenu()">Get Started</a>
+          </div>
+        </div>
 
         <main class="main-wrapper">
             <section class="hero-section">
@@ -905,7 +829,7 @@
             <section class="contact-section contact-section-positioned">
                 <div class="contact-background-element"></div>
                 <div class="contact-container contact-container-positioned">
-                    <h2 class="contact-title">Contact Us</h2>
+                    <h2 class="contact-title">Let's Connect</h2>
                     
                     <div class="contact-form">
                         <form id="contact-form">
@@ -918,14 +842,40 @@
                                 <input type="email" id="email" name="email" class="form-field" placeholder="Enter your email address" required />
                             </div>
                             <div class="form-group">
-                                <label class="form-label" for="subject">Subject</label>
-                                <input type="text" id="subject" name="subject" class="form-field" placeholder="Enter message subject" required />
+                                <label class="form-label">Services Interested In</label>
+                                <div class="services-grid">
+                                    <label class="service-option">
+                                        <input type="checkbox" name="services" value="Digital Marketing" class="service-checkbox">
+                                        <span class="service-button">Digital Marketing</span>
+                                    </label>
+                                    <label class="service-option">
+                                        <input type="checkbox" name="services" value="Software Marketing" class="service-checkbox">
+                                        <span class="service-button">Software Marketing</span>
+                                    </label>
+                                    <label class="service-option">
+                                        <input type="checkbox" name="services" value="Technical Development" class="service-checkbox">
+                                        <span class="service-button">Technical Development</span>
+                                    </label>
+                                    <label class="service-option">
+                                        <input type="checkbox" name="services" value="Learning & Development" class="service-checkbox">
+                                        <span class="service-button">Learning & Development</span>
+                                    </label>
+                                    <label class="service-option">
+                                        <input type="checkbox" name="services" value="Account Management" class="service-checkbox">
+                                        <span class="service-button">Account Management</span>
+                                    </label>
+                                    <label class="service-option">
+                                        <input type="checkbox" name="services" value="Event Management" class="service-checkbox">
+                                        <span class="service-button">Event Management</span>
+                                    </label>
+                                </div>
+                                <div class="validation-message" id="services-error" style="display: none; color: #ef4444; font-size: 0.85rem; margin-top: 8px;">Please select at least one service</div>
                             </div>
                             <div class="form-group">
                                 <label class="form-label" for="message">Message</label>
                                 <textarea id="message" name="message" class="form-field" rows="4" placeholder="Enter your message" required></textarea>
                             </div>
-                            <button type="submit" class="submit-btn">Send message</button>
+                            <button type="submit" class="submit-btn" style="background: #5818C1; color: white; padding: 18px 0; border: none; border-radius: 50px; font-size: 1rem; font-weight: 500; cursor: pointer; width: 100%; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(88, 24, 193, 0.2);">Send message</button>
                         </form>
                     </div>
 
@@ -976,85 +926,108 @@
             </section>
         </main>
 
-        <footer class="modern-footer">
-          <div class="footer-container">
-            <div class="footer-content">
-              <!-- Logo and Copyright -->
-              <div class="footer-brand-section">
-                <div class="footer-logo">
-                  <img src="src/images/growthpulse-logo.png" alt="GrowthPulse" class="footer-logo-img">
-                </div>
-                <p class="footer-copyright">© copyright GrowthPulse 2024. All rights reserved.</p>
-                <div class="footer-social-icons">
-                  <a href="https://x.com" class="footer-social-link" target="_blank" rel="noopener" title="Follow us on X (Twitter)">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                    </svg>
-                  </a>
-                  <a href="https://facebook.com" class="footer-social-link" target="_blank" rel="noopener" title="Follow us on Facebook">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                    </svg>
-                  </a>
-                  <a href="https://instagram.com" class="footer-social-link" target="_blank" rel="noopener" title="Follow us on Instagram">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                    </svg>
-                  </a>
-                  <a href="https://linkedin.com" class="footer-social-link" target="_blank" rel="noopener" title="Follow us on LinkedIn">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-              
-              <!-- Footer Links -->
-              <div class="footer-links-grid">
-                <div class="footer-column">
-                  <h4 class="footer-column-title">Pages</h4>
-                  <ul class="footer-links">
-                    <li><a href="index.html" class="footer-link">Home</a></li>
-                    <li><a href="services.html" class="footer-link">Services</a></li>
-                    <li><a href="about.html" class="footer-link">About</a></li>
-                    <li><a href="contact.html" class="footer-link">Contact</a></li>
-                    <li><a href="product.html" class="footer-link">Product</a></li>
-                  </ul>
-                </div>
-                
-                <div class="footer-column">
-                  <h4 class="footer-column-title">Services</h4>
-                  <ul class="footer-links">
-                    <li><a href="digital-marketing.html" class="footer-link">Digital Marketing</a></li>
-                    <li><a href="software-marketing.html" class="footer-link">Software Marketing</a></li>
-                    <li><a href="technical-development.html" class="footer-link">Technical Development</a></li>
-                    <li><a href="learning-development.html" class="footer-link">Learning & Development</a></li>
-                  </ul>
-                </div>
-                
-                <div class="footer-column">
-                  <h4 class="footer-column-title">Address</h4>
-                  <ul class="footer-links">
-                    <li><span class="footer-link footer-link-with-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>#2, Avvaiyar Street, Ekkatuthangal</span></li>
-                    <li><span class="footer-link footer-link-with-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Chennai-32, India</span></li>
-                  </ul>
-                </div>
-                
-                <div class="footer-column">
-                  <h4 class="footer-column-title">Contact</h4>
-                  <ul class="footer-links">
-                    <li><a href="mailto:sales@growthpulss.com" class="footer-link footer-email-highlight footer-link-with-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>sales@growthpulss.com</a></li>
-                    <li style="margin-top: 15px;"><a href="tel:+919876543210" class="footer-link footer-link-with-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>+91 98765 43210</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Large Background Text -->
-            <div class="footer-bg-text">GrowthPulse</div>
-          </div>
-        </footer>
+
     </div>
+
+    <!-- New Footer -->
+    <footer class="modern-footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand-section">
+                    <div class="footer-logo">
+                        <img src="src/images/growthpulse-logo.png" alt="GrowthPulse" class="footer-logo-img">
+                    </div>
+                    <p class="footer-copyright">© copyright GrowthPulse 2024.<br>All rights reserved.</p>
+                    <div class="footer-social-icons">
+                        <a href="#" class="footer-social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="footer-social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="footer-social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="footer-social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links-grid">
+                    <div class="footer-column">
+                        <h4 class="footer-column-title">Pages</h4>
+                        <ul class="footer-links">
+                            <li><a href="index.html" class="footer-link">Home</a></li>
+                            <li><a href="services.html" class="footer-link">Services</a></li>
+                            <li><a href="about.html" class="footer-link">About</a></li>
+                            <li><a href="contact.html" class="footer-link">Contact</a></li>
+                            <li><a href="product.html" class="footer-link">Product</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4 class="footer-column-title">Services</h4>
+                        <ul class="footer-links">
+                            <li><a href="#" class="footer-link">Digital Marketing</a></li>
+                            <li><a href="#" class="footer-link">Software Marketing</a></li>
+                            <li><a href="#" class="footer-link">Technical Development</a></li>
+                            <li><a href="#" class="footer-link">Learning & Development</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4 class="footer-column-title">Address</h4>
+                        <ul class="footer-links">
+                            <li class="footer-link-with-icon">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                                </svg>
+                                <span class="footer-link">#2, Avvaiyar Street, Ekkatuthangal</span>
+                            </li>
+                            <li class="footer-link-with-icon">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                                </svg>
+                                <span class="footer-link">Chennai-32, India</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4 class="footer-column-title">Contact</h4>
+                        <ul class="footer-links">
+                            <li>
+                                <a href="mailto:sales@growthpulss.com" class="footer-link footer-email-highlight">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;">
+                                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.89 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                                    </svg>
+                                    sales@growthpulss.com
+                                </a>
+                            </li>
+                            <li>
+                                <a href="tel:+919876543210" class="footer-link">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;">
+                                        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                                    </svg>
+                                    +91 98765 43210
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bg-text">GROWTHPULSE</div>
+    </footer>
 
     <!-- EmailJS SDK -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
@@ -1100,11 +1073,24 @@
             submitBtn.textContent = 'Sending...';
             submitBtn.disabled = true;
             
+            // Validate services selection
+            const selectedServices = Array.from(document.querySelectorAll('input[name="services"]:checked')).map(cb => cb.value);
+            const servicesError = document.getElementById('services-error');
+            
+            if (selectedServices.length === 0) {
+                servicesError.style.display = 'block';
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+                return;
+            } else {
+                servicesError.style.display = 'none';
+            }
+            
             // Get form data
             const contactParams = {
                 name: document.getElementById('name').value,
                 from_email: document.getElementById('email').value,
-                subject: document.getElementById('subject').value,
+                selected_services: selectedServices.join(', '),
                 message: document.getElementById('message').value,
                 time: new Date().toLocaleString()
             };
@@ -1112,7 +1098,7 @@
             const replyParams = {
                 to_name: document.getElementById('name').value,
                 to_email: document.getElementById('email').value,
-                subject: document.getElementById('subject').value,
+                selected_services: selectedServices.join(', '),
                 reply_to: 'sales@growthpulss.com',
                 from_name: 'GrowthPulse Team'
             };
@@ -1173,6 +1159,30 @@
                 });
 
         });
+        
+        // Mobile Menu Functions
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const hamburger = document.querySelector('.mobile-hamburger');
+            
+            mobileMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+            
+            if (mobileMenu.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = 'auto';
+            }
+        }
+        
+        function closeMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const hamburger = document.querySelector('.mobile-hamburger');
+            
+            mobileMenu.classList.remove('active');
+            hamburger.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
     </script>
     <script src="header-scroll.js"></script>
 </body>
