@@ -12,6 +12,7 @@
     <link href="full-width.css" rel="stylesheet" type="text/css" />
     <link href="footer-styles.css" rel="stylesheet" type="text/css" />
     <link href="footer-fix.css" rel="stylesheet" type="text/css" />
+    <link href="footer-responsive-fix.css" rel="stylesheet" type="text/css" />
     <style>
       * {
         -webkit-font-smoothing: antialiased;
@@ -26,7 +27,7 @@
         margin: 0;
       }
       
-      /* Header Styles - Matching Technical Development */
+      /* Header Styles - Fixed Position */
       .header-container {
         position: fixed;
         top: 20px;
@@ -35,7 +36,7 @@
         z-index: 1000;
         width: 95%;
         max-width: 1200px;
-        transition: transform 0.2s ease, visibility 0.2s ease;
+        transition: transform 0.3s ease;
       }
       
       .header-pill {
@@ -345,6 +346,7 @@
         font-size: 1.5rem;
         max-width: 600px;
         color: #000000;
+        text-align: justify;
       }
       
       .service-section {
@@ -397,6 +399,7 @@
         line-height: 1.8;
         color: #555;
         margin-bottom: 25px;
+        text-align: justify;
       }
       
       .cta-btn {
@@ -466,6 +469,7 @@
       .service-description {
         color: #666;
         line-height: 1.6;
+        text-align: justify;
       }
       
       .features-list {
@@ -568,6 +572,7 @@
         margin: 0;
         color: #666;
         line-height: 1.6;
+        text-align: justify;
       }
       
       .service-title {
@@ -583,7 +588,7 @@
         line-height: 1.8;
         color: #666;
         margin-bottom: 60px;
-        text-align: center;
+        text-align: justify;
         max-width: 800px;
         margin-left: auto;
         margin-right: auto;
@@ -633,6 +638,7 @@
         color: #666;
         line-height: 1.6;
         margin-bottom: 20px;
+        text-align: justify;
       }
       
       .service-features {
@@ -685,6 +691,7 @@
         max-width: 600px;
         margin-left: auto;
         margin-right: auto;
+        text-align: justify;
       }
       
       .cta-button {
@@ -955,6 +962,11 @@
         font-size: 0.9rem;
       }
       
+      /* Force justify alignment for all paragraphs */
+      p, .content-text, .service-description, .service-card p, .cta-description {
+        text-align: justify !important;
+      }
+      
       /* Responsive Design */
       @media (max-width: 1024px) {
         .footer-grid {
@@ -1074,7 +1086,7 @@
 
                     <div id="services" style="margin-bottom: 80px;" class="fade-in animated-section">
                         <h2 class="content-title">Our Core Digital Marketing Services</h2>
-                        <p class="content-text" style="margin-bottom: 40px; text-align: center;">
+                        <p class="content-text" style="margin-bottom: 40px; text-align: justify;">
                             Our digital marketing services are built to enhance brand awareness, visibility, authority, and conversion it deserves.
                         </p>
                         
@@ -1139,7 +1151,7 @@
 
                     <div style="margin-bottom: 80px;" class="fade-in">
                         <h2 class="content-title">Why Choose Growthpulse Solutions for Digital Marketing?</h2>
-                        <p class="content-text" style="margin-bottom: 30px; text-align: center;">
+                        <p class="content-text" style="margin-bottom: 30px; text-align: justify;">
                             We build strategies that are tailored, transparent, and built for growth.
                         </p>
                         <ul class="features-list">
@@ -1152,38 +1164,33 @@
 
                     <div style="margin-bottom: 80px;">
                         <h2 class="content-title">How Do We Work?</h2>
-                        <p class="content-text" style="margin-bottom: 40px; text-align: center;">
+                        <p class="content-text" style="margin-bottom: 40px; text-align: justify;">
                             Our Strategies are crafted in simple and effective roadmaps that are completely designed for your business requirements.
                         </p>
                         <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin-top: 40px;" class="work-grid">
                             <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); position: relative; border-left: 4px solid #667eea; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.1)'">
                                 <div style="background: linear-gradient(45deg, #667eea, #764ba2); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-bottom: 20px;">1</div>
                                 <h3 style="color: #2c3e50; font-size: 1.3rem; font-weight: 700; margin-bottom: 15px;">Discover Your Market & Product</h3>
-                                <p style="color: #666; line-height: 1.6;">Comprehensive analysis of your current digital presence, competitor landscape, and target audience behavior to identify opportunities.</p>
+                                <p style="color: #666; line-height: 1.6; text-align: justify;">Comprehensive analysis of your current digital presence, competitor landscape, and target audience behavior to identify opportunities.</p>
                             </div>
                             <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); position: relative; border-left: 4px solid #667eea; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.1)'">
                                 <div style="background: linear-gradient(45deg, #667eea, #764ba2); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-bottom: 20px;">2</div>
                                 <h3 style="color: #2c3e50; font-size: 1.3rem; font-weight: 700; margin-bottom: 15px;">Design Your Strategic Marketing Plan</h3>
-                                <p style="color: #666; line-height: 1.6;">Create customized digital marketing strategies with clear objectives, channel selection, and content plans tailored to your goals.</p>
+                                <p style="color: #666; line-height: 1.6; text-align: justify;">Create customized digital marketing strategies with clear objectives, channel selection, and content plans tailored to your goals.</p>
                             </div>
                             <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); position: relative; border-left: 4px solid #667eea; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.1)'">
                                 <div style="background: linear-gradient(45deg, #667eea, #764ba2); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-bottom: 20px;">3</div>
                                 <h3 style="color: #2c3e50; font-size: 1.3rem; font-weight: 700; margin-bottom: 15px;">Execute Campaigns & Reselling</h3>
-                                <p style="color: #666; line-height: 1.6;">Launch multi-channel campaigns including SEO, PPC, social media, content marketing, and email campaigns for maximum reach.</p>
+                                <p style="color: #666; line-height: 1.6; text-align: justify;">Launch multi-channel campaigns including SEO, PPC, social media, content marketing, and email campaigns for maximum reach.</p>
                             </div>
                             <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); position: relative; border-left: 4px solid #667eea; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.1)'">
                                 <div style="background: linear-gradient(45deg, #667eea, #764ba2); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-bottom: 20px;">4</div>
                                 <h3 style="color: #2c3e50; font-size: 1.3rem; font-weight: 700; margin-bottom: 15px;">Measure, Track & Optimize</h3>
-                                <p style="color: #666; line-height: 1.6;">Monitor performance metrics, conduct A/B testing, and continuously optimize campaigns for improved ROI and conversion rates.</p>
+                                <p style="color: #666; line-height: 1.6; text-align: justify;">Monitor performance metrics, conduct A/B testing, and continuously optimize campaigns for improved ROI and conversion rates.</p>
                             </div>
                         </div>
                         
-                        <div style="text-align: center; margin-top: 60px;">
-                            <p class="content-text" style="font-size: 1.4rem; font-weight: 600; margin-bottom: 30px;">
-                                Want to see your brand go from being noticed to being chosen?
-                            </p>
-                            <a href="contact.html" class="cta-btn">Get Started Today</a>
-                        </div>
+
                     </div>
 
                     <div style="margin-bottom: 80px;" class="fade-in">
@@ -1195,7 +1202,7 @@
                                 </div>
                                 <div style="padding: 30px; text-align: center;">
                                     <h3 style="color: #2c3e50; font-size: 1.3rem; font-weight: 700; margin-bottom: 15px;">SaaS & Cloud Platforms</h3>
-                                    <p style="color: #666; line-height: 1.6;">Strategic marketing for software-as-a-service companies, cloud platforms, and subscription-based software solutions.</p>
+                                    <p style="color: #666; line-height: 1.6; text-align: justify;">Strategic marketing for software-as-a-service companies, cloud platforms, and subscription-based software solutions.</p>
                                 </div>
                             </div>
                             <div style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 8px 25px rgba(0,0,0,0.1); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.1)'">
@@ -1204,7 +1211,7 @@
                                 </div>
                                 <div style="padding: 30px; text-align: center;">
                                     <h3 style="color: #2c3e50; font-size: 1.3rem; font-weight: 700; margin-bottom: 15px;">Enterprise Software</h3>
-                                    <p style="color: #666; line-height: 1.6;">B2B marketing for enterprise applications, CRM systems, and business management software solutions.</p>
+                                    <p style="color: #666; line-height: 1.6; text-align: justify;">B2B marketing for enterprise applications, CRM systems, and business management software solutions.</p>
                                 </div>
                             </div>
                             <div style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 8px 25px rgba(0,0,0,0.1); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.1)'">
@@ -1213,7 +1220,7 @@
                                 </div>
                                 <div style="padding: 30px; text-align: center;">
                                     <h3 style="color: #2c3e50; font-size: 1.3rem; font-weight: 700; margin-bottom: 15px;">FinTech Solutions</h3>
-                                    <p style="color: #666; line-height: 1.6;">Marketing for financial technology products, payment platforms, and digital banking solutions.</p>
+                                    <p style="color: #666; line-height: 1.6; text-align: justify;">Marketing for financial technology products, payment platforms, and digital banking solutions.</p>
                                 </div>
                             </div>
                             <div style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 8px 25px rgba(0,0,0,0.1); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.1)'">
@@ -1222,7 +1229,7 @@
                                 </div>
                                 <div style="padding: 30px; text-align: center;">
                                     <h3 style="color: #2c3e50; font-size: 1.3rem; font-weight: 700; margin-bottom: 15px;">Healthcare Technology</h3>
-                                    <p style="color: #666; line-height: 1.6;">Specialized marketing for medical software, telemedicine platforms, and healthcare management systems.</p>
+                                    <p style="color: #666; line-height: 1.6; text-align: justify;">Specialized marketing for medical software, telemedicine platforms, and healthcare management systems.</p>
                                 </div>
                             </div>
                             <div style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 8px 25px rgba(0,0,0,0.1); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.1)'">
@@ -1231,7 +1238,7 @@
                                 </div>
                                 <div style="padding: 30px; text-align: center;">
                                     <h3 style="color: #2c3e50; font-size: 1.3rem; font-weight: 700; margin-bottom: 15px;">EdTech & E-learning</h3>
-                                    <p style="color: #666; line-height: 1.6;">Marketing for educational software, learning management systems, and online training platforms.</p>
+                                    <p style="color: #666; line-height: 1.6; text-align: justify;">Marketing for educational software, learning management systems, and online training platforms.</p>
                                 </div>
                             </div>
                             <div style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 8px 25px rgba(0,0,0,0.1); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.1)'">
@@ -1240,7 +1247,7 @@
                                 </div>
                                 <div style="padding: 30px; text-align: center;">
                                     <h3 style="color: #2c3e50; font-size: 1.3rem; font-weight: 700; margin-bottom: 15px;">Retail & E-commerce</h3>
-                                    <p style="color: #666; line-height: 1.6;">Digital marketing for online stores, e-commerce platforms, and retail brands to drive sales and customer engagement.</p>
+                                    <p style="color: #666; line-height: 1.6; text-align: justify;">Digital marketing for online stores, e-commerce platforms, and retail brands to drive sales and customer engagement.</p>
                                 </div>
                             </div>
                         </div>
@@ -1368,8 +1375,8 @@
                 <div class="footer-column">
                   <h4 class="footer-column-title">Contact</h4>
                   <ul class="footer-links">
-                    <li><a href="mailto:sales@growthpulss.com" class="footer-link footer-email-highlight footer-link-with-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>sales@growthpulss.com</a></li>
-                    <li style="margin-top: 15px;"><a href="tel:+919876543210" class="footer-link footer-link-with-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>+91 98765 43210</a></li>
+                    <li><a href="https://mail.google.com/mail/?view=cm&fs=1&to=sales@growthpulss.com" target="_blank" rel="noopener" class="footer-link footer-email-highlight footer-link-with-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>sales@growthpulss.com</a></li>
+                    <li style="margin-top: 15px;"><a href="tel:+919994422539" class="footer-link footer-link-with-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>9994422539</a></li>
                   </ul>
                 </div>
               </div>
@@ -1440,6 +1447,18 @@
                 closeMobileMenu();
             }
         });
+        
+        // Hide header on scroll, show when back to top
+        const header = document.querySelector('.header-container');
+        if (header) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 100) {
+                    header.style.transform = 'translateX(-50%) translateY(-100%)';
+                } else {
+                    header.style.transform = 'translateX(-50%) translateY(0)';
+                }
+            });
+        }
     </script>
 </body>
 </html>

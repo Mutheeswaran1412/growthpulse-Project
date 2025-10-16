@@ -327,6 +327,8 @@
         margin-top: 15px;
         display: none;
         font-size: 0.95rem;
+        text-align: justify;
+        font-family: 'Arial', sans-serif;
       }
       .faq-toggle {
         width: 24px;
@@ -739,6 +741,18 @@
         margin-top: 10px;
       }
       
+      @media (max-width: 768px) {
+        .services-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      
+      @media (max-width: 480px) {
+        .services-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      
       .service-option {
         cursor: pointer;
       }
@@ -812,7 +826,7 @@
             <a href="services.html" class="mobile-nav-link" onclick="closeMobileMenu()">Services</a>
             <a href="product.html" class="mobile-nav-link" onclick="closeMobileMenu()">Product</a>
             <a href="contact.html" class="mobile-nav-link" onclick="closeMobileMenu()">Contact</a>
-            <a href="contact.html" class="mobile-cta-button" onclick="closeMobileMenu()">Get Started</a>
+            
           </div>
         </div>
 
@@ -867,6 +881,10 @@
                                     <label class="service-option">
                                         <input type="checkbox" name="services" value="Event Management" class="service-checkbox">
                                         <span class="service-button">Event Management</span>
+                                    </label>
+                                    <label class="service-option">
+                                        <input type="checkbox" name="services" value="Others" class="service-checkbox">
+                                        <span class="service-button">Others</span>
                                     </label>
                                 </div>
                                 <div class="validation-message" id="services-error" style="display: none; color: #ef4444; font-size: 0.85rem; margin-top: 8px;">Please select at least one service</div>
@@ -964,23 +982,24 @@
                 
                 <div class="footer-links-grid">
                     <div class="footer-column">
-                        <h4 class="footer-column-title">Pages</h4>
+                        <h4 class="footer-column-title">Home</h4>
                         <ul class="footer-links">
-                            <li><a href="index.html" class="footer-link">Home</a></li>
-                            <li><a href="services.html" class="footer-link">Services</a></li>
-                            <li><a href="about.html" class="footer-link">About</a></li>
-                            <li><a href="contact.html" class="footer-link">Contact</a></li>
-                            <li><a href="product.html" class="footer-link">Product</a></li>
+                            <li><a href="index.html" class="footer-link">Homepage</a></li>
+                            <li><a href="about.html" class="footer-link">About Us</a></li>
+                            <li><a href="product.html" class="footer-link">Our Products</a></li>
+                            <li><a href="#hero" class="footer-link">Back to Top</a></li>
                         </ul>
                     </div>
                     
                     <div class="footer-column">
                         <h4 class="footer-column-title">Services</h4>
                         <ul class="footer-links">
-                            <li><a href="#" class="footer-link">Digital Marketing</a></li>
-                            <li><a href="#" class="footer-link">Software Marketing</a></li>
-                            <li><a href="#" class="footer-link">Technical Development</a></li>
-                            <li><a href="#" class="footer-link">Learning & Development</a></li>
+                            <li><a href="digital-marketing.html" class="footer-link">Digital Marketing</a></li>
+                            <li><a href="software-marketing.html" class="footer-link">Software Marketing</a></li>
+                            <li><a href="technical-development.html" class="footer-link">Technical Development</a></li>
+                            <li><a href="learning-development.html" class="footer-link">Learning & Development</a></li>
+                            <li><a href="account-management.html" class="footer-link">Account Management</a></li>
+                            <li><a href="event-management.html" class="footer-link">Event Management</a></li>
                         </ul>
                     </div>
                     
@@ -991,7 +1010,13 @@
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                                     <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
                                 </svg>
-                                <span class="footer-link">#2, Avvaiyar Street, Ekkatuthangal</span>
+                                <span class="footer-link">#2, Avvaiyar Street</span>
+                            </li>
+                            <li class="footer-link-with-icon">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                                </svg>
+                                <span class="footer-link">Ekkatuthangal</span>
                             </li>
                             <li class="footer-link-with-icon">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
@@ -1006,19 +1031,19 @@
                         <h4 class="footer-column-title">Contact</h4>
                         <ul class="footer-links">
                             <li>
-                                <a href="mailto:sales@growthpulss.com" class="footer-link footer-email-highlight">
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;">
+                                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sales@growthpulss.com" target="_blank" rel="noopener" class="footer-link footer-email-highlight footer-link-with-icon">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                                         <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.89 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
                                     </svg>
                                     sales@growthpulss.com
                                 </a>
                             </li>
                             <li>
-                                <a href="tel:+919876543210" class="footer-link">
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;">
+                                <a href="tel:+919994422539" class="footer-link footer-link-with-icon">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                                         <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
                                     </svg>
-                                    +91 98765 43210
+                                    9994422539
                                 </a>
                             </li>
                         </ul>

@@ -274,6 +274,7 @@
         margin-left: auto;
         margin-right: auto;
         opacity: 1;
+        text-align: justify;
       }
 
       .hero-buttons {
@@ -843,6 +844,7 @@
       .faq_answer p {
         margin: 0;
         font-size: 1.1rem;
+        text-align: justify;
       }
       @media (max-width: 768px) {
         .faq_layout {
@@ -3197,6 +3199,7 @@
         color: #666;
         margin: 0;
         line-height: 1.4;
+        text-align: justify;
       }
       
       @media (max-width: 768px) {
@@ -3851,6 +3854,10 @@
         align-items: center;
         position: relative;
         overflow: hidden;
+        margin: 0 auto;
+        max-width: 100%;
+        box-sizing: border-box;
+        width: 100%;
       }
       
       .talk-to-expert-container::before {
@@ -3909,6 +3916,7 @@
         color: #666;
         margin-bottom: 0;
         max-width: 450px;
+        text-align: justify;
       }
       
       .expert-meeting-link {
@@ -3953,28 +3961,133 @@
         }
         
         .expert-title {
-          font-size: clamp(2rem, 6vw, 2.5rem);
+          font-size: clamp(1.8rem, 5vw, 2.2rem);
+          line-height: 1.2;
         }
         
         .expert-description {
           max-width: 100%;
+          font-size: 1rem;
         }
         
         .expert-lottie {
-          width: 350px;
-          height: 350px;
+          width: 320px;
+          height: 320px;
+        }
+        
+        .expert-animation-container {
+          order: 1;
+        }
+        
+        .talk-to-expert-content {
+          order: 2;
+        }
+        
+        .meeting-btn {
+          padding: 12px 25px;
+          font-size: 0.95rem;
+          white-space: nowrap;
         }
       }
       
       @media (max-width: 480px) {
         .talk-to-expert-container {
-          padding: 30px 20px;
-          gap: 30px;
+          padding: 25px 15px;
+          gap: 25px;
+        }
+        
+        .expert-title {
+          font-size: clamp(1.4rem, 6vw, 1.8rem);
+        }
+        
+        .expert-description {
+          font-size: 0.9rem;
         }
         
         .expert-lottie {
-          width: 300px;
-          height: 300px;
+          width: 250px;
+          height: 250px;
+        }
+        
+        .expert-badge {
+          font-size: 0.8rem;
+          padding: 6px 16px;
+        }
+        
+        .meeting-btn {
+          padding: 10px 20px;
+          font-size: 0.9rem;
+        }
+      }
+      
+      /* Book a Meeting Section Responsive Fix */
+      @media (max-width: 768px) {
+        .talk-to-expert-container {
+          display: flex !important;
+          flex-direction: column !important;
+          grid-template-columns: none !important;
+          gap: 20px !important;
+          padding: 20px !important;
+          text-align: center !important;
+          width: 100% !important;
+          max-width: 100% !important;
+          margin: 0 !important;
+          border-radius: 15px !important;
+          box-sizing: border-box !important;
+        }
+        
+        .expert-animation-container {
+          order: 1 !important;
+          width: 100% !important;
+          display: flex !important;
+          justify-content: center !important;
+        }
+        
+        .talk-to-expert-content {
+          order: 2 !important;
+          width: 100% !important;
+          max-width: 100% !important;
+        }
+        
+        .expert-title {
+          font-size: 1.3rem !important;
+          line-height: 1.2 !important;
+          margin-bottom: 15px !important;
+        }
+        
+        .expert-description {
+          font-size: 0.9rem !important;
+          margin-bottom: 15px !important;
+        }
+        
+        .expert-lottie {
+          width: 250px !important;
+          height: 250px !important;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        .talk-to-expert-container {
+          padding: 15px !important;
+          gap: 15px !important;
+        }
+        
+        .expert-title {
+          font-size: 1.1rem !important;
+        }
+        
+        .expert-description {
+          font-size: 0.8rem !important;
+        }
+        
+        .expert-lottie {
+          width: 200px !important;
+          height: 200px !important;
+        }
+        
+        .expert-badge {
+          font-size: 0.7rem !important;
+          padding: 4px 10px !important;
         }
       }
       
@@ -4234,7 +4347,7 @@
                   </div>
                   <div class="spacer-large"></div>
                   <h3 class="heading-style-h3">
-                We provide comprehensive services to accelerate growth, streamline workflows, and achieve impactful results. From enterprise automation and ERP integration to digital marketing, corporate training, and analytics, our solutions empower organizations to innovate faster, work smarter, and achieve long-term scalability.
+                <div style="text-align: justify;">We provide comprehensive services to accelerate growth, streamline workflows, and achieve impactful results. From enterprise automation and ERP integration to digital marketing, corporate training, and analytics, our solutions empower organizations to innovate faster, work smarter, and achieve long-term scalability.</div>
 
                   </h3>
                   <div class="spacer-medium"></div>
@@ -4324,7 +4437,7 @@
                 </div>
                 <div class="brands_heading">
                   <h3 class="heading-style-h4">
-                    Trusted by startups and industry leaders for strategic growth solutions.
+                    <div style="text-align: justify;">Trusted by startups and industry leaders for strategic growth solutions.</div>
 
 
                   </h3>
@@ -4429,7 +4542,7 @@
                   🛒
                 </div>
                 <h3 class="industry_title_new">Retail & E-commerce</h3>
-                <p class="industry_desc_new">Optimize digital storefronts and customer journeys with our TNova ERP and customized Odoo for seamless inventory, order, and CRM management.</p>
+                <p class="industry_desc_new" style="text-align: justify;">Optimize digital storefronts and customer journeys with our TNova ERP and customized Odoo for seamless inventory, order, and CRM management.</p>
               </div>
               
               <div class="industry_card_new">
@@ -4437,7 +4550,7 @@
                   💰
                 </div>
                 <h3 class="industry_title_new">Finance and FinTech</h3>
-                <p class="industry_desc_new">Provide secure, compliant financial services with agile platforms enhanced by TNova ERP and Odoo for real-time reporting, analysis, and operational control.</p>
+                <p class="industry_desc_new" style="text-align: justify;">Provide secure, compliant financial services with agile platforms enhanced by TNova ERP and Odoo for real-time reporting, analysis, and operational control.</p>
               </div>
               
               <div class="industry_card_new">
@@ -4445,7 +4558,7 @@
                   🏥
                 </div>
                 <h3 class="industry_title_new">Healthcare and Life Sciences</h3>
-                <p class="industry_desc_new">Streamline clinic workflows, patient records, and supply chains using TNova ERP and Odoo integrated with HIPAA-ready digital engagement tools.</p>
+                <p class="industry_desc_new" style="text-align: justify;">Streamline clinic workflows, patient records, and supply chains using TNova ERP and Odoo integrated with HIPAA-ready digital engagement tools.</p>
               </div>
               
               <div class="industry_card_new">
@@ -4453,7 +4566,7 @@
                   🎓
                 </div>
                 <h3 class="industry_title_new">EdTech and SaaS</h3>
-                <p class="industry_desc_new">Drive learning outcomes and user growth with KallooriConnect, a career aggregation and student engagement platform, and GrowthPulse L&D, our corporate upskilling solution.</p>
+                <p class="industry_desc_new" style="text-align: justify;">Drive learning outcomes and user growth with KallooriConnect, a career aggregation and student engagement platform, and GrowthPulse L&D, our corporate upskilling solution.</p>
               </div>
               
               <div class="industry_card_new">
@@ -4461,7 +4574,7 @@
                   🏠
                 </div>
                 <h3 class="industry_title_new">Real Estate</h3>
-                <p class="industry_desc_new">Accelerate sales cycles with smart lead tracking and virtual engagement backed by TNova ERP and Odoo for property management, billing, and investor reporting.</p>
+                <p class="industry_desc_new" style="text-align: justify;">Accelerate sales cycles with smart lead tracking and virtual engagement backed by TNova ERP and Odoo for property management, billing, and investor reporting.</p>
               </div>
               
               <div class="industry_card_new">
@@ -4469,7 +4582,7 @@
                   📊
                 </div>
                 <h3 class="industry_title_new">Accounting</h3>
-                <p class="industry_desc_new">Streamlining financial processes with automated bookkeeping, tax compliance solutions, and real-time financial reporting systems.</p>
+                <p class="industry_desc_new" style="text-align: justify;">Streamlining financial processes with automated bookkeeping, tax compliance solutions, and real-time financial reporting systems.</p>
               </div>
             </div>
           </div>
@@ -4548,19 +4661,19 @@
         <!-- 8. TALK TO EXPERT SECTION -->
         <section id="section_cta" class="section_cta">
           <div class="padding-section-small"></div>
-          <div class="padding-global">
-            <div class="container-medium">
-              <div class="talk-to-expert-container">
+          <div class="padding-global" style="padding-left: 15px; padding-right: 15px;">
+            <div class="container-medium" style="max-width: 100%; padding: 0;">
+              <div class="talk-to-expert-container" style="width: 100%; max-width: 100%; margin: 0; box-sizing: border-box;">
                 <div class="talk-to-expert-content">
-                  <div class="expert-badge">Book a Meeting</div>
+                  <h3 class="expert-heading" style="font-size: 1.2rem; font-weight: 600; color: #5818C1; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px;">Book a Meeting</h3>
                   <h2 class="expert-title">Partner with Growthpulse to turn your ideas into measurable business growth 🚀</h2>
                   <div class="expert-meeting-link">
                     <a href="#" class="meeting-btn" style="background: #5818C1; color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">Book a Meeting</a>
                   </div>
-                  <p class="expert-description">Book a free 30-minute consultation with one of our data experts to discuss your project.</p>
+                  <p class="expert-description" style="text-align: justify;">Book a free 30-minute consultation with one of our data experts to discuss your project.</p>
                 </div>
                 <div class="expert-animation-container">
-                  <dotlottie-wc src="https://lottie.host/213904c1-6958-4844-8076-82b6f84158fb/UvRCB8C9qk.lottie" style="width: 500px;height: 500px;opacity: 1;visibility: visible" autoplay loop speed="2" preload></dotlottie-wc>
+                  <dotlottie-wc src="https://lottie.host/213904c1-6958-4844-8076-82b6f84158fb/UvRCB8C9qk.lottie" class="expert-lottie" style="width: 500px;height: 500px;opacity: 1;visibility: visible" autoplay loop speed="2" preload></dotlottie-wc>
                 </div>
               </div>
             </div>
@@ -4635,8 +4748,8 @@
               <div class="footer-column">
                 <h4 class="footer-column-title">Contact</h4>
                 <ul class="footer-links">
-                  <li><a href="mailto:sales@growthpulss.com" class="footer-link footer-email-highlight footer-link-with-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>sales@growthpulss.com</a></li>
-                  <li style="margin-top: 15px;"><a href="tel:+919876543210" class="footer-link footer-link-with-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>+91 98765 43210</a></li>
+                  <li><a href="https://mail.google.com/mail/?view=cm&fs=1&to=sales@growthpulss.com" class="footer-link footer-email-highlight footer-link-with-icon" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>sales@growthpulss.com</a></li>
+                  <li style="margin-top: 15px;"><a href="tel:+919994422539" class="footer-link footer-link-with-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>9994422539</a></li>
                 </ul>
               </div>
             </div>
