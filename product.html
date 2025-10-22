@@ -154,6 +154,10 @@
             max-width: 200px;
             object-fit: contain;
         }
+        .product-item:first-child .product-logo-img {
+            max-height: 100px;
+            max-width: 240px;
+        }
         .product-description {
             color: #666;
             font-size: 1rem;
@@ -436,6 +440,11 @@
                 min-height: auto;
             }
         }
+        .products-grid {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        
         @media (max-width: 1024px) {
             .products-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -502,7 +511,7 @@
                     <div class="products-grid">
                     <div class="product-item">
                         <div class="product-logo">
-                            <img src="src/images/products/hotelierlinks.jpg" alt="Hotelierlinks" class="product-logo-img">
+                            <img src="src/images/products/hoterlierlinks.png" alt="Hotelierlinks" class="product-logo-img">
                         </div>
                         <p class="product-description">Our hospitality management platform that transforms hotel operations with innovative technology solutions and seamless guest experiences.</p>
                         <a href="https://hotelierlinks.com" target="_blank" rel="noopener" class="product-link">Visit Platform</a>
@@ -513,7 +522,7 @@
                             <img src="src/images/products/TNova-Logo-01.png" alt="TNova" class="product-logo-img">
                         </div>
                         <p class="product-description">Leading provider of ERPNext implementation and customization services that optimize business processes and drive operational efficiency.</p>
-                        <a href="https://tnova.ai" target="_blank" rel="noopener" class="product-link">Visit Platform</a>
+                        <a href="tnova-erp.html" class="product-link">Learn More</a>
                     </div>
 
                     <div class="product-item">
@@ -524,6 +533,13 @@
                         <span class="product-link-disabled">Coming Soon</span>
                     </div>
 
+                    <div class="product-item">
+                        <div class="product-logo">
+                            <img src="src/images/products/LIMS LOGO.jpg" alt="LIMS" class="product-logo-img">
+                        </div>
+                        <p class="product-description">Unlock your lab's full potential with a unified platform that streamlines workflows, ensures compliance, and delivers actionable insight, all in one place.</p>
+                        <a href="lims.html" class="product-link">Learn More</a>
+                    </div>
 
                 </div>
             </div>

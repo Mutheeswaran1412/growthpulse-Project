@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Growthpulse LIMS - AI-Integrated Laboratory Information Management System | Growthpulse Solutions</title>
+    <meta content="Growthpulse LIMS - AI-integrated, web-based Laboratory Information Management System for global access with regulatory compliance and seamless integration" name="description"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <link href="src/images/Main-Logo-01.png" rel="shortcut icon" type="image/png"/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo img {
+            height: 50px;
+        }
+        .nav-link {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 16px;
+            border: 1px solid #007bff;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        .nav-link:hover {
+            background: #007bff;
+            color: white;
+        }
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        .learn-more-btn {
+            background: #ff6b6b;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .learn-more-btn:hover {
+            background: #ff5252;
+            transform: translateY(-2px);
+        }
+        .content-section {
+            padding: 60px 0;
+        }
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #2c3e50;
+            text-align: center;
+        }
+        .section-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            text-align: justify;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        .feature-item {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-top: 4px solid #28a745;
+        }
+        .feature-item h4 {
+            color: #28a745;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        .capabilities-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin: 40px 0;
+            background: #f8fafc;
+            padding: 40px;
+            border-radius: 20px;
+        }
+        .capability-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 15px;
+        }
+        .capability-icon {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .capability-card:hover .capability-icon {
+            transform: translateY(-5px);
+        }
+        .capability-card h4 {
+            color: #1f2937;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 0;
+            line-height: 1.3;
+        }
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .industry-item {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 30px 20px;
+            border-radius: 12px;
+            text-align: left;
+            position: relative;
+            min-height: 120px;
+            display: flex;
+            align-items: flex-end;
+        }
+        .industry-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(25, 118, 210, 0.8) 0%, rgba(25, 118, 210, 0.6) 100%);
+            border-radius: 12px;
+            z-index: 1;
+        }
+        .industry-content {
+            position: relative;
+            z-index: 2;
+            color: white;
+        }
+        .industry-item h4 {
+            color: white;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .industry-item p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.95rem;
+            margin: 0;
+        }
+        .industry-chemical { background-image: url('https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=400'); }
+        .industry-pharma { background-image: url('https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400'); }
+        .industry-forensic { background-image: url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400'); }
+        .industry-cannabis { background-image: url('https://images.unsplash.com/photo-1536431311719-398b6704d4cc?w=400'); }
+        .industry-bio { background-image: url('https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=400'); }
+        .industry-clinical { background-image: url('https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400'); }
+        .industry-water { background-image: url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400'); }
+        .industry-mining { background-image: url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400'); }
+        .industry-oil { background-image: url('https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400'); }
+        .industry-manufacturing { background-image: url('https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=400'); }
+        .faq-section {
+            background: #f8f9fa;
+        }
+        .faq-item {
+            background: white;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .faq-question {
+            background: #007bff;
+            color: white;
+            padding: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .faq-question:hover {
+            background: #0056b3;
+        }
+        .faq-answer {
+            padding: 20px;
+            display: none;
+        }
+        .faq-answer.active {
+            display: block;
+        }
+        .modern-footer {
+            background: #ffffff;
+            color: #000000;
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 120px;
+            align-items: start;
+        }
+        .footer-brand-section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .footer-logo-img {
+            height: 55px;
+            width: auto;
+        }
+        .footer-copyright {
+            color: #333333;
+            font-size: 0.9rem;
+            margin: 0;
+            line-height: 1.4;
+        }
+        .footer-links-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 100px;
+        }
+        .footer-column {
+            display: flex;
+            flex-direction: column;
+        }
+        .footer-column-title {
+            color: #000000;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .footer-link {
+            color: #666666;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+            line-height: 1.4;
+        }
+        .footer-link:hover {
+            color: #000000;
+        }
+        .footer-social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .footer-social-link {
+            color: #666666;
+            transition: color 0.3s ease;
+        }
+        .footer-social-link:hover {
+            color: #000000;
+        }
+        .footer-email-highlight {
+            background: #f0f8ff;
+            padding: 8px 12px;
+            border-radius: 6px;
+            border: 1px solid #e0e0e0;
+            font-weight: 600;
+            color: #000000 !important;
+        }
+        .footer-email-highlight:hover {
+            background: #e6f3ff;
+            border-color: #ccc;
+        }
+        .footer-link-with-icon {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .footer-link-with-icon svg {
+            flex-shrink: 0;
+        }
+        .footer-bg-text {
+            position: absolute;
+            bottom: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: clamp(8rem, 15vw, 20rem);
+            font-weight: 900;
+            color: rgba(0, 0, 0, 0.03);
+            z-index: 1;
+            pointer-events: none;
+            white-space: nowrap;
+            user-select: none;
+        }
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+            .capabilities-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+                padding: 20px;
+            }
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            .industries-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 1024px) {
+            .capabilities-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="src/images/growthpulse-logo.png" alt="Growthpulse">
+                </div>
+                <a href="product.html" class="nav-link">← Back to Products</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Seamless LIMS Integration for Smarter Labs</h1>
+            <p>Our unified platform helps you unlock the potential of your laboratory by simplifying processes, maintaining compliance, and providing valuable insights.</p>
+        </div>
+    </section>
+
+    <section class="content-section" id="content">
+        <div class="container">
+            <h2 class="section-title">What is Growthpulse LIMS?</h2>
+            <div class="section-content">
+                <p>Growthpulse LIMS is an AI-integrated, web-based Laboratory Information Management System. We provide industry-specific regulatory compliance for managing laboratory data and operations. Our LIMS is designed for global access and deployed either on-premises or in the cloud, supporting both no-code and low-code customization for ease of configuration and integration.</p>
+            </div>
+
+            <h2 class="section-title">Why Choose Growthpulse LIMS?</h2>
+            <div class="section-content">
+                <p>Here are the core reasons to select Growthpulse LIMS for your Laboratory element:</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-item">
+                    <h4>AI Integration</h4>
+                    <p>AI/ML is going to be instrumental in streamlining operations, spotting data anomalies, automating quality control, and offering predictive insights, which will be the main drivers for the performance enhancement of labs and the accuracy of data.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Efficient Sample Management</h4>
+                    <p>Comprehensive coverage of sampling and specimen tracking right from accessioning to storage, testing, disposal, and more, plus ensuring traceability and retention management for quick retrieval.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Workflow Automation</h4>
+                    <p>Configurable workflows for processing samples, testing, approving, and reporting will be customized and automatically transitioned into the respective status for completion.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Customizable Interface</h4>
+                    <p>A user-friendly interface offering role-based access and modular customization without requiring any coding is offered.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Advanced Data Security</h4>
+                    <p>Two-factor authentication, audit trails, secure data backup, and encryption ensure sensitive laboratory information is not compromised but rather has integrity and compliance.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Seamless Reporting</h4>
+                    <p>Real-time dashboards, scheduled and dynamic reports, and configurable outputs maintain operational monitoring while producing regulatory-compliant documentation smoothly.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Preventive Maintenance Tracking</h4>
+                    <p>This system monitors laboratory equipment and assets: preventive maintenance and scheduling of calibration, thus reducing downtime to ensure uninterrupted operational reliability.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Regulatory Compliance Made Simple</h4>
+                    <p>Growthpulse LIMS was designed to comply with most major standards, including ISO 17025, FDA 21 CFR Part 11, CAP, and NABL. It automates document control, e-signatures, audit trails, and quality control, making audit readiness easier.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Comprehensive Instrument Integration</h4>
+                    <p>Instrument connectivity with several lab instruments, automatically capturing data (via RS232, Excel, CSV) or manually entering data, hence enabling central collection of data and reducing manual errors.</p>
+                </div>
+            </div>
+
+            <h2 class="section-title">Our Capabilities</h2>
+            <div class="capabilities-grid">
+                <div class="capability-card">
+                    <div class="capability-icon">
+                        <svg width="50" height="50" viewBox="0 0 50 50" fill="none">
+                            <rect width="50" height="50" rx="10" fill="#4F46E5"/>
+                            <path d="M15 20h20v2H15zm0 4h20v2H15zm0 4h15v2H15zm20-8h5v10h-5z" fill="white"/>
+                        </svg>
+                    </div>
+                    <h4>On-Premise</h4>
+                </div>
+                <div class="capability-card">
+                    <div class="capability-icon">
+                        <svg width="50" height="50" viewBox="0 0 50 50" fill="none">
+                            <rect width="50" height="50" rx="10" fill="#059669"/>
+                            <path d="M25 15c-5.5 0-10 4.5-10 10s4.5 10 10 10 10-4.5 10-10-4.5-10-10-10zm0 15c-2.8 0-5-2.2-5-5s2.2-5 5-5 5 2.2 5 5-2.2 5-5 5z" fill="white"/>
+                        </svg>
+                    </div>
+                    <h4>Cloud</h4>
+                </div>
+                <div class="capability-card">
+                    <div class="capability-icon">
+                        <svg width="50" height="50" viewBox="0 0 50 50" fill="none">
+                            <rect width="50" height="50" rx="10" fill="#DC2626"/>
+                            <path d="M25 15l8 6v14h-6v-8h-4v8h-6V21l8-6zm0 3l-5 3.75V32h2v-8h6v8h2v-10.25L25 18z" fill="white"/>
+                        </svg>
+                    </div>
+                    <h4>Compliance</h4>
+                </div>
+                <div class="capability-card">
+                    <div class="capability-icon">
+                        <svg width="50" height="50" viewBox="0 0 50 50" fill="none">
+                            <rect width="50" height="50" rx="10" fill="#7C3AED"/>
+                            <path d="M25 15c-5.5 0-10 4.5-10 10s4.5 10 10 10 10-4.5 10-10-4.5-10-10-10zm-2 8h4v2h-2v2h2v2h-4v-2h2v-2h-2v-2z" fill="white"/>
+                        </svg>
+                    </div>
+                    <h4>Innovation</h4>
+                </div>
+                <div class="capability-card">
+                    <div class="capability-icon">
+                        <svg width="50" height="50" viewBox="0 0 50 50" fill="none">
+                            <rect width="50" height="50" rx="10" fill="#EA580C"/>
+                            <path d="M25 15c-2.8 0-5 2.2-5 5 0 1.7.7 3.2 1.8 4.3L25 35l3.2-10.7c1.1-1.1 1.8-2.6 1.8-4.3 0-2.8-2.2-5-5-5zm0 7c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" fill="white"/>
+                        </svg>
+                    </div>
+                    <h4>AI Integration</h4>
+                </div>
+            </div>
+
+            <h2 class="section-title">Industries We Serve</h2>
+            <div class="section-content">
+                <p>Growthpulse LIMS customizes its offerings to suit laboratory requirements across diverse industries.</p>
+            </div>
+
+            <div class="industries-grid">
+                <div class="industry-item industry-chemical">
+                    <div class="industry-content">
+                        <h4>Chemical and Petrochemical</h4>
+                        <p>Simplified lab processing, superior data integrity, and regulatory compliance.</p>
+                    </div>
+                </div>
+                <div class="industry-item industry-pharma">
+                    <div class="industry-content">
+                        <h4>Pharmaceutical and Life Sciences</h4>
+                        <p>Improved data management, compliance, and operational efficiencies.</p>
+                    </div>
+                </div>
+                <div class="industry-item industry-forensic">
+                    <div class="industry-content">
+                        <h4>Forensic</h4>
+                        <p>Appreciates scientific data evidence that is mirrored in legal and criminal cases, ensuring data robustness.</p>
+                    </div>
+                </div>
+                <div class="industry-item industry-cannabis">
+                    <div class="industry-content">
+                        <h4>Cannabis</h4>
+                        <p>Flexible enough to increase other capabilities, although these must comply with the cannabis standards of quality.</p>
+                    </div>
+                </div>
+                <div class="industry-item industry-bio">
+                    <div class="industry-content">
+                        <h4>Biorepository</h4>
+                        <p>Better efficiency and regulatory compliance within biobanking activities.</p>
+                    </div>
+                </div>
+                <div class="industry-item industry-clinical">
+                    <div class="industry-content">
+                        <h4>Clinical Research and Diagnostics</h4>
+                        <p>Sample management, accuracy in data, and compliance with clinical labs.</p>
+                    </div>
+                </div>
+                <div class="industry-item industry-water">
+                    <div class="industry-content">
+                        <h4>Water and Environment</h4>
+                        <p>Creates automated workflows in water quality and environmental laboratories, thereby improving quality and efficiency.</p>
+                    </div>
+                </div>
+                <div class="industry-item industry-mining">
+                    <div class="industry-content">
+                        <h4>Metals and Mining</h4>
+                        <p>Specificity in data management and operational efficiency, as well as compliance for the industry.</p>
+                    </div>
+                </div>
+                <div class="industry-item industry-oil">
+                    <div class="industry-content">
+                        <h4>Oil & Gas and Petrochemical</h4>
+                        <p>Handling the testing and quality control requirements for a harsh environment-performance environment.</p>
+                    </div>
+                </div>
+                <div class="industry-item industry-manufacturing">
+                    <div class="industry-content">
+                        <h4>Manufacturing Sectors</h4>
+                        <p>Covers all aspects of process automation, real-time monitoring, and inventory and sample tracking.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-content" style="text-align: center; margin-top: 60px;">
+                <h2 style="color: #28a745; margin-bottom: 20px;">Streamline Your Laboratory with Growthpulse LIMS Today!</h2>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    What is LIMS?
+                </div>
+                <div class="faq-answer">
+                    A laboratory information management system (LIMS) is a computer program that works by improving accuracy and compliance, helping a laboratory efficiently handle the samples, the data, and the workflow.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    What is the process of LIMS?
+                </div>
+                <div class="faq-answer">
+                    LIMS brings down the operation of a laboratory through the tracking of samples, data collection, analysis, and reporting, and often integrates with the laboratory equipment to automate the entire working process.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    What software is used in a laboratory?
+                </div>
+                <div class="faq-answer">
+                    Some of the most common software used in laboratories are LIMS, electronic laboratory notebook (ELN), laboratory execution system (LES), and specialized analysis tools for overall management.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    What are LIMS licensing and deployment models?
+                </div>
+                <div class="faq-answer">
+                    LIMS can be installed on-site for complete control or using cloud-based SaaS for various laboratory requirements that demand flexibility and low-maintenance options.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    What are the different types of LIMS?
+                </div>
+                <div class="faq-answer">
+                    LIMS can be classified into commercial off-the-shelf, customized point solutions, and systems developed in-house according to specific workflows.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="modern-footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <!-- Brand Section -->
+          <div class="footer-brand-section">
+            <div class="footer-logo">
+              <img src="src/images/growthpulse-logo.png" alt="GrowthPulse" class="footer-logo-img">
+            </div>
+            <p class="footer-copyright">© copyright GrowthPulse 2024. All rights reserved.</p>
+            <div class="footer-social-icons">
+              <a href="https://x.com" class="footer-social-link" target="_blank" rel="noopener" title="Follow us on X (Twitter)">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+              </a>
+              <a href="https://facebook.com" class="footer-social-link" target="_blank" rel="noopener" title="Follow us on Facebook">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+              </a>
+              <a href="https://instagram.com" class="footer-social-link" target="_blank" rel="noopener" title="Follow us on Instagram">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+              </a>
+              <a href="https://www.linkedin.com/company/growth-pulse-solutions/?viewAsMember=true" class="footer-social-link" target="_blank" rel="noopener" title="Follow us on LinkedIn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Footer Links -->
+          <div class="footer-links-grid">
+            <div class="footer-column">
+              <h4 class="footer-column-title">Pages</h4>
+              <ul class="footer-links">
+                <li><a href="index.html" class="footer-link">Home</a></li>
+                <li><a href="services.html" class="footer-link">Services</a></li>
+                <li><a href="about.html" class="footer-link">About</a></li>
+                <li><a href="contact.html" class="footer-link">Contact</a></li>
+                <li><a href="product.html" class="footer-link">Product</a></li>
+              </ul>
+            </div>
+            
+            <div class="footer-column">
+              <h4 class="footer-column-title">Services</h4>
+              <ul class="footer-links">
+                <li><a href="digital-marketing.html" class="footer-link">Digital Marketing</a></li>
+                <li><a href="software-marketing.html" class="footer-link">Software Marketing</a></li>
+                <li><a href="technical-development.html" class="footer-link">Technical Development</a></li>
+                <li><a href="learning-development.html" class="footer-link">Learning & Development</a></li>
+              </ul>
+            </div>
+            
+            <div class="footer-column">
+              <h4 class="footer-column-title">Address</h4>
+              <ul class="footer-links">
+                <li><span class="footer-link footer-link-with-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>#2, Avvaiyar Street, Ekkatuthangal</span></li>
+                <li><span class="footer-link footer-link-with-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Chennai-32, India</span></li>
+              </ul>
+            </div>
+            
+            <div class="footer-column">
+              <h4 class="footer-column-title">Contact</h4>
+              <ul class="footer-links">
+                <li><a href="https://mail.google.com/mail/?view=cm&fs=1&to=sales@growthpulss.com" class="footer-link footer-email-highlight footer-link-with-icon" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>sales@growthpulss.com</a></li>
+                <li style="margin-top: 15px;"><a href="tel:+919994422539" class="footer-link footer-link-with-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>9994422539</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Large Background Text -->
+        <div class="footer-bg-text">GrowthPulse</div>
+      </div>
+    </footer>
+
+    <script>
+        function scrollToContent() {
+            document.getElementById('content').scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            const allAnswers = document.querySelectorAll('.faq-answer');
+            
+            // Close all other FAQs
+            allAnswers.forEach(ans => {
+                if (ans !== answer) {
+                    ans.classList.remove('active');
+                }
+            });
+            
+            // Toggle current FAQ
+            answer.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
