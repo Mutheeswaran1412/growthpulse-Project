@@ -1,17 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://www.growthpulss.com/</loc><lastmod>2025-01-06T04:30:50+00:00</lastmod><priority>1.00</priority></url>
-<url><loc>https://www.growthpulss.com/index.html</loc><lastmod>2025-01-06T04:30:50+00:00</lastmod><priority>0.80</priority></url>
-<url><loc>https://www.growthpulss.com/about.html</loc><lastmod>2025-01-06T11:54:06+00:00</lastmod><priority>0.80</priority></url>
-<url><loc>https://www.growthpulss.com/services.html</loc><lastmod>2025-01-06T11:56:46+00:00</lastmod><priority>0.80</priority></url>
-<url><loc>https://www.growthpulss.com/product.html</loc><lastmod>2025-01-06T09:45:02+00:00</lastmod><priority>0.80</priority></url>
-<url><loc>https://www.growthpulss.com/contact.html</loc><lastmod>2025-01-06T11:54:23+00:00</lastmod><priority>0.80</priority></url>
-<url><loc>https://www.growthpulss.com/digital-marketing.html</loc><lastmod>2025-01-06T12:22:24+00:00</lastmod><priority>0.80</priority></url>
-<url><loc>https://www.growthpulss.com/software-marketing.html</loc><lastmod>2025-01-06T11:56:54+00:00</lastmod><priority>0.80</priority></url>
-<url><loc>https://www.growthpulss.com/technical-development.html</loc><lastmod>2025-01-06T11:57:08+00:00</lastmod><priority>0.80</priority></url>
-<url><loc>https://www.growthpulss.com/learning-development.html</loc><lastmod>2025-01-06T11:56:38+00:00</lastmod><priority>0.80</priority></url>
-<url><loc>https://www.growthpulss.com/account-management.html</loc><lastmod>2025-01-06T11:54:14+00:00</lastmod><priority>0.64</priority></url>
-<url><loc>https://www.growthpulss.com/event-management.html</loc><lastmod>2025-01-06T11:54:48+00:00</lastmod><priority>0.64</priority></url>
-<url><loc>https://www.growthpulss.com/tnova-erp.html</loc><lastmod>2025-01-06T09:44:32+00:00</lastmod><priority>0.64</priority></url>
-<url><loc>https://www.growthpulss.com/lims.html</loc><lastmod>2025-01-06T09:44:15+00:00</lastmod><priority>0.64</priority></url>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://www.growthpulss.com/</loc>
+  <lastmod>2025-10-24T05:09:14+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://www.growthpulss.com/index.html</loc>
+  <lastmod>2025-10-24T05:09:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.growthpulss.com/about.html</loc>
+  <lastmod>2025-10-15T11:54:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.growthpulss.com/services.html</loc>
+  <lastmod>2025-10-15T11:56:46+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.growthpulss.com/product.html</loc>
+  <lastmod>2025-10-22T09:45:02+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.growthpulss.com/contact.html</loc>
+  <lastmod>2025-10-15T11:54:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.growthpulss.com/digital-marketing.html</loc>
+  <lastmod>2025-10-15T12:22:24+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.growthpulss.com/software-marketing.html</loc>
+  <lastmod>2025-10-15T11:56:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.growthpulss.com/technical-development.html</loc>
+  <lastmod>2025-10-15T11:57:08+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.growthpulss.com/learning-development.html</loc>
+  <lastmod>2025-10-15T11:56:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.growthpulss.com/account-management.html</loc>
+  <lastmod>2025-10-15T11:54:14+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.growthpulss.com/event-management.html</loc>
+  <lastmod>2025-10-15T11:54:48+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.growthpulss.com/tnova-erp.html</loc>
+  <lastmod>2025-10-22T09:44:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.growthpulss.com/lims.html</loc>
+  <lastmod>2025-10-22T09:44:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
 </urlset>
