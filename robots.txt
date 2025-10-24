@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.growthpulss.com/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
+
+# Disallow certain paths (if any)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.pdf$
+Disallow: /temp/

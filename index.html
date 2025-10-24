@@ -7,17 +7,19 @@
 >
   <head>
     <meta charset="utf-8"/>
-    <title>Strategic Business Solutions | Growthpulse Solutions</title>
+    <title>GrowthPulse - Strategic Business Solutions | Digital Marketing & Software Development</title>
     <meta
-      content="Growthpulse Solutions drives business growth in software & digital marketing, technology development, and learning & development with data-driven strategies."
+      content="GrowthPulse Solutions - Leading provider of digital marketing, software development, AI/Data engineering, and business growth solutions. Transform your business with our strategic services."
       name="description"
     />
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://growthpulss.com/">
     <meta content="Digital Marketing, SEO, Social Media, GrowthPulse, Online Branding, Marketing Company, AI Data Engineering, Full-Stack Development" name="keywords" />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://yourdomain.com/" />
-    <meta property="og:title" content="GrowthPulse - Global Strategy for Digital Marketing & Software Solutions" />
+    <meta property="og:url" content="https://growthpulss.com/" />
+    <meta property="og:title" content="GrowthPulse - Strategic Business Solutions | Digital Marketing & Software Development" />
     <meta property="og:description" content="End-to-end strategic solutions for marketing, development, management, and learning. We drive sustainable business growth with AI/Data Engineering, Full-Stack Development, and Digital Marketing services." />
     <meta property="og:image" content="https://yourdomain.com/src/images/growthpulse-social-preview.jpg" />
     <meta property="og:image:width" content="1200" />
@@ -36,6 +38,12 @@
     <meta name="author" content="GrowthPulse" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta content="Webflow" name="generator" />
+    <meta name="google-site-verification" content="MmL3d2wJJE6_jYEDkRtcT4mNdpjQgmaFfWcf1RzfEDs" />
+    
+    <!-- Sitemap and SEO Meta Tags -->
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <link
       href="https://cdn.prod.website-files.com/684a11845c7dd0b4b7745cd9/css/noura-template-supply.webflow.shared.ca770ec91.css"
       rel="stylesheet"
@@ -967,31 +975,34 @@
         position: relative;
         z-index: 15;
         padding-top: 220px;
-        padding-left: 160px !important;
+        padding-left: 60px !important;
+        padding-right: 100px !important;
         display: flex;
         align-items: flex-start;
         min-height: 70vh;
-        max-width: none !important;
-        margin: 0 !important;
+        max-width: 1600px !important;
+        margin: 0 auto !important;
       }
       
       .hero-content-left {
         text-align: left;
-        max-width: 800px;
+        max-width: 550px;
         margin-left: 0;
         padding-left: 0;
+        padding-right: 50px;
       }
       
       .hero-image-positioned {
         position: absolute;
         top: 30%;
-        right: 50px;
+        right: 80px;
         transform: translateY(-50%);
-        width: 700px;
+        width: 550px;
         height: auto;
         filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.08));
         animation: heroFloat 6s ease-in-out infinite;
         z-index: 12;
+        max-width: calc(100vw - 180px);
       }
       
       @media (max-width: 1200px) {
@@ -1136,7 +1147,54 @@
         box-shadow: 0 8px 30px rgba(163, 230, 53, 0.4);
       }
       
+      /* Enhanced Mobile Responsiveness */
+      @media (max-width: 1200px) {
+        .hero-image-positioned {
+          width: 550px;
+          right: 20px;
+        }
+        
+        .home-two-hero-container {
+          padding-left: 80px !important;
+        }
+      }
+      
+      @media (max-width: 1024px) {
+        .hero-image-positioned {
+          width: 450px;
+          right: 10px;
+        }
+        
+        .home-two-hero-container {
+          padding-left: 60px !important;
+          padding-top: 180px;
+        }
+        
+        .hero-main-title {
+          font-size: clamp(2.2rem, 4vw, 3rem) !important;
+        }
+        
+        .hero-subtitle {
+          font-size: 1.2rem !important;
+        }
+      }
+      
+      @media (max-width: 900px) {
+        .hero-image-positioned {
+          width: 400px;
+          right: 5px;
+        }
+        
+        .home-two-hero-container {
+          padding-left: 40px !important;
+        }
+      }
+      
       @media (max-width: 768px) {
+        .modern-hero-section {
+          min-height: 80vh;
+        }
+        
         .home-two-hero-container {
           padding-top: 120px;
           padding-left: 20px !important;
@@ -1145,16 +1203,7 @@
           flex-direction: column;
           align-items: center;
           text-align: center;
-        }
-        
-        .hero-main-title {
-          font-size: clamp(1.8rem, 8vw, 2.5rem) !important;
-          text-align: center;
-        }
-        
-        .hero-subtitle {
-          font-size: 1.1rem !important;
-          text-align: center;
+          min-height: 60vh;
         }
         
         .hero-content-left {
@@ -1162,18 +1211,102 @@
           max-width: 100%;
           position: relative;
           z-index: 10;
+          order: 1;
+        }
+        
+        .hero-image-positioned {
+          position: static;
+          transform: none;
+          width: 90%;
+          max-width: 350px;
+          margin: 30px auto 0;
+          display: block;
+          order: 2;
+        }
+        
+        .hero-main-title {
+          font-size: clamp(1.8rem, 7vw, 2.5rem) !important;
+          text-align: center;
+          line-height: 1.2;
+          margin-bottom: 20px;
+        }
+        
+        .hero-subtitle {
+          font-size: 1.1rem !important;
+          text-align: center;
+          margin-bottom: 25px;
+          line-height: 1.5;
         }
         
         .hero-cta-btn {
-          width: 100%;
+          width: auto;
+          min-width: 200px;
           justify-content: center;
           margin-top: 20px;
+          padding: 12px 25px;
         }
         
         .gradient-shape-1,
         .gradient-shape-2,
         .gradient-shape-3 {
           display: none;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        .modern-hero-section {
+          min-height: 70vh;
+          padding-bottom: 40px;
+        }
+        
+        .home-two-hero-container {
+          padding-top: 100px;
+          padding-left: 15px !important;
+          padding-right: 15px !important;
+          min-height: 50vh;
+        }
+        
+        .hero-main-title {
+          font-size: clamp(1.5rem, 8vw, 2rem) !important;
+          line-height: 1.1;
+          margin-bottom: 15px;
+        }
+        
+        .hero-subtitle {
+          font-size: 1rem !important;
+          margin-bottom: 20px;
+          padding: 0 10px;
+        }
+        
+        .hero-image-positioned {
+          width: 95%;
+          max-width: 280px;
+          margin: 20px auto 0;
+        }
+        
+        .hero-cta-btn {
+          width: 100%;
+          max-width: 250px;
+          padding: 10px 20px;
+          font-size: 0.9rem;
+        }
+      }
+      
+      @media (max-width: 360px) {
+        .home-two-hero-container {
+          padding-top: 90px;
+        }
+        
+        .hero-main-title {
+          font-size: 1.4rem !important;
+        }
+        
+        .hero-subtitle {
+          font-size: 0.9rem !important;
+        }
+        
+        .hero-image-positioned {
+          max-width: 250px;
         }
       }
       
@@ -1933,6 +2066,21 @@
         background: #4A15A3;
       }
       
+      @media (max-width: 1024px) {
+        .header-container {
+          width: 96%;
+          top: 15px;
+        }
+        
+        .header-pill {
+          padding: 12px 24px;
+        }
+        
+        .header-logo-img {
+          height: 50px;
+        }
+      }
+      
       @media (max-width: 768px) {
         .header-nav,
         .header-cta {
@@ -1944,6 +2092,21 @@
         }
         
         .header-pill {
+          padding: 10px 20px;
+        }
+        
+        .header-logo-img {
+          height: 45px;
+        }
+        
+        .header-container {
+          width: 95%;
+          top: 10px;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        .header-pill {
           padding: 8px 16px;
         }
         
@@ -1953,7 +2116,17 @@
         
         .header-container {
           width: 98%;
-          top: 10px;
+          top: 8px;
+        }
+      }
+      
+      @media (max-width: 360px) {
+        .header-pill {
+          padding: 6px 12px;
+        }
+        
+        .header-logo-img {
+          height: 35px;
         }
       }
       
