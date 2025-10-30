@@ -22,8 +22,11 @@
   /* Hero Mobile */
   .hero-content {
     grid-template-columns: 1fr !important;
-    text-align: center;
+    text-align: center !important;
     gap: 30px;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    max-width: 100% !important;
   }
   
   /* Hero Section Mobile Fixes */
@@ -260,8 +263,31 @@
     padding-left: 20px !important;
     padding-right: 20px !important;
     flex-direction: column !important;
-    text-align: center;
+    text-align: center !important;
     padding-top: 120px !important;
+    margin: 0 auto !important;
+    max-width: 100% !important;
+  }
+  
+  /* Index.html Hero Section Mobile Fix */
+  .home-header_component {
+    padding: 0 20px !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+  }
+  
+  .hero-content {
+    padding: 80px 0 120px 0 !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+    max-width: 100% !important;
+  }
+  
+  .hero-text {
+    padding: 0 !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+    max-width: 100% !important;
   }
   
   .hero-image-positioned {

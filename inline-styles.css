@@ -56,3 +56,43 @@
   position: relative;
   z-index: 2;
 }
+
+/* Hero Section Bottom Padding */
+.hero-content {
+  padding-bottom: 160px !important;
+}
+
+/* Know More Button Spacing */
+.hero-cta-btn-orange {
+  margin-bottom: 30px;
+}
+
+/* Hero Center Alignment for All Devices */
+.hero-content {
+  margin: 0 auto !important;
+  text-align: center !important;
+}
+
+.hero-text {
+  text-align: center !important;
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    grid-template-columns: 1fr !important;
+    padding: 80px 30px 120px 30px !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+  }
+  
+  .hero-text {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    margin: 0 auto !important;
+    max-width: 100% !important;
+  }
+  
+  .home-header_component {
+    padding: 0 15px !important;
+  }
+}

@@ -92,11 +92,13 @@
             font-size: 4rem;
             margin-bottom: 20px;
             color: #000000;
+            text-align: left;
         }
         .product-subtitle {
             font-size: 1.5rem;
             max-width: 600px;
             color: #000000;
+            text-align: left;
         }
         @media (max-width: 768px) {
             .product-hero > div {
@@ -138,7 +140,8 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            min-height: 400px;
+            min-height: 500px;
+            align-items: center;
         }
         .product-item:hover {
             transform: translateY(-5px);
@@ -171,12 +174,14 @@
             display: inline-block;
             background: #007bff;
             color: white;
-            padding: 12px 8px;
+            padding: 12px 24px;
             border-radius: 6px;
             text-decoration: none;
             font-size: 0.9rem;
             font-weight: 500;
             transition: all 0.3s ease;
+            min-width: 120px;
+            text-align: center;
         }
         .product-link:hover {
             background: #0056b3;
@@ -186,10 +191,12 @@
             display: inline-block;
             background: #e9ecef;
             color: #6c757d;
-            padding: 8px 16px;
+            padding: 12px 24px;
             border-radius: 6px;
-            font-size: 0.8rem;
+            font-size: 0.9rem;
             font-weight: 500;
+            min-width: 120px;
+            text-align: center;
         }
         /* Modern Footer Styles */
         .modern-footer {
@@ -490,13 +497,13 @@
 
     <main>
         <section class="product-hero">
-            <div style="display: flex; align-items: center; max-width: 1600px; margin: 0 auto; padding: 0 40px; position: relative;">
-                <div class="hero-content" style="flex: 0 0 400px; margin-right: 200px;">
+            <div style="display: flex; align-items: center; justify-content: space-between; max-width: 1400px; margin: 0 auto; padding: 0 20px 0 60px; gap: 80px; margin-top: 150px;">
+                <div class="hero-content" style="flex: 1; max-width: 500px; margin-left: -40px; text-align: left; margin-top: 60px;">
                     <h1 class="product-title">Growthpulse <span class="gradient-text">Products</span></h1>
                     <p class="product-subtitle">In-house projects delivering transformative solutions across multiple industries</p>
                 </div>
-                <div style="flex: 0 0 550px;">
-                    <dotlottie-wc src="https://lottie.host/bcc6807d-f365-4200-af08-69a95f4dbe7e/qzLJQtQdOq.lottie" style="width: 550px;height: 550px;opacity: 1;visibility: visible" autoplay loop speed="2" preload></dotlottie-wc>
+                <div style="flex: 0 0 500px; margin-top: -60px;">
+                    <dotlottie-wc src="https://lottie.host/bcc6807d-f365-4200-af08-69a95f4dbe7e/qzLJQtQdOq.lottie" style="width: 500px;height: 500px;opacity: 1;visibility: visible" autoplay loop speed="2" preload></dotlottie-wc>
                 </div>
             </div>
         </section>
