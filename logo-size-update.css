@@ -1,0 +1,111 @@
+/* Logo Size Updates - Slightly increase header and footer logo sizes */
+
+/* Header Logo Sizes */
+.header-logo-img {
+    height: 80px !important; /* Increased from 65px */
+    width: auto;
+}
+
+/* Footer Logo Sizes */
+.footer-logo-img {
+    height: 90px !important; /* Increased from 75px */
+    width: auto;
+}
+
+/* Navbar Logo Sizes */
+.navbar_logo {
+    height: 65px !important; /* Increased from 50px */
+    width: auto;
+}
+
+/* Additional selectors for TNova and LIMS pages */
+.logo img {
+    height: 80px !important; /* Override inline styles */
+    width: auto;
+}
+
+.header .logo img {
+    height: 80px !important;
+    width: auto;
+}
+
+.footer-logo img {
+    height: 90px !important;
+    width: auto;
+}
+
+/* Generic logo selectors */
+img[src*="growthpulse-logo"] {
+    height: 80px !important;
+    width: auto;
+}
+
+img[src*="Main-Logo"] {
+    height: 80px !important;
+    width: auto;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 1024px) {
+    .header-logo-img {
+        height: 70px !important; /* Increased from 60px */
+    }
+    
+    .logo img, .header .logo img, img[src*="growthpulse-logo"], img[src*="Main-Logo"] {
+        height: 70px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-logo-img {
+        height: 60px !important; /* Increased from 50px */
+    }
+    
+    .footer-logo-img {
+        height: 75px !important; /* Increased from 65px */
+    }
+    
+    .logo img, .header .logo img, img[src*="growthpulse-logo"], img[src*="Main-Logo"] {
+        height: 60px !important;
+    }
+    
+    .footer-logo img {
+        height: 75px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-logo-img {
+        height: 50px !important; /* Increased from 45px */
+    }
+    
+    .footer-logo-img {
+        height: 70px !important; /* Increased from 60px */
+    }
+    
+    .logo img, .header .logo img, img[src*="growthpulse-logo"], img[src*="Main-Logo"] {
+        height: 50px !important;
+    }
+    
+    .footer-logo img {
+        height: 70px !important;
+    }
+}
+
+@media (max-width: 360px) {
+    .header-logo-img {
+        height: 45px !important; /* Increased from 40px */
+    }
+    
+    .footer-logo-img {
+        height: 60px !important; /* Increased from 55px */
+    }
+    
+    .logo img, .header .logo img, img[src*="growthpulse-logo"], img[src*="Main-Logo"] {
+        height: 45px !important;
+    }
+    
+    .footer-logo img {
+        height: 60px !important;
+    }
+}
