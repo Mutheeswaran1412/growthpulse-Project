@@ -1,0 +1,16 @@
+/* Performance Optimization CSS */
+/* Compress images and lazy load */
+img {
+  loading: lazy;
+  decoding: async;
+}
+
+/* Minimize CSS */
+* {
+  box-sizing: border-box;
+}
+
+/* Reduce unused CSS */
+.unused-class {
+  display: none;
+}

@@ -1,3 +1,6 @@
+# 301 Redirect for homepage duplicate content fix
+Redirect 301 /index.html https://www.growthpulss.com/
+
 AddType application/xml .xml
 AddType text/xml .xml
 
