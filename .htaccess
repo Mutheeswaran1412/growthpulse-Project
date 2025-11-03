@@ -1,9 +1,42 @@
-# 301 Redirect for homepage duplicate content fix
-Redirect 301 /index.html https://www.growthpulss.com/
+RewriteEngine On
+
+# Force www redirect
+RewriteCond %{HTTP_HOST} ^growthpulss\.com [NC]
+RewriteRule ^(.*)$ https://www.growthpulss.com/$1 [R=301,L]
+
+# Remove index.html from URL completely
+RewriteCond %{THE_REQUEST} \s/+index\.html[\s?] [NC]
+RewriteRule ^index\.html$ https://www.growthpulss.com/ [R=301,L]
+
+# Prevent direct access to index.html
+RewriteCond %{REQUEST_URI} ^/index\.html$ [NC]
+RewriteRule ^(.*)$ https://www.growthpulss.com/ [R=301,L]
+
+# Set DirectoryIndex to index.html but hide it from URL
+DirectoryIndex index.html
 
 AddType application/xml .xml
 AddType text/xml .xml
 
 <Files "sitemap.xml">
     Header set Content-Type "application/xml; charset=utf-8"
+</Files>
+
+# Security: Block malicious directories
+RedirectMatch 403 ^/temp/.*$
+RedirectMatch 403 ^/private/.*$
+RedirectMatch 403 ^/cache/.*$
+RedirectMatch 403 ^/includes/.*$
+RedirectMatch 403 ^/old/.*$
+
+# Block suspicious file access
+<FilesMatch "\.(php|phtml|php3|php4|php5|pl|py|jsp|asp|sh|cgi)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Allow only your legitimate PHP files if needed
+<Files "index.php">
+    Order Allow,Deny
+    Allow from all
 </Files>

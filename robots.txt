@@ -7,8 +7,12 @@ Sitemap: https://www.growthpulss.com/sitemap.xml
 # Crawl-delay
 Crawl-delay: 1
 
-# Disallow certain paths (if any)
+# Block malicious directories
 Disallow: /admin/
 Disallow: /private/
-Disallow: /*.pdf$
 Disallow: /temp/
+Disallow: /cache/
+Disallow: /includes/
+Disallow: /old/
+Disallow: /*.php$
+Disallow: /*.pdf$
