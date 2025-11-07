@@ -17,8 +17,8 @@
     <meta charset="utf-8"/>
     <title>Growthpulse Solutions | Strategic Business Solutions for Growth</title>
     <script>
-      // Force clean URL
-      if (window.location.pathname === '/index.html' || window.location.href.includes('index.html')) {
+      // Force clean URL only for direct index.html access
+      if (window.location.pathname === '/index.html') {
         window.location.replace('https://www.growthpulss.com/');
       }
     </script>
@@ -54,14 +54,7 @@
     <meta content="Webflow" name="generator" />
     <meta name="google-site-verification" content="MmL3d2wJJE6_jYEDkRtcT4mNdpjQgmaFfWcf1RzfEDs" />
     
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'GA_MEASUREMENT_ID');
-    </script>
+
     
     <!-- Schema Markup -->
     <script type="application/ld+json">
